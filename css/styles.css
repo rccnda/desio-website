@@ -198,3 +198,53 @@ body {
 #about, #menu, #gallery, #contact {
   scroll-margin-top: calc(1rem + 2.5rem + 1rem);
 }
+
+/* ---------------------------------------------------
+   CAROSELLO COME LEPETITBLEUCAFE
+--------------------------------------------------- */
+.carousel-container {
+  background: var(--bg);
+  overflow: hidden;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll-left 25s linear infinite;
+  white-space: nowrap;
+  gap: 4rem;
+  font-size: 1.5rem;
+  color: var(--primary);
+  font-weight: bold;
+  justify-content: flex-start;
+}
+
+.carousel-track span {
+  min-width: max-content;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---------------------------------------------------
+   FOOTER LEGALE
+--------------------------------------------------- */
+.legal-footer {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.legal-footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.legal-footer p {
+  margin: 0.5rem 0;
+}
