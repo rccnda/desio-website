@@ -1,5 +1,5 @@
-// js/main.js
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize AOS (scroll animations)
   AOS.init({
     duration: 800,
     once: true

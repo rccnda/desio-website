@@ -1,65 +1,200 @@
-/* css/styles.css */
+/* ---------------------------------------------------
+   COLORS, FONTS & RESET
+--------------------------------------------------- */
+:root {
+  --accent: #9E0005;
+  --primary: #005728;
+  --bg: #f3f2f2;
+}
 
-/* Reset & Base */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: sans-serif; color: #333; background: #fff; line-height:1.6; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Nav */
+body {
+  background: var(--bg);
+  color: #333;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+/* Majesty font (self-hosted in fonts/) */
+@font-face {
+  font-family: 'Majesty';
+  src: url('../fonts/Majesty.woff2') format('woff2'),
+       url('../fonts/Majesty.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---------------------------------------------------
+   TICKER (MOVING LINE)
+--------------------------------------------------- */
+.ticker {
+  background: var(--primary);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker__inner {
+  display: inline-block;
+  padding-left: 100%;
+  animation: ticker 20s linear infinite;
+}
+
+.ticker__inner span {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  padding: 0 2rem;
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ---------------------------------------------------
+   NAVIGATION & TAGLINE
+--------------------------------------------------- */
 .nav {
-  position: fixed; width:100%; background: rgba(255,255,255,0.9); 
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.nav ul { display:flex; justify-content:flex-end; padding:1rem; list-style:none; }
-.nav li + li { margin-left:1.5rem; }
-.nav a { text-decoration:none; color:#333; font-weight:500; }
 
-/* Hero */
+.nav__list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem;
+}
+
+.nav__list li + li {
+  margin-left: 2rem;
+}
+
+.nav__list a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.nav__tagline {
+  text-align: center;
+  font-family: 'Majesty', cursive;
+  color: var(--accent);
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* ---------------------------------------------------
+   HERO SECTION
+--------------------------------------------------- */
 .hero {
-  height:100vh; background-size:cover; background-position:center;
-  display:flex; align-items:center; justify-content:center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
+
 .hero::after {
-  content:''; position:absolute; top:0; left:0; width:100%; height:100%;
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: rgba(0,0,0,0.5);
 }
+
 .hero-content {
-  position: relative; text-align:center; color:#fff;
-}
-.hero-content h1 { font-size:3rem; margin-bottom:0.5rem; }
-.hero-content p { margin-bottom:1.5rem; font-size:1.2rem; }
-.btn {
-  background: #fff; color: #333; padding:0.75rem 1.5rem;
-  text-decoration:none; font-weight:bold; border-radius:4px;
+  position: relative;
+  text-align: center;
+  color: #fff;
 }
 
-/* Sections */
-.section { padding:4rem 1rem; }
-.container { max-width: 1000px; margin:0 auto; }
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* ---------------------------------------------------
+   SECTIONS (About, Menu, Gallery, Contact)
+--------------------------------------------------- */
+.section {
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
 /* About & Contact */
-.about p, .contact p { max-width:600px; margin-top:1rem; }
+.about p,
+.contact p {
+  max-width: 600px;
+  margin-top: 1rem;
+}
 
 /* Menu */
-.menu-list { list-style:none; }
-.menu-list li {
-  display:flex; justify-content:space-between; padding:0.75rem 0;
-  border-bottom:1px solid #eee;
+.menu-list {
+  list-style: none;
 }
-.menu-list h3 { font-weight:500; }
-.menu-list span { font-style:italic; color:#666; }
+
+.menu-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-list span {
+  font-style: italic;
+  color: #666;
+}
 
 /* Gallery */
 .grid {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:1rem; margin-top:2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
 }
+
 .grid img {
-  width:100%; height:auto; display:block;
+  width: 100%;
+  height: auto;
+  display: block;
   filter: grayscale(20%);
   transition: filter 0.3s ease;
 }
-.grid img:hover { filter: none; }
 
-/* Footer fix for nav overlap */
-#about, #menu, #gallery, #contact { scroll-margin-top:70px; }
+.grid img:hover {
+  filter: none;
+}
+
+/* Prevent content hiding under sticky nav */
+#about, #menu, #gallery, #contact {
+  scroll-margin-top: calc(1rem + 2.5rem + 1rem);
+}

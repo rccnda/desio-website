@@ -2,30 +2,44 @@
 <!-- 20.05.2025 -->
 
 
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Le Petit Bleu Clone</title>
+
   <!-- AOS.css for scroll animations -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Your main stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker__inner">
+      <span>Il tempo vola… “Era già l’ora che volge il disio, ai navicanti e ‘ntenerisce il core” • </span>
+      <span>Il tempo vola… “Era già l’ora che volge il disio, ai navicanti e ‘ntenerisce il core” • </span>
+      <!-- duplicate as needed for smooth loop -->
+    </div>
+  </div>
+
+  <!-- NAVIGATION & TAGLINE -->
   <nav class="nav">
-    <ul>
+    <ul class="nav__list">
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="nav__tagline">
+      Era già l’ora che volge il disio, ai navicanti e ‘ntenerisce il core
+    </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- HERO SECTION -->
   <section id="hero" class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?coffee-shop')">
     <div class="hero-content" data-aos="fade-up">
       <h1>Le Petit Bleu Café</h1>
@@ -34,7 +48,7 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- ABOUT SECTION -->
   <section id="about" class="section about">
     <div class="container" data-aos="fade-right">
       <h2>About</h2>
@@ -45,41 +59,49 @@
     </div>
   </section>
 
-  <!-- Menu Section -->
+  <!-- MENU SECTION -->
   <section id="menu" class="section menu">
     <div class="container" data-aos="fade-left">
       <h2>Menu</h2>
       <ul class="menu-list">
         <li>
           <h3>Espresso</h3>
-          <span>€2.50</span>
+          <span>2.50</span>
         </li>
         <li>
           <h3>Cappuccino</h3>
-          <span>€3.50</span>
+          <span>3.50</span>
         </li>
         <li>
           <h3>Croissant</h3>
-          <span>€2.00</span>
+          <span>2.00</span>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- Gallery Section -->
+  <!-- GALLERY SECTION -->
   <section id="gallery" class="section gallery">
     <div class="container">
       <h2 data-aos="fade-up">Gallery</h2>
       <div class="grid">
-        <div data-aos="zoom-in"><img src="https://source.unsplash.com/400x300/?coffee" alt="Coffee"></div>
-        <div data-aos="zoom-in"><img src="https://source.unsplash.com/400x300/?cafe" alt="Cafe"></div>
-        <div data-aos="zoom-in"><img src="https://source.unsplash.com/400x300/?pastry" alt="Pastry"></div>
-        <div data-aos="zoom-in"><img src="https://source.unsplash.com/400x300/?interior" alt="Interior"></div>
+        <div data-aos="zoom-in">
+          <img src="https://source.unsplash.com/400x300/?coffee" alt="Coffee">
+        </div>
+        <div data-aos="zoom-in">
+          <img src="https://source.unsplash.com/400x300/?cafe" alt="Cafe">
+        </div>
+        <div data-aos="zoom-in">
+          <img src="https://source.unsplash.com/400x300/?pastry" alt="Pastry">
+        </div>
+        <div data-aos="zoom-in">
+          <img src="https://source.unsplash.com/400x300/?interior" alt="Interior">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- CONTACT SECTION -->
   <section id="contact" class="section contact">
     <div class="container" data-aos="fade-up">
       <h2>Contact</h2>
