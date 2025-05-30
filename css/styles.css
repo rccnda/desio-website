@@ -1,250 +1,231 @@
-/* ---------------------------------------------------
-   COLORS, FONTS & RESET
---------------------------------------------------- */
 :root {
-  --accent: #9E0005;
+  --accent: #9e0005;
   --primary: #005728;
   --bg: #f3f2f2;
 }
 
-* {
+/* GENERAL */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: var(--bg);
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: var(--bg);
-  color: #333;
-  font-family: sans-serif;
+  color: #222;
   line-height: 1.6;
 }
 
-/* Majesty font (self-hosted in fonts/) */
-@font-face {
-  font-family: 'Majesty';
-  src: url('../fonts/Majesty.woff2') format('woff2'),
-       url('../fonts/Majesty.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* ---------------------------------------------------
-   TICKER (MOVING LINE)
---------------------------------------------------- */
-.ticker {
-  background: var(--primary);
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.ticker__inner {
-  display: inline-block;
-  padding-left: 100%;
-  animation: ticker 20s linear infinite;
-}
-
-.ticker__inner span {
-  display: inline-block;
-  color: #fff;
-  font-weight: bold;
-  padding: 0 2rem;
-}
-
-@keyframes ticker {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-/* ---------------------------------------------------
-   NAVIGATION & TAGLINE
---------------------------------------------------- */
-.nav {
+/* HEADER */
+.sticky-nav {
   position: sticky;
   top: 0;
-  background: #fff;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.nav__list {
+  background: var(--bg);
+  padding: 1rem 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  border-bottom: 1px solid #ddd;
+}
+.sticky-nav .logo {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.sticky-nav ul {
   list-style: none;
-  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
-
-.nav__list li + li {
-  margin-left: 2rem;
-}
-
-.nav__list a {
-  text-decoration: none;
+.sticky-nav a {
   color: var(--primary);
+  text-decoration: none;
   font-weight: 500;
 }
 
-.nav__tagline {
-  text-align: center;
-  font-family: 'Majesty', cursive;
-  color: var(--accent);
-  padding-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-/* ---------------------------------------------------
-   HERO SECTION
---------------------------------------------------- */
+/* HERO */
 .hero {
   height: 100vh;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   position: relative;
 }
-
 .hero::after {
   content: '';
+  background: rgba(0, 0, 0, 0.4);
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
+  inset: 0;
 }
-
 .hero-content {
   position: relative;
-  text-align: center;
-  color: #fff;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 1rem;
 }
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
-
-.hero-content p {
+.hero .subline {
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.btn {
-  background: var(--accent);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-/* ---------------------------------------------------
-   SECTIONS (About, Menu, Gallery, Contact)
---------------------------------------------------- */
-.section {
-  padding: 4rem 1rem;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* About & Contact */
-.about p,
-.contact p {
-  max-width: 600px;
-  margin-top: 1rem;
-}
-
-/* Menu */
-.menu-list {
-  list-style: none;
-}
-
-.menu-list li {
+/* COUNTDOWN */
+.countdown-timer {
   display: flex;
-  justify-content: space-between;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid #eee;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  color: white;
 }
-
-.menu-list span {
-  font-style: italic;
-  color: #666;
+.countdown-timer div {
+  text-align: center;
 }
-
-/* Gallery */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.grid img {
-  width: 100%;
-  height: auto;
+.countdown-timer div span {
   display: block;
-  filter: grayscale(20%);
-  transition: filter 0.3s ease;
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
 }
 
-.grid img:hover {
-  filter: none;
-}
-
-/* Prevent content hiding under sticky nav */
-#about, #menu, #gallery, #contact {
-  scroll-margin-top: calc(1rem + 2.5rem + 1rem);
-}
-
-/* ---------------------------------------------------
-   CAROSELLO COME LEPETITBLEUCAFE
---------------------------------------------------- */
+/* CAROUSEL */
 .carousel-container {
   background: var(--bg);
   overflow: hidden;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   border-bottom: 1px solid #ccc;
 }
-
 .carousel-track {
   display: flex;
   animation: scroll-left 25s linear infinite;
   white-space: nowrap;
   gap: 4rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--primary);
   font-weight: bold;
-  justify-content: flex-start;
 }
-
-.carousel-track span {
-  min-width: max-content;
-}
-
 @keyframes scroll-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* ---------------------------------------------------
-   FOOTER LEGALE
---------------------------------------------------- */
+/* MENU SECTION */
+#menu {
+  background: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+#menu h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+#menu .center-text {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* GIVEAWAY */
+.giveaway-section {
+  background: var(--accent);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.giveaway-section h2 {
+  font-size: 1.8rem;
+}
+.giveaway-section p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+.email-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.email-form input {
+  padding: 0.6rem;
+  width: 280px;
+  max-width: 100%;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.email-form button {
+  padding: 0.6rem 1.2rem;
+  background: white;
+  color: var(--accent);
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.email-form button:hover {
+  background: #f2f2f2;
+}
+
+/* CONTACT */
+#contact {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+#contact h2 {
+  color: var(--primary);
+}
+#contact a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* LEGAL FOOTER */
 .legal-footer {
   background: var(--primary);
   color: #fff;
   text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
+  padding: 2rem;
+  font-size: 0.8rem;
 }
-
 .legal-footer a {
   color: #fff;
   text-decoration: underline;
 }
 
-.legal-footer p {
-  margin: 0.5rem 0;
+/* ANIMATIONS (AOS) */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero .subline {
+    font-size: 1rem;
+  }
+  .sticky-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sticky-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
 }

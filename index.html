@@ -3,63 +3,111 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Desio Pasta e Panini</title>
 
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+
+  <!-- Countdown & Parallax libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/countdown@2.6.0/countdown.min.js"></script>
 </head>
 <body>
 
-  <!-- CAROSELLO (come lepetitbleucafe) -->
+  <!-- LOGO + NAV -->
+  <header class="sticky-nav">
+    <div class="logo">LOGO HERE</div>
+    <nav>
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#giveaway">Giveaway</a></li>
+        <li><a href="#contact">Contattaci</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- TEXT LOOP CAROUSEL -->
   <div class="carousel-container">
     <div class="carousel-track">
-      <span>pasta</span>
-      <span>panini</span>
-      <span>tiramisù</span>
-      <span>pasta</span>
-      <span>panini</span>
-      <span>tiramisù</span>
+      <span>pasta</span><span>panini</span><span>tiramisù</span>
+      <span>pasta</span><span>panini</span><span>tiramisù</span>
     </div>
   </div>
 
-  <!-- NAVIGATION -->
-  <nav class="nav">
-    <ul class="nav__list">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav__tagline">
-      Era già l’ora che volge il disio, ai navicanti e ‘ntenerisce il core
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section id="hero" class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?italian-food')">
+  <!-- HERO SECTION -->
+  <section class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?italian,restaurant');">
     <div class="hero-content" data-aos="fade-up">
-      <h1>Desio Pasta e Panini</h1>
-      <p>Tradizione Italiana, gusto autentico</p>
-      <a href="#menu" class="btn">Scopri il menù</a>
+      <h1>La Dolce Vita Arrives in Milano This July</h1>
+      <p class="subline">Authentic Italian cuisine, locally sourced ingredients, and a dining experience to remember.</p>
+
+      <!-- Countdown -->
+      <div id="countdown" class="countdown-timer"></div>
     </div>
   </section>
 
-  <!-- ABOUT, MENU, GALLERY, CONTACT (identici alla versione precedente, omessi qui per brevità) -->
+  <!-- MENU SECTION (can scroll through) -->
+  <section id="menu" data-aos="fade-up">
+    <h2>Il Nostro Menù</h2>
+    <p class="center-text">Senza € - Solo gusto autentico</p>
+    <!-- Menu content goes here -->
+  </section>
 
-  <!-- FOOTER LEGALE -->
+  <!-- GIVEAWAY -->
+  <section id="giveaway" class="giveaway-section" data-aos="fade-up">
+    <h2>🎁 Grand Opening Giveaway!</h2>
+    <p>Iscriviti alla nostra newsletter e partecipa all’estrazione per una cena gratuita per due!</p>
+    <form class="email-form">
+      <input type="email" placeholder="Inserisci la tua email" required />
+      <button type="submit">Partecipa</button>
+    </form>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" data-aos="fade-up">
+    <h2>Contattaci</h2>
+    <p>Hai domande? Scrivici a <a href="mailto:info@desiopasta.com">info@desiopasta.com</a></p>
+  </section>
+
+  <!-- LEGAL FOOTER -->
   <footer class="legal-footer">
-    <div class="footer-content">
-      <p><a href="#">Privacy Policy</a> • <a href="#">Cookie Policy</a> • <a href="#">Note Legali</a></p>
-      <p>Partita IVA: 00000000000</p>
-    </div>
+    <p><a href="#">Privacy</a> • <a href="#">Cookie</a> • <a href="#">Legal</a></p>
+    <p>Partita IVA: 00000000000</p>
   </footer>
 
+  <!-- JS + AOS + Countdown -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    AOS.init();
+
+    // Countdown
+    const countdownElement = document.getElementById("countdown");
+    const openingDate = new Date("2025-07-01T00:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const timeLeft = countdown(openingDate, now);
+
+      if (timeLeft.value > 0) {
+        countdownElement.innerHTML = `
+          <div><strong>${timeLeft.days}</strong><span>Giorni</span></div>
+          <div><strong>${timeLeft.hours}</strong><span>Ore</span></div>
+          <div><strong>${timeLeft.minutes}</strong><span>Min</span></div>
+          <div><strong>${timeLeft.seconds}</strong><span>Sec</span></div>
+        `;
+      } else {
+        countdownElement.innerHTML = "<p>Aperto ora!</p>";
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
