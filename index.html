@@ -22,16 +22,24 @@
 <body>
 
   <!-- LOGO + NAV -->
-  <header class="sticky-nav">
-    <div class="logo">LOGO HERE</div>
-    <nav>
-      <ul>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#giveaway">Giveaway</a></li>
-        <li><a href="#contact">Contattaci</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="sticky-nav">
+  <!-- Hamburger button (top-left) -->
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+  <!-- Centered logo -->
+  <div class="logo-center">
+    <img src="logo.png" alt="Desio Logo">
+  </div>
+
+  <!-- Hidden nav menu -->
+  <nav id="mobile-menu" class="hidden-menu">
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#giveaway">Giveaway</a></li>
+      <li><a href="#contact">Contattaci</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- TEXT LOOP CAROUSEL -->
   <div class="carousel-container">
@@ -44,8 +52,8 @@
   <!-- HERO SECTION -->
   <section class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?italian,restaurant');">
     <div class="hero-content" data-aos="fade-up">
-      <h1>La Dolce Vita Arrives in Milano This July</h1>
-      <p class="subline">Authentic Italian cuisine, locally sourced ingredients, and a dining experience to remember.</p>
+      <h1>La Dolce Vita Arrives in Groningen This July</h1>
+      <p class="subline">Authentic Italian cuisine, sourced ingredients, and a eatery experience to remember.</p>
 
       <!-- Countdown -->
       <div id="countdown" class="countdown-timer"></div>
@@ -109,5 +117,14 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
+
+  <!-- toggleMenu() -->
+ <script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('open');
+  }
+</script>
+</script>
 </body>
 </html>
