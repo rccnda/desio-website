@@ -80,7 +80,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* COUNTDOWN */
+/* COUNTDOWN
 .countdown-timer {
   display: flex;
   justify-content: center;
@@ -95,7 +95,7 @@ body {
   display: block;
   font-size: 0.75rem;
   margin-top: 0.2rem;
-}
+}*/
 
 /* CAROUSEL */
 .carousel-container {
@@ -287,4 +287,54 @@ body {
 /* HIDE DESKTOP MENU LINKS */
 .sticky-nav ul {
   display: none;
+}
+
+.flip-timer-section {
+  background: var(--primary);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.flip-timer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.unit {
+  text-align: center;
+}
+
+.flip-card {
+  background: white;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 2rem;
+  width: 80px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.flip-card .top,
+.flip-card .bottom {
+  display: block;
+  height: 50%;
+  line-height: 50px;
+  transition: transform 0.5s;
+}
+
+.label {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: white;
 }

@@ -28,7 +28,7 @@
 
   <!-- Centered logo -->
   <div class="logo-center">
-    <img src="logo.png" alt="Desio Logo">
+    <img src="assets/logo/logo.png" alt="Desio Logo">
   </div>
 
   <!-- Hidden nav menu -->
@@ -52,19 +52,42 @@
   <!-- HERO SECTION -->
   <section class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?italian,restaurant');">
     <div class="hero-content" data-aos="fade-up">
-      <h1>La Dolce Vita Arrives in Groningen This July</h1>
+      <h1>Desio qrrives in Groningen this July</h1>
       <p class="subline">Authentic Italian cuisine, sourced ingredients, and a eatery experience to remember.</p>
-
-      <!-- Countdown -->
-      <div id="countdown" class="countdown-timer"></div>
-    </div>
-  </section>
+      
+      <!-- COUNTDOWN SECTION -->
+      <section id="countdown-flip" class="flip-timer-section">
+        <div class="flip-timer">
+            <div class="unit" id="days">
+                <div class="flip-card"><span class="top">00</span><span class="bottom">00</span></div>
+                <span class="label">Days</span>
+            </div>
+            <div class="unit" id="hours">
+                <div class="flip-card"><span class="top">00</span><span class="bottom">00</span></div>
+                <span class="label">Hours</span>
+            </div>
+            <div class="unit" id="minutes">
+                <div class="flip-card"><span class="top">00</span><span class="bottom">00</span></div>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="unit" id="seconds">
+                <div class="flip-card"><span class="top">00</span><span class="bottom">00</span></div>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+    </section>
+</div>
+</section>
 
   <!-- MENU SECTION (can scroll through) -->
   <section id="menu" data-aos="fade-up">
-    <h2>Il Nostro Menù</h2>
-    <p class="center-text">Senza € - Solo gusto autentico</p>
-    <!-- Menu content goes here -->
+    <h2>Choose your side</h2>
+    <p class="center-text">Pasta 1</p>
+    <p class="center-text">Pasta 2</p>
+    <p class="center-text">Pasta 3</p>
+    <p class="center-text">Panino 1</p>
+    <p class="center-text">Panino 2</p>
+    <p class="center-text">Panino 3</p>
   </section>
 
   <!-- GIVEAWAY -->
@@ -80,13 +103,13 @@
   <!-- CONTACT -->
   <section id="contact" data-aos="fade-up">
     <h2>Contattaci</h2>
-    <p>Hai domande? Scrivici a <a href="mailto:info@desiopasta.com">info@desiopasta.com</a></p>
+    <p>Hai domande? Scrivici a <a href="mailto:info@desiofood.com">info@desiofood.com</a></p>
   </section>
 
   <!-- LEGAL FOOTER -->
   <footer class="legal-footer">
     <p><a href="#">Privacy</a> • <a href="#">Cookie</a> • <a href="#">Legal</a></p>
-    <p>Partita IVA: 00000000000</p>
+    <p>KVK: 00000000000</p>
   </footer>
 
   <!-- JS + AOS + Countdown -->
@@ -117,7 +140,7 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
-
+  
   <!-- toggleMenu() -->
  <script>
   function toggleMenu() {
@@ -126,5 +149,47 @@
   }
 </script>
 </script>
+
+<!-- updateCountdown() -->
+<script>
+function updateCountdown() {
+  const endDate = new Date("2025-07-01T00:00:00");
+  const now = new Date();
+  const diff = endDate - now;
+
+  if (diff <= 0) return;
+
+  const secs = Math.floor(diff / 1000);
+  const days = Math.floor(secs / (3600 * 24));
+  const hours = Math.floor((secs % (3600 * 24)) / 3600);
+  const minutes = Math.floor((secs % 3600) / 60);
+  const seconds = secs % 60;
+
+  updateUnit("days", days);
+  updateUnit("hours", hours);
+  updateUnit("minutes", minutes);
+  updateUnit("seconds", seconds);
+}
+
+function updateUnit(id, value) {
+  const unit = document.getElementById(id);
+  const top = unit.querySelector(".top");
+  const bottom = unit.querySelector(".bottom");
+  const current = top.innerText;
+
+  const formatted = String(value).padStart(2, "0");
+
+  if (current !== formatted) {
+    top.innerText = formatted;
+    bottom.innerText = formatted;
+    unit.classList.add("flip");
+    setTimeout(() => unit.classList.remove("flip"), 500);
+  }
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
 </body>
 </html>
