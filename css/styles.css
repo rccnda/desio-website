@@ -308,28 +308,60 @@ body {
 }
 
 .flip-card {
+  position: relative;
   background: white;
   color: var(--accent);
   font-weight: bold;
-  font-size: 2rem;
-  width: 80px;
-  height: 100px;
+  width: 100px;
+  height: 120px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 3rem;
+  text-align: center;
 }
 
 .flip-card .top,
 .flip-card .bottom {
-  display: block;
   height: 50%;
-  line-height: 50px;
-  transition: transform 0.5s;
+  line-height: 60px;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.flip-card .top {
+  border-bottom: 1px solid #ccc;
+  transform-origin: bottom;
+}
+
+.flip-card .bottom {
+  transform-origin: top;
+  transform: rotateX(180deg);
+}
+
+.unit.flip .top {
+  animation: flipTop 0.5s forwards;
+}
+
+.unit.flip .bottom {
+  animation: flipBottom 0.5s forwards;
+}
+
+@keyframes flipTop {
+  0%   { transform: rotateX(0); }
+  100% { transform: rotateX(-180deg); }
+}
+
+@keyframes flipBottom {
+  0%   { transform: rotateX(180deg); }
+  100% { transform: rotateX(0); }
 }
 
 .label {
