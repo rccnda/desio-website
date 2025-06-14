@@ -23,10 +23,15 @@ header {
 }
 
 .logo {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-style: italic;
-    color: #005728;
-    font-size: 2rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
 }
 
 nav ul {
