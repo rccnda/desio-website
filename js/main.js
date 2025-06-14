@@ -1,13 +1,13 @@
 const slides = document.querySelectorAll('.slide');
-let current = 0;
+let currentIndex = 0;
 
 function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-    });
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
 }
 
 setInterval(() => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
 }, 2000);
