@@ -1,16 +1,15 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize AOS (scroll animations)
-  AOS.init({
-    duration: 800,
-    once: true
-  });
+let currentIndex = 0;
+const slides = document.querySelectorAll(".slide");
 
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      e.preventDefault();
-      document.querySelector(anchor.getAttribute('href'))
-        .scrollIntoView({ behavior: 'smooth' });
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
     });
-  });
-});
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+setInterval(nextSlide, 2000);

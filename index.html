@@ -1,195 +1,46 @@
-<!-- Nadia Ruocco -->
-<!-- 20.05.2025 -->
-
-
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desio Pasta e Panini</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>AOS.init();</script>
-
-
-  <!-- Countdown & Parallax libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/countdown@2.6.0/countdown.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desio - Italian Eatery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- LOGO + NAV -->
-<header class="sticky-nav">
-  <!-- Hamburger button (top-left) -->
-  <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <header>
+        <div class="logo">Desio</div>
+        <nav>
+            <ul>
+                <li><a href="#">Menù</a></li>
+                <li><a href="#">Desio</a></li>
+                <li><a href="#">Fun Staff</a></li>
+                <li><a href="#">Work with us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Centered logo -->
-  <div class="logo-center">
-    <img src="assets/logo/logo.png" alt="Desio Logo">
-  </div>
+    <section class="slider">
+        <img src="Plan.png" alt="Slide 1" class="slide active">
+        <img src="Plan.png" alt="Slide 2" class="slide">
+        <img src="Plan.png" alt="Slide 3" class="slide">
+        <img src="Plan.png" alt="Slide 4" class="slide">
+        <img src="Plan.png" alt="Slide 5" class="slide">
+    </section>
 
-  <!-- Hidden nav menu -->
-  <nav id="mobile-menu" class="hidden-menu">
-    <ul>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#giveaway">Giveaway</a></li>
-      <li><a href="#contact">Contattaci</a></li>
-    </ul>
-  </nav>
-</header>
-
-  <!-- TEXT LOOP CAROUSEL -->
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <span>pasta</span><span>panini</span><span>tiramisù</span>
-      <span>pasta</span><span>panini</span><span>tiramisù</span>
-    </div>
-  </div>
-
-  <!-- HERO SECTION -->
-  <section class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?italian,restaurant');">
-    <div class="hero-content" data-aos="fade-up">
-      <h1>Desio arrives in Groningen this July</h1>
-      <p class="subline">Authentic Italian cuisine, sourced ingredients, and a eatery experience to remember.</p>
-      
-      <!-- COUNTDOWN SECTION -->
-      <section id="countdown-flip" class="flip-timer-section">
-        <div class="flip-timer">
-            <div class="unit" id="days">
-                <div class="flip-card"><span class="top">00</span><span class="bottom">00</span></div>
-                <span class="label">Days</span>
-            </div>
-            <div class="unit" id="hours">
-                <div class="flip-card"><span class="top">00</span><span class="bottom">00</span></div>
-                <span class="label">Hours</span>
-            </div>
-            <div class="unit" id="minutes">
-                <div class="flip-card"><span class="top">00</span><span class="bottom">00</span></div>
-                <span class="label">Minutes</span>
-            </div>
-            <div class="unit" id="seconds">
-                <div class="flip-card"><span class="top">00</span><span class="bottom">00</span></div>
-                <span class="label">Seconds</span>
-            </div>
+    <section class="content">
+        <div class="icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/1051/1051937.png" alt="Pasta Icon">
+        </div>
+        <div class="text">
+            <h1>Eat Fast. Dream Italian.</h1>
+            <p>Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be. With fast fresh italian attitude, come join us for your neat meal.</p>
+            <p class="subline"><a href="https://www.google.com/maps/place/Herestraat+82,+9711LL+Groningen" target="_blank">Herestraat 82, 9711LL Groningen</a></p>
+            <button>Hungry?</button>
         </div>
     </section>
-</div>
-</section>
 
-  <!-- MENU SECTION (can scroll through) -->
-  <section id="menu" data-aos="fade-up">
-    <h2>Choose your side</h2>
-    <p class="center-text">Pasta 1</p>
-    <p class="center-text">Pasta 2</p>
-    <p class="center-text">Pasta 3</p>
-    <p class="center-text">Panino 1</p>
-    <p class="center-text">Panino 2</p>
-    <p class="center-text">Panino 3</p>
-  </section>
-
-  <!-- GIVEAWAY -->
-  <section id="giveaway" class="giveaway-section" data-aos="fade-up">
-    <h2>🎁 Grand Opening Giveaway!</h2>
-    <p>Iscriviti alla nostra newsletter e partecipa all’estrazione per una cena gratuita per due!</p>
-    <form class="email-form">
-      <input type="email" placeholder="Inserisci la tua email" required />
-      <button type="submit">Partecipa</button>
-    </form>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" data-aos="fade-up">
-    <h2>Contattaci</h2>
-    <p>Hai domande? Scrivici a <a href="mailto:info@desiofood.com">info@desiofood.com</a></p>
-  </section>
-
-  <!-- LEGAL FOOTER -->
-  <footer class="legal-footer">
-    <p><a href="#">Privacy</a> • <a href="#">Cookie</a> • <a href="#">Legal</a></p>
-    <p>KVK: 00000000000</p>
-  </footer>
-
-  <!-- JS + AOS + Countdown -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    // Countdown
-    const countdownElement = document.getElementById("countdown");
-    const openingDate = new Date("2025-07-01T00:00:00");
-
-    function updateCountdown() {
-      const now = new Date();
-      const timeLeft = countdown(openingDate, now);
-
-      if (timeLeft.value > 0) {
-        countdownElement.innerHTML = `
-          <div><strong>${timeLeft.days}</strong><span>Giorni</span></div>
-          <div><strong>${timeLeft.hours}</strong><span>Ore</span></div>
-          <div><strong>${timeLeft.minutes}</strong><span>Min</span></div>
-          <div><strong>${timeLeft.seconds}</strong><span>Sec</span></div>
-        `;
-      } else {
-        countdownElement.innerHTML = "<p>Aperto ora!</p>";
-      }
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-  
-  <!-- toggleMenu() -->
- <script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('open');
-  }
-</script>
-</script>
-
-<!-- updateCountdown() -->
-<script>
-function updateCountdown() {
-  const endDate = new Date("2025-07-01T00:00:00");
-  const now = new Date();
-  const diff = endDate - now;
-
-  if (diff <= 0) return;
-
-  const secs = Math.floor(diff / 1000);
-  const days = Math.floor(secs / (3600 * 24));
-  const hours = Math.floor((secs % (3600 * 24)) / 3600);
-  const minutes = Math.floor((secs % 3600) / 60);
-  const seconds = secs % 60;
-
-  updateUnit("days", days);
-  updateUnit("hours", hours);
-  updateUnit("minutes", minutes);
-  updateUnit("seconds", seconds);
-}
-
-function updateUnit(id, value) {
-  const unit = document.getElementById(id);
-  const top = unit.querySelector(".top");
-  const bottom = unit.querySelector(".bottom");
-  const current = top.innerText;
-
-  const formatted = String(value).padStart(2, "0");
-
-  if (current !== formatted) {
-    top.innerText = formatted;
-    bottom.innerText = formatted;
-    unit.classList.add("flip");
-    setTimeout(() => unit.classList.remove("flip"), 500);
-  }
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-</script>
-
+    <script src="main.js"></script>
 </body>
 </html>
