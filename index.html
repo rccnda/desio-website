@@ -6,40 +6,49 @@
     <title>Desio - Italian Eatery</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-    <header>
+    <header class="site-header">
         <div class="logo">Desio</div>
-        <nav>
+        <nav class="main-nav">
             <ul>
-                <li><a href="#">Menù</a></li>
-                <li><a href="#">Desio</a></li>
-                <li><a href="#">Fun Staff</a></li>
-                <li><a href="#">Work with us</a></li>
+                <li><a href="#menu">Menù</a></li>
+                <li><a href="#about">Desio</a></li>
+                <li><a href="#staff">Fun Staff</a></li>
+                <li><a href="#work">Work with us</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="slider">
-        <img src="Plan.png" alt="Slide 1" class="slide active">
-        <img src="Plan.png" alt="Slide 2" class="slide">
-        <img src="Plan.png" alt="Slide 3" class="slide">
-        <img src="Plan.png" alt="Slide 4" class="slide">
-        <img src="Plan.png" alt="Slide 5" class="slide">
-    </section>
+    <main>
+        <section class="slider" aria-label="Photo Slider">
+            <div class="slides">
+                <img src="Plan.png" alt="Italian food photo 1" class="slide active">
+                <img src="Plan.png" alt="Italian food photo 2" class="slide">
+                <img src="Plan.png" alt="Italian food photo 3" class="slide">
+                <img src="Plan.png" alt="Italian food photo 4" class="slide">
+                <img src="Plan.png" alt="Italian food photo 5" class="slide">
+            </div>
+        </section>
 
-    <section class="content">
-        <div class="icon">
-            <img src="https://cdn-icons-png.flaticon.com/512/1051/1051937.png" alt="Pasta Icon">
-        </div>
-        <div class="text">
-            <h1>Eat Fast. Dream Italian.</h1>
-            <p>Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be. With fast fresh italian attitude, come join us for your neat meal.</p>
-            <p class="subline"><a href="https://www.google.com/maps/place/Herestraat+82,+9711LL+Groningen" target="_blank">Herestraat 82, 9711LL Groningen</a></p>
-            <button>Hungry?</button>
-        </div>
-    </section>
+        <section class="about-section" id="about">
+            <div class="icon-container">
+                <img src="https://cdn-icons-png.flaticon.com/512/1051/1051937.png" alt="Pasta icon">
+            </div>
+            <div class="text-container">
+                <h1>Eat Fast. Dream Italian.</h1>
+                <p>Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be. With fast fresh italian attitude, come join us for your neat meal.</p>
+                <p class="address"><a href="https://www.google.com/maps/place/Herestraat+82,+9711LL+Groningen" target="_blank" rel="noopener noreferrer">Herestraat 82, 9711LL Groningen</a></p>
+                <button class="cta-button">Hungry?</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Desio Italian Eatery. All rights reserved.</p>
+    </footer>
 
     <script src="main.js"></script>
 </body>
