@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Desio - Italian Eatery</title>
   <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=ITC+Franklin+Gothic+LT:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <header class="navbar">
+  <header>
     <div class="logo">Desio</div>
     <nav>
-      <ul class="menu">
+      <ul>
         <li><a href="#menu">Menù</a></li>
         <li><a href="#desio">Desio</a></li>
         <li><a href="#staff">Fun Staff</a></li>
@@ -21,31 +22,32 @@
     </nav>
   </header>
 
-  <section class="slider">
+  <div class="slider">
     <div class="slides">
-      <img src="Plan.png" alt="Slide 1" class="slide active"/>
-      <img src="Plan.png" alt="Slide 2" class="slide"/>
-      <img src="Plan.png" alt="Slide 3" class="slide"/>
-      <img src="Plan.png" alt="Slide 4" class="slide"/>
-      <img src="Plan.png" alt="Slide 5" class="slide"/>
+      <img src="assets/logo/Plan.png" alt="Desio Restaurant">
+      <img src="assets/logo/Plan.png" alt="Desio Restaurant">
+      <img src="assets/logo/Plan.png" alt="Desio Restaurant">
+      <img src="assets/logo/Plan.png" alt="Desio Restaurant">
+      <img src="assets/logo/Plan.png" alt="Desio Restaurant">
     </div>
-  </section>
+  </div>
 
   <section class="about">
-    <div class="content">
+    <div class="about-content">
       <div class="icon">
         <img src="https://cdn-icons-png.flaticon.com/512/1051/1051937.png" alt="Pasta Icon"/>
       </div>
-      <div class="text">
+      <div class="text-content">
         <h1>Eat Fast. Dream Italian.</h1>
         <p>Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be. With fast fresh italian attitude, come join us for your neat meal.</p>
-        <p class="address">
-          <a href="https://www.google.com/maps/place/Herestraat+82,+9711LL+Groningen" target="_blank">Herestraat 82, 9711LL Groningen</a>
-        </p>
-        <button class="cta">Hungry?</button>
+        <a href="https://www.google.com/maps" class="address">Herestraat 82, 9711LL Groningen</a>
       </div>
     </div>
   </section>
+
+  <div class="cta">
+    <button class="hungry-btn">Hungry?</button>
+  </div>
 
   <script src="main.js"></script>
 </body>

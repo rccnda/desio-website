@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'ITC Franklin Gothic LT', sans-serif;
+    color: #001514;
+}
+
+/* Header Styles */
+header {
+    background-color: #f9eed9;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: italic;
+    color: #005728;
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #005728;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #003d1c;
+}
+
+/* Slider Styles */
+.slider {
+    margin-top: 80px;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    animation: slide 10s infinite;
+}
+
+.slides img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-20%); }
+    45% { transform: translateX(-20%); }
+    50% { transform: translateX(-40%); }
+    70% { transform: translateX(-40%); }
+    75% { transform: translateX(-60%); }
+    95% { transform: translateX(-60%); }
+    100% { transform: translateX(-80%); }
+}
+
+/* About Section Styles */
+.about {
+    background-color: #ede2d4;
+    padding: 4rem 2rem;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.icon img {
+    width: 150px;
+    height: auto;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.text-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.address {
+    color: #001514;
+    text-decoration: none;
+    font-style: italic;
+}
+
+/* CTA Button Styles */
+.cta {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.hungry-btn {
+    background-color: #6e0e0a;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'ITC Franklin Gothic LT', sans-serif;
+}
+
+.hungry-btn:hover {
+    background-color: #8a110d;
+} 
