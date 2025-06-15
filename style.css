@@ -161,8 +161,17 @@ nav a:hover {
 
 .typewriter {
     overflow: hidden;
-    white-space: nowrap;
+    white-space: normal;
     animation: typewriter 2s steps(40) forwards;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Add a wrapper for typewriter text */
+.typewriter-wrapper {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
 }
 
 /* CTA Button Styles */
