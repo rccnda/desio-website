@@ -62,12 +62,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Loading overlay fade out
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            document.getElementById('loading-overlay').classList.add('fade-out');
-        }, 600);
-    });
+    // --- LOADING OVERLAY: Only on first visit to homepage ---
+    const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    if (isHome) {
+        if (!sessionStorage.getItem('desioLoaded')) {
+            if (loadingOverlay) loadingOverlay.style.display = 'flex';
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    if (loadingOverlay) loadingOverlay.classList.add('fade-out');
+                    sessionStorage.setItem('desioLoaded', 'yes');
+                }, 600);
+            });
+        } else {
+            if (loadingOverlay) loadingOverlay.style.display = 'none';
+        }
+    } else {
+        if (loadingOverlay) loadingOverlay.style.display = 'none';
+    }
 
     // GSAP staggered menu animation
     if (window.gsap) {
@@ -81,12 +93,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Newsletter modal after 2s of scrolling
-    let newsletterShown = false;
+    // --- NEWSLETTER MODAL: Only once per session ---
+    let newsletterShown = sessionStorage.getItem('newsletterShown') === 'yes';
     function showNewsletterModal() {
         if (!newsletterShown) {
             document.getElementById('newsletter-modal').classList.add('active');
             newsletterShown = true;
+            sessionStorage.setItem('newsletterShown', 'yes');
         }
     }
     window.addEventListener('scroll', function() {
@@ -94,20 +107,27 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(showNewsletterModal, 2000);
         }
     });
-    document.querySelector('.close-modal').addEventListener('click', function() {
-        document.getElementById('newsletter-modal').classList.remove('active');
-    });
-    document.querySelector('#newsletter-modal form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        document.getElementById('newsletter-modal').classList.remove('active');
-        // Optionally show a thank you message
-    });
+    const closeModalBtn = document.querySelector('.close-modal');
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', function() {
+            document.getElementById('newsletter-modal').classList.remove('active');
+        });
+    }
+    const newsletterForm = document.querySelector('#newsletter-modal form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('newsletter-modal').classList.remove('active');
+            // Optionally show a thank you message
+        });
+    }
 
-    // --- LOGO SVG DRAW-IN & BOUNCE ---
+    // --- LOGO SVG DRAW-IN & BOUNCE with fallback ---
+    const logoSvg = document.getElementById('logo-svg');
     fetch('assets/images/logo_animation.svg')
       .then(res => res.text())
       .then(svg => {
-        document.getElementById('logo-svg').innerHTML = svg;
+        if (logoSvg) logoSvg.innerHTML = svg;
         const paths = document.querySelectorAll('#logo-svg path');
         paths.forEach(path => {
           const length = path.getTotalLength();
@@ -117,21 +137,28 @@ document.addEventListener('DOMContentLoaded', function() {
           path.style.fill = 'none';
           path.style.transition = 'fill 0.5s';
         });
-        gsap.to('#logo-svg path', {
-          strokeDashoffset: 0,
-          duration: 1.5,
-          stagger: 0.2,
-          ease: 'power2.out',
-          onComplete: () => {
-            paths.forEach(path => path.style.fill = '#005728');
-          }
-        });
-        // Bounce on load
-        gsap.fromTo('#logo-svg', {y: -30, scale: 0.9}, {y: 0, scale: 1, duration: 0.7, ease: 'bounce.out', delay: 1.2});
-        // Bounce on hover
-        document.getElementById('logo-svg').addEventListener('mouseenter', () => {
-          gsap.fromTo('#logo-svg', {y: 0, scale: 1}, {y: -18, scale: 1.08, duration: 0.3, yoyo: true, repeat: 1, ease: 'power1.inOut'});
-        });
+        if (window.gsap) {
+          gsap.to('#logo-svg path', {
+            strokeDashoffset: 0,
+            duration: 1.5,
+            stagger: 0.2,
+            ease: 'power2.out',
+            onComplete: () => {
+              paths.forEach(path => path.style.fill = '#005728');
+            }
+          });
+          // Bounce on load
+          gsap.fromTo('#logo-svg', {y: -30, scale: 0.9}, {y: 0, scale: 1, duration: 0.7, ease: 'bounce.out', delay: 1.2});
+          // Bounce on hover
+          logoSvg.addEventListener('mouseenter', () => {
+            gsap.fromTo('#logo-svg', {y: 0, scale: 1}, {y: -18, scale: 1.08, duration: 0.3, yoyo: true, repeat: 1, ease: 'power1.inOut'});
+          });
+        }
+      })
+      .catch(() => {
+        // Fallback to PNG if SVG fails
+        const png = document.querySelector('.logo-img-png');
+        if (png) png.style.display = 'block';
       });
 
     // --- FLOATING PASTA ICON ---
