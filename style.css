@@ -49,11 +49,14 @@ nav a {
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background 0.3s cubic-bezier(.4,2,.6,1);
+    border-radius: 8px;
+    padding: 0.3em 0.8em;
 }
 
 nav a:hover {
     color: #003d1c;
+    background: #c9e3ac;
 }
 
 /* Slider Styles */
@@ -189,12 +192,33 @@ nav a:hover {
     padding: 1rem 3rem;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.18s cubic-bezier(.4,2,.6,1);
     font-family: 'ITC Franklin Gothic LT', sans-serif;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(110,14,10,0.07);
 }
 
 .hungry-btn:hover {
     background-color: #8a110d;
+    transform: scale(1.08) rotate(-2deg);
+    animation: bounceBtn 0.5s;
+}
+
+.hungry-btn:active {
+    animation: pulseBtn 0.3s;
+}
+
+@keyframes bounceBtn {
+    0% { transform: scale(1) rotate(0); }
+    30% { transform: scale(1.12) rotate(-3deg); }
+    60% { transform: scale(0.96) rotate(2deg); }
+    100% { transform: scale(1.08) rotate(-2deg); }
+}
+
+@keyframes pulseBtn {
+    0% { transform: scale(1.08); }
+    50% { transform: scale(1.18); }
+    100% { transform: scale(1.08); }
 }
 
 /* Coming Soon Page Styles */
@@ -361,4 +385,108 @@ nav a:hover {
     .hero-image-wrapper {
         margin: 80px 0 24px 0;
     }
+}
+
+#loading-overlay {
+    position: fixed;
+    z-index: 2000;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #005728;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.7s cubic-bezier(.4,2,.6,1);
+}
+.loading-logo {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 4px 24px rgba(0,0,0,0.12));
+}
+#loading-overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.newsletter-modal {
+    position: fixed;
+    z-index: 3000;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,21,20,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(.4,2,.6,1);
+}
+.newsletter-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.newsletter-content {
+    background: #f9eed9;
+    border-radius: 24px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    text-align: center;
+    min-width: 300px;
+    max-width: 90vw;
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+}
+.newsletter-modal.active .newsletter-content {
+    transform: scale(1);
+}
+.newsletter-content h2 {
+    font-family: 'ITC Franklin Gothic LT', sans-serif;
+    color: #005728;
+    margin-bottom: 1rem;
+}
+.newsletter-content input[type="email"] {
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #c9e3ac;
+    margin-bottom: 1rem;
+    width: 80%;
+    font-size: 1rem;
+}
+.newsletter-content button[type="submit"] {
+    background: #6e0e0a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+.newsletter-content button[type="submit"]:hover {
+    background: #8a110d;
+}
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #6e0e0a;
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    cursor: pointer;
+}
+
+.logo-svg {
+    display: block;
+    height: 80px;
+    width: auto;
+    margin: 0;
+}
+
+.floating-pasta {
+    animation: floatPasta 3s ease-in-out infinite;
+}
+@keyframes floatPasta {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0); }
 } 

@@ -7,11 +7,27 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=ITC+Franklin+Gothic+LT:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
+    <div id="loading-overlay">
+        <img src="assets/images/loading_logo.png" alt="Loading..." class="loading-logo" />
+    </div>
+    <div id="newsletter-modal" class="newsletter-modal">
+        <div class="newsletter-content">
+            <h2>Subscribe to our Newsletter</h2>
+            <form>
+                <input type="email" placeholder="Your email" required />
+                <button type="submit">Subscribe</button>
+            </form>
+            <button class="close-modal">×</button>
+        </div>
+    </div>
     <header>
         <div class="logo">
-            <img src="assets/images/logo.png" alt="Desio Logo">
+            <img src="assets/images/logo_lettering.png" alt="Desio Logo" class="logo-img-png" style="display:none;" />
+            <svg id="logo-svg" class="logo-svg" style="height:80px;width:auto;"></svg>
         </div>
         <nav>
             <ul>
@@ -27,12 +43,15 @@
             <span></span>
         </div>
     </header>
-
-    <div class="coming-soon">
-        <h1>Coming Soon</h1>
-        <p>Learn more about our story and passion for Italian cuisine.</p>
+    <div class="about-content">
+        <div class="icon floating-pasta">
+            <img src="https://cdn-icons-png.flaticon.com/512/1051/1051937.png" alt="Pasta Icon"/>
+        </div>
+        <div class="text-content">
+            <h1 class="typewriter">Coming Soon</h1>
+            <p class="typewriter">Learn more about our story and passion for Italian cuisine.</p>
+        </div>
     </div>
-
     <script src="main.js"></script>
 </body>
 </html> 
