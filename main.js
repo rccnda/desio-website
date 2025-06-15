@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Add typewriter animation to text elements
+    const textElements = document.querySelectorAll('.text-content h1, .text-content p');
+    textElements.forEach(element => {
+        element.classList.add('typewriter');
+    });
+
     // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
@@ -43,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const hungryBtn = document.querySelector('.hungry-btn');
     if (hungryBtn) {
         hungryBtn.addEventListener('click', function() {
-            // Add your action here when the button is clicked
-            console.log('Hungry button clicked!');
+            window.location.href = 'menu.html';
         });
     }
 

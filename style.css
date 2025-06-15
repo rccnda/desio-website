@@ -7,6 +7,7 @@
 body {
     font-family: 'ITC Franklin Gothic LT', sans-serif;
     color: #001514;
+    background-color: #ede2d4;
 }
 
 /* Header Styles */
@@ -45,6 +46,7 @@ nav a {
     color: #005728;
     text-decoration: none;
     font-size: 1.1rem;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
@@ -66,7 +68,7 @@ nav a:hover {
     display: flex;
     width: 500%;
     height: 100%;
-    animation: slide 10s infinite;
+    animation: slide 20s infinite;
 }
 
 .slides img {
@@ -78,14 +80,16 @@ nav a:hover {
 
 @keyframes slide {
     0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-20%); }
-    45% { transform: translateX(-20%); }
-    50% { transform: translateX(-40%); }
-    70% { transform: translateX(-40%); }
+    15% { transform: translateX(0); }
+    20% { transform: translateX(-20%); }
+    35% { transform: translateX(-20%); }
+    40% { transform: translateX(-40%); }
+    55% { transform: translateX(-40%); }
+    60% { transform: translateX(-60%); }
     75% { transform: translateX(-60%); }
-    95% { transform: translateX(-60%); }
-    100% { transform: translateX(-80%); }
+    80% { transform: translateX(-80%); }
+    95% { transform: translateX(-80%); }
+    100% { transform: translateX(0); }
 }
 
 /* About Section Styles */
@@ -95,15 +99,16 @@ nav a:hover {
 }
 
 .about-content {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
+    padding: 6rem 2rem;
 }
 
 .icon img {
-    width: 150px;
+    width: 120px;
     height: auto;
 }
 
@@ -112,20 +117,52 @@ nav a:hover {
 }
 
 .text-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .text-content p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.3s forwards;
 }
 
 .address {
     color: #001514;
     text-decoration: none;
     font-style: italic;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 2s steps(40) forwards;
 }
 
 /* CTA Button Styles */
