@@ -329,4 +329,34 @@ nav a:hover {
     .coming-soon p {
         font-size: 1rem;
     }
+}
+
+.hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 100px 0 40px 0;
+    min-height: 300px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    background: #ede2d4;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .hero-image {
+        max-width: 90vw;
+        border-radius: 18px;
+    }
+    .hero-image-wrapper {
+        margin: 80px 0 24px 0;
+    }
 } 
