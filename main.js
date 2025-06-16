@@ -86,56 +86,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // GSAP staggered menu animation
-    if (window.gsap) {
-        gsap.from('nav ul li', {
-            opacity: 0,
-            y: -30,
-            stagger: 0.15,
-            duration: 0.7,
-            ease: 'power2.out',
-            delay: 0.7
-        });
-    }
-
-    // --- PARALLAX SCROLL EFFECTS ---
-    if (window.gsap && window.ScrollTrigger) {
-      gsap.to('.floating-pasta', {
-        y: -40,
-        scrollTrigger: {
-          trigger: '.about',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 0.5
-        }
-      });
-    }
-
-    // --- FOOTER ANIMATIONS ---
-    if (window.gsap) {
-      gsap.from('.footer-main h2', {opacity: 0, y: 30, scale: 0.8, duration: 1.1, ease: 'elastic.out(1,0.6)', delay: 0.7});
-      gsap.from('.footer-policies, .footer-kvk, .footer-social', {opacity: 0, y: 40, duration: 1.1, stagger: 0.18, ease: 'power2.out', delay: 1.1});
-    }
-
     // Initialize Swiper
     const heroSwiper = new Swiper('.hero-slider', {
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
     });
 
     // Newsletter Pop-up Logic
@@ -145,47 +114,47 @@ document.addEventListener('DOMContentLoaded', function() {
     let newsletterShownSession = sessionStorage.getItem('newsletterShown') === 'yes';
 
     function showNewsletterPopup() {
-      if (!newsletterShownSession && newsletterPopup) {
-        newsletterPopup.classList.add('active');
-        newsletterShownSession = true;
-        sessionStorage.setItem('newsletterShown', 'yes');
-      }
+        if (!newsletterShownSession && newsletterPopup) {
+            newsletterPopup.classList.add('active');
+            newsletterShownSession = true;
+            sessionStorage.setItem('newsletterShown', 'yes');
+        }
     }
 
     if (closePopupBtn) {
-      closePopupBtn.addEventListener('click', () => {
-        newsletterPopup.classList.remove('active');
-      });
+        closePopupBtn.addEventListener('click', () => {
+            newsletterPopup.classList.remove('active');
+        });
     }
 
     if (newsletterPopupForm) {
-      newsletterPopupForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // You can add logic here to handle form submission (e.g., send to an API)
-        alert('Thank you for subscribing!'); // Placeholder for success message
-        newsletterPopup.classList.remove('active');
-      });
+        newsletterPopupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // You can add logic here to handle form submission (e.g., send to an API)
+            alert('Thank you for subscribing!'); // Placeholder for success message
+            newsletterPopup.classList.remove('active');
+        });
     }
 
     // Show newsletter pop-up after a delay on scroll, only once per session
     window.addEventListener('scroll', () => {
-      if (!newsletterShownSession && window.scrollY > 200) { // Adjust scroll threshold as needed
-        setTimeout(showNewsletterPopup, 3000); // Show after 3 seconds of scrolling
-      }
+        if (!newsletterShownSession && window.scrollY > 200) { // Adjust scroll threshold as needed
+            setTimeout(showNewsletterPopup, 3000); // Show after 3 seconds of scrolling
+        }
     }, { once: true }); // Ensure this event listener only fires once
 
     // Scroll Animations
     const revealElements = document.querySelectorAll('.reveal-text, .reveal-image, .reveal-card');
     
     const revealOnScroll = () => {
-      revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.classList.add('active');
-        }
-      });
+        revealElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
     };
 
     window.addEventListener('scroll', revealOnScroll);
@@ -195,10 +164,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.main-header');
     let lastScroll = 0;
 
-    // Combined scroll event listener for multiple functionalities
     window.addEventListener('scroll', () => {
-        // Header scroll effect
         const currentScroll = window.pageYOffset;
+        
         if (currentScroll <= 0) {
             header.classList.remove('scroll-up');
         } else if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
@@ -209,20 +177,6 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.add('scroll-up');
         }
         lastScroll = currentScroll;
-
-        // Newsletter popup
-        if (!newsletterShownSession && window.scrollY > 200) {
-            setTimeout(showNewsletterPopup, 3000);
-        }
-
-        // Reveal elements on scroll
-        revealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('active');
-            }
-        });
     });
 
     // Mobile Menu
@@ -235,112 +189,4 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenu.appendChild(navClone);
     mobileMenu.appendChild(headerCta);
     document.body.appendChild(mobileMenu);
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
-    });
-
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId.startsWith('#')) {
-          const targetElement = document.getElementById(targetId.substring(1));
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      });
-    });
-
-    // Loading Animation
-    if (loadingOverlay) {
-      window.addEventListener('load', () => {
-        loadingOverlay.style.opacity = '0';
-        setTimeout(() => {
-          loadingOverlay.style.display = 'none';
-        }, 500);
-      });
-    }
-
-    // --- Store Page Newsletter Form ---
-    const storeNewsletterForm = document.querySelector('.store-newsletter .newsletter-form');
-    if (storeNewsletterForm) {
-        storeNewsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for subscribing!'); // Or some other feedback
-            storeNewsletterForm.reset();
-        });
-    }
-
-    // Image hover effects
-    document.querySelectorAll('.image-item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.querySelector('img').style.transform = 'scale(1.1)';
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            item.querySelector('img').style.transform = 'scale(1)';
-        });
-    });
-
-    // Dish card hover effects
-    document.querySelectorAll('.dish-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px)';
-            card.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.15)';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-            card.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-        });
-    });
-
-    // --- LEAFLET MAP INITIALIZATION (for desio.html) ---
-    const storeMapElement = document.getElementById('store-map');
-    if (storeMapElement && typeof L !== 'undefined') {
-      fetch('assets/data/location_map.json')
-        .then(response => response.json())
-        .then(data => {
-          const groningenLocation = data.locations.find(loc => loc.id === 'groningen');
-          if (groningenLocation) {
-            const { lat, lng } = groningenLocation.coordinates;
-            const address = groningenLocation.address;
-
-            const map = L.map('store-map').setView([lat, lng], 15);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
-            
-            L.marker([lat, lng])
-                .addTo(map)
-                .bindPopup(`Desio Groningen<br>${address}`)
-                .openPopup();
-          }
-        })
-        .catch(error => console.error('Error loading location data:', error));
-    }
-
-    // --- SCROLL REVEAL ANIMATIONS ---
-    if (window.gsap && window.ScrollTrigger) {
-      gsap.registerPlugin(ScrollTrigger);
-
-      const revealOnScroll = () => {
-        revealElements.forEach(element => {
-          const elementTop = element.getBoundingClientRect().top;
-          const elementVisible = 150;
-          
-          if (elementTop < window.innerHeight - elementVisible) {
-            element.classList.add('active');
-          }
-        });
-      };
-
-      window.addEventListener('scroll', revealOnScroll);
-      revealOnScroll(); // Initial check
-    }
 }); 
