@@ -495,7 +495,25 @@ nav a:hover {
     box-shadow: 0 2px 12px #c9e3ac44;
 }
 .newsletter-content button[type="submit"] {
-    margin-top: 0.7em;
+    background-color: #6e0e0a;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'ITC Franklin Gothic LT', sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(110,14,10,0.07);
+    transition: background-color 0.3s, transform 0.18s cubic-bezier(.4,2,.6,1);
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+.newsletter-content button[type="submit"]:hover {
+    background-color: #8a110d;
+    transform: scale(1.06) rotate(-2deg);
+}
+.newsletter-content button[type="submit"]:active {
+    animation: pulseBtn 0.3s;
 }
 .close-modal {
     background: none;
@@ -582,6 +600,8 @@ nav a:hover {
 }
 
 .footer-social img {
+    width: 20px;
+    height: 20px;
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
     transition: transform 0.3s cubic-bezier(.4,2,.6,1), filter 0.3s;
 }
@@ -799,4 +819,30 @@ nav a:hover {
     .footer-bg {
         height: 90px;
     }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding-top: env(safe-area-inset-top, 0);
+    }
+    nav {
+        top: 0;
+        padding-top: calc(44px + env(safe-area-inset-top, 0));
+    }
+}
+
+.menu-titles-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.menu-titles-centered h2 {
+    font-family: 'RobotoCondensedCustom', 'Roboto Condensed', Arial, sans-serif;
+    color: #001514;
+    font-size: 1.7rem;
+    margin: 0.2em 0;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.01em;
 } 
