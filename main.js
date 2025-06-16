@@ -169,49 +169,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Footer background SVG parallax ---
     const footerBg = document.querySelector('.footer-bg');
     if (footerBg && window.gsap && window.ScrollTrigger) {
-      gsap.to(footerBg, {
-        y: 60,
-        opacity: 0.28,
-        scrollTrigger: {
-          trigger: '.site-footer',
-          start: 'top bottom',
-          end: 'bottom bottom',
-          scrub: 0.7
-        }
-      });
+      // Removed as footer-bg is no longer used
     }
 
     // --- FOOTER ANIMATIONS ---
     if (window.gsap) {
       gsap.from('.footer-main h2', {opacity: 0, y: 30, scale: 0.8, duration: 1.1, ease: 'elastic.out(1,0.6)', delay: 0.7});
       gsap.from('.footer-policies, .footer-kvk, .footer-social', {opacity: 0, y: 40, duration: 1.1, stagger: 0.18, ease: 'power2.out', delay: 1.1});
-      gsap.from('.footer-bg img', {opacity: 0, y: 60, scale: 1.1, duration: 1.2, ease: 'power2.out', delay: 0.5});
-    }
-
-    // --- MENU PAGE: Button scroll to section ---
-    document.querySelectorAll('.menu-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.getElementById(this.dataset.target);
-        if (target) {
-          target.scrollIntoView({behavior: 'smooth', block: 'start'});
-        }
-        document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-
-    // --- GSAP PASTA SVG ANIMATION (for menudesio.html) ---
-    if (window.gsap && document.getElementById('pasta-svg')) {
-      gsap.to("#spaghetti1", { duration: 2, repeat: -1, yoyo: true, attr: { d: "M100,170 Q120,120 100,70 Q80,40 100,30" }, ease: "power1.inOut" });
-      gsap.to("#spaghetti2", { duration: 2.2, repeat: -1, yoyo: true, attr: { d: "M110,170 Q130,120 110,70 Q90,40 110,30" }, ease: "power1.inOut" });
-      gsap.to("#spaghetti3", { duration: 1.8, repeat: -1, yoyo: true, attr: { d: "M90,170 Q70,120 90,70 Q110,40 90,30" }, ease: "power1.inOut" });
-      gsap.to("#meatball", { duration: 2, repeat: -1, yoyo: true, cy: 50, ease: "power1.inOut" });
-
-      gsap.fromTo("#pasta-title", 
-          { scale: 0.8, opacity: 0.5, y: 20, letterSpacing: "0.5em" }, 
-          { scale: 1, opacity: 1, y: 0, letterSpacing: "0.1em", duration: 1.2, ease: "elastic.out(1, 0.5)", delay: 0.5 }
-      );
     }
 
     // Initialize Swiper

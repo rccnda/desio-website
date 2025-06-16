@@ -51,34 +51,154 @@
     </header>
 
     <main class="menu-main">
-        <!-- GSAP Pasta SVG Animation from CodePen -->
-        <div class="gsap-pasta-animation" style="display:flex;justify-content:center;margin-top:40px;">
-            <svg id="pasta-svg" width="200" height="200" viewBox="0 0 200 200">
-                <ellipse id="plate" cx="100" cy="170" rx="70" ry="20" fill="#f9eed9"/>
-                <path id="spaghetti1" d="M100,170 Q110,120 100,70 Q90,40 100,30" stroke="#e2b07a" stroke-width="6" fill="none"/>
-                <path id="spaghetti2" d="M110,170 Q120,120 110,70 Q100,40 110,30" stroke="#e2b07a" stroke-width="6" fill="none"/>
-                <path id="spaghetti3" d="M90,170 Q80,120 90,70 Q100,40 90,30" stroke="#e2b07a" stroke-width="6" fill="none"/>
-                <circle id="meatball" cx="100" cy="60" r="12" fill="#6e0e0a"/>
-            </svg>
-        </div>
+        <section class="menu-hero-section">
+            <div class="container">
+                <h1 class="reveal-text">Our Menu</h1>
+                <p class="reveal-text">Discover our tasty, satisfying, and flavor-packed Italian dishes. Easy as-is, and customizable to fit your life.</p>
+                <div class="menu-actions">
+                    <a href="#" class="btn btn-primary" aria-label="Download our menu">Download Menu</a>
+                    <a href="#" class="btn btn-secondary" aria-label="View nutrition information">Nutrition Info</a>
+                    <a href="#" class="btn btn-secondary" aria-label="View allergen guide">Allergen Guide</a>
+                </div>
+            </div>
+        </section>
 
-        <!-- Animated "Pasta" Section Title from CodePen -->
-        <div class="animated-pasta-title" style="display:flex;justify-content:center;margin-top:10px;">
-            <h2 id="pasta-title" style="font-family:'ITC Franklin Gothic LT',sans-serif;font-size:2.5rem;color:#6e0e0a;letter-spacing:0.1em;">Pasta</h2>
-        </div>
+        <section class="signature-dishes-section">
+            <div class="container">
+                <h2 class="section-title reveal-text">Our Signature Dishes</h2>
+                <p class="section-description reveal-text">We offer a variety of authentic Italian dishes, with tastes ranging from classic pasta to delightful pizzas. All fully customizable.</p>
+                <div class="dishes-grid">
+                    <div class="dish-card reveal-card">
+                        <img src="assets/images/pasta-hands.jpg" alt="Fresh Pasta" />
+                        <div class="dish-content">
+                            <h3>Fresh Pasta</h3>
+                            <p>Handmade daily with traditional Italian recipes, customizable with your favorite sauces and toppings.</p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="dish-card reveal-card">
+                        <img src="assets/images/pasta-hands.jpg" alt="Authentic Pizza" />
+                        <div class="dish-content">
+                            <h3>Authentic Pizza</h3>
+                            <p>Wood-fired pizzas with premium ingredients, a true taste of Italy in every bite.</p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="dish-card reveal-card">
+                        <img src="assets/images/pasta-hands.jpg" alt="Classic Lasagna" />
+                        <div class="dish-content">
+                            <h3>Classic Lasagna</h3>
+                            <p>Layers of rich meat ragù, béchamel, and fresh pasta, baked to perfection.</p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="dish-card reveal-card">
+                        <img src="assets/images/pasta-hands.jpg" alt="Risotto Funghi" />
+                        <div class="dish-content">
+                            <h3>Risotto Funghi</h3>
+                            <p>Creamy Arborio rice with wild mushrooms, Parmesan cheese, and a hint of truffle oil.</p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary load-more-btn">Load More</button>
+                </div>
+            </div>
+        </section>
 
-        <div class="menu-buttons-row">
-            <button class="menu-btn" data-target="pasta">Pasta</button>
-            <button class="menu-btn" data-target="panini">Panini</button>
-            <button class="menu-btn" data-target="sides">Sides</button>
-            <button class="menu-btn" data-target="drinks">Drinks</button>
-            <button class="menu-btn" data-target="nutrition">Nutrition Calculator</button>
-        </div>
-        <section id="pasta" class="menu-section"><h2>Pasta</h2></section>
-        <section id="panini" class="menu-section"><h2>Panini</h2></section>
-        <section id="sides" class="menu-section"><h2>Sides</h2></section>
-        <section id="drinks" class="menu-section"><h2>Drinks</h2></section>
-        <section id="nutrition" class="menu-section"><h2>Nutrition Calculator</h2></section>
+        <section class="beverages-section">
+            <div class="container">
+                <h2 class="section-title reveal-text">Beverages</h2>
+                <p class="section-description reveal-text">Keep it easy. Keep it fresh. A selection of drinks to complement your meal.</p>
+                <div class="drinks-grid">
+                    <div class="drink-card reveal-card">
+                        <img src="assets/images/pasta-hands.jpg" alt="Italian Lemonade" />
+                        <div class="drink-content">
+                            <h3>Italian Lemonade</h3>
+                            <p>Refreshing lemonade with a hint of fresh basil, perfect for summer.</p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="drink-card reveal-card">
+                        <img src="assets/images/pasta-hands.jpg" alt="Sparkling Water" />
+                        <div class="drink-content">
+                            <h3>Sparkling Water</h3>
+                            <p>Crisp and effervescent, a classic Italian staple.</p>
+                            <a href="#" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary order-drinks-btn">Order Drinks Online</a>
+            </div>
+        </section>
+
+        <section class="ingredients-allergen-section">
+            <div class="container">
+                <h2 class="section-title reveal-text">Natural Ingredients & Allergen Guide</h2>
+                <p class="section-description reveal-text">We stay close to the way nature intended. From fresh vegetables to our homemade sauces, we keep our ingredients as simple and natural as we can.</p>
+
+                <div class="ingredients-list-grid">
+                    <div class="ingredients-category reveal-card">
+                        <h3>Dressings</h3>
+                        <ul>
+                            <li>Basil Pesto</li>
+                            <li>Creamy Gorgonzola</li>
+                            <li>Lemon Vinaigrette</li>
+                            <li>Balsamic Glaze</li>
+                        </ul>
+                    </div>
+                    <div class="ingredients-category reveal-card">
+                        <h3>Bases</h3>
+                        <ul>
+                            <li>Fresh Tagliatelle</li>
+                            <li>Penne Rigate</li>
+                            <li>Risotto Rice</li>
+                            <li>Mixed Greens</li>
+                        </ul>
+                    </div>
+                    <div class="ingredients-category reveal-card">
+                        <h3>Toppings (Grill)</h3>
+                        <ul>
+                            <li>Grilled Chicken</li>
+                            <li>Sautéed Mushrooms</li>
+                            <li>Spicy Italian Sausage</li>
+                            <li>Roasted Vegetables</li>
+                        </ul>
+                    </div>
+                    <div class="ingredients-category reveal-card">
+                        <h3>Other Ingredients</h3>
+                        <ul>
+                            <li>San Marzano Tomatoes</li>
+                            <li>Fresh Mozzarella</li>
+                            <li>Parmesan Reggiano</li>
+                            <li>Black Olives</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn btn-secondary load-more-ingredients-btn">View All Ingredients</button>
+
+                <h2 class="section-title reveal-text">Allergen Guide</h2>
+                <p class="section-description reveal-text">We take food safety seriously. While we have ingredients on our line that contain, or are exposed to, common food allergens, we prioritize proper food storage and serving. If you have allergies not listed below – let us know. We're here to make ordering safe and easy.</p>
+                <div class="allergen-grid">
+                    <div class="allergen-item reveal-card">
+                        <h3>Gluten</h3>
+                        <p><strong>Ingredients:</strong> Pasta, Pizza Dough, Bread</p>
+                    </div>
+                    <div class="allergen-item reveal-card">
+                        <h3>Dairy</h3>
+                        <p><strong>Ingredients:</strong> Cheeses, Cream-based Sauces</p>
+                    </div>
+                    <div class="allergen-item reveal-card">
+                        <h3>Eggs</h3>
+                        <p><strong>Ingredients:</strong> Fresh Pasta (some types), Desserts</p>
+                    </div>
+                    <div class="allergen-item reveal-card">
+                        <h3>Nuts</h3>
+                        <p><strong>Ingredients:</strong> Pesto (pine nuts), some Desserts</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary download-allergen-btn">Download Allergen Guide</a>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -107,17 +227,14 @@
                 <label class="cookie-option">
                   <input type="checkbox" id="necessaryCookies" checked disabled>
                   <span>Necessary</span>
-                  <small>Required for the website to function properly</small>
                 </label>
                 <label class="cookie-option">
                   <input type="checkbox" id="analyticsCookies">
                   <span>Analytics</span>
-                  <small>Help us understand how visitors interact with our website</small>
                 </label>
                 <label class="cookie-option">
                   <input type="checkbox" id="marketingCookies">
                   <span>Marketing</span>
-                  <small>Used to deliver personalized advertisements</small>
                 </label>
               </div>
               <div class="cookie-buttons">
