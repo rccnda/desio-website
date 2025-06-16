@@ -1,0 +1,49 @@
+{
+  "locations": [
+    {
+      "id": "groningen",
+      "name": "Desio Groningen",
+      "address": "Oosterstraat 53, 9711 NV Groningen",
+      "coordinates": {
+        "lat": 53.2178,
+        "lng": 6.5683
+      },
+      "hours": {
+        "monday": {
+          "lunch": "12:00 - 15:00",
+          "dinner": "17:00 - 22:00"
+        },
+        "tuesday": {
+          "lunch": "12:00 - 15:00",
+          "dinner": "17:00 - 22:00"
+        },
+        "wednesday": {
+          "lunch": "12:00 - 15:00",
+          "dinner": "17:00 - 22:00"
+        },
+        "thursday": {
+          "lunch": "12:00 - 15:00",
+          "dinner": "17:00 - 22:00"
+        },
+        "friday": {
+          "lunch": "12:00 - 15:00",
+          "dinner": "17:00 - 22:00"
+        },
+        "saturday": {
+          "lunch": "12:00 - 15:00",
+          "dinner": "17:00 - 22:00"
+        },
+        "sunday": {
+          "lunch": "12:00 - 15:00",
+          "dinner": "17:00 - 22:00"
+        }
+      },
+      "phone": "+31 50 123 4567",
+      "email": "groningen@desio.nl",
+      "orderLinks": {
+        "thuisbezorgd": "https://www.thuisbezorgd.nl/desio-groningen",
+        "ubereats": "https://www.ubereats.com/nl/store/desio-groningen"
+      }
+    }
+  ]
+} 

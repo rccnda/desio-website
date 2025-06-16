@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desio - About Us</title>
+    <title>Desio - Our Location</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=ITC+Franklin+Gothic+LT:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
     <div id="loading-overlay">
@@ -37,7 +39,7 @@
                 <li><a href="homepage.html">Home</a></li>
                 <li><a href="menudesio.html">Menù</a></li>
                 <li><a href="desio.html">Desio</a></li>
-                <li><a href="funstuff.html">Fun Staff</a></li>
+                <li><a href="funstuff.html">Fun Stuff</a></li>
                 <li><a href="workwithdesio.html">Work with us</a></li>
             </ul>
         </nav>
@@ -47,28 +49,122 @@
             <span></span>
         </div>
     </header>
-    <main class="page-main">
-        <h1>About Desio</h1>
-        <p>Welcome to Desio! Here you will soon find our story, philosophy, and what makes us special. Stay tuned for more delicious details.</p>
-        <p>Placeholder: More content coming soon. Scroll to see more if needed.</p>
+    <main class="store-page">
+        <section class="store-hero">
+            <h1>DESIO GRONINGEN</h1>
+            <div class="store-actions">
+                <a href="https://www.thuisbezorgd.nl/desio-groningen" class="btn btn-primary" target="_blank" rel="noopener">ORDER ONLINE</a>
+                <a href="https://maps.google.com/?q=Oosterstraat+53,+9711+NV+Groningen" class="btn btn-secondary" target="_blank" rel="noopener">GET DIRECTIONS</a>
+            </div>
+        </section>
+
+        <section class="store-info">
+            <div class="store-details">
+                <div class="store-address">
+                    <h2>Oosterstraat 53</h2>
+                    <p>9711 NV Groningen</p>
+                </div>
+                <div class="store-hours">
+                    <h3>Opening Hours</h3>
+                    <div class="hours-grid">
+                        <div class="day">
+                            <span>LUNCH</span>
+                            <span>DINNER</span>
+                        </div>
+                        <div class="hours">
+                            <div class="day-hours">
+                                <span>MON</span>
+                                <span>12:00 - 15:00</span>
+                                <span>17:00 - 22:00</span>
+                            </div>
+                            <div class="day-hours">
+                                <span>TUE</span>
+                                <span>12:00 - 15:00</span>
+                                <span>17:00 - 22:00</span>
+                            </div>
+                            <div class="day-hours">
+                                <span>WED</span>
+                                <span>12:00 - 15:00</span>
+                                <span>17:00 - 22:00</span>
+                            </div>
+                            <div class="day-hours">
+                                <span>THU</span>
+                                <span>12:00 - 15:00</span>
+                                <span>17:00 - 22:00</span>
+                            </div>
+                            <div class="day-hours">
+                                <span>FRI</span>
+                                <span>12:00 - 15:00</span>
+                                <span>17:00 - 22:00</span>
+                            </div>
+                            <div class="day-hours">
+                                <span>SAT</span>
+                                <span>12:00 - 15:00</span>
+                                <span>17:00 - 22:00</span>
+                            </div>
+                            <div class="day-hours">
+                                <span>SUN</span>
+                                <span>12:00 - 15:00</span>
+                                <span>17:00 - 22:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="store-contact">
+                    <h3>Contact</h3>
+                    <p>Phone: <a href="tel:+31501234567">+31 50 123 4567</a></p>
+                    <p>Email: <a href="mailto:groningen@desio.nl">groningen@desio.nl</a></p>
+                </div>
+            </div>
+            <div id="store-map" class="store-map"></div>
+        </section>
+
+        <section class="store-reviews">
+            <h2>Write Your Review</h2>
+            <p>Share your experience at Desio Groningen</p>
+            <a href="#" class="btn btn-secondary">Write a Review</a>
+        </section>
+
+        <section class="store-newsletter">
+            <h2>Join Our Newsletter!</h2>
+            <p>Get exclusive offers, event invites, and news before anyone else</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email" required />
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </section>
     </main>
     <footer class="site-footer">
-      <div class="footer-bg"><img src="assets/images/footer_ciao.svg" alt="" /></div>
-      <div class="footer-main">
-        <h2>Created by / &copy; Sorm Studio</h2>
-        <div class="footer-policies">
-          <a href="privacy.html">Privacy Policy</a> |
-          <a href="cookie.html">Cookie Policy</a> |
-          <a href="terms.html">Terms of Service</a>
+        <div class="footer-bg"><img src="assets/images/footer_ciao.svg" alt="" /></div>
+        <div class="footer-main">
+            <h2>Created by / &copy; Sorm Studio</h2>
+            <div class="footer-policies">
+                <a href="privacy.html">Privacy Policy</a> |
+                <a href="cookie.html">Cookie Policy</a> |
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="footer-kvk">KVK: 12345678</div>
+            <div class="footer-social">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><img src="assets/images/instagram.svg" alt="Instagram"/></a>
+                <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><img src="assets/images/tiktok.svg" alt="TikTok"/></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="assets/images/facebook.svg" alt="Facebook"/></a>
+            </div>
         </div>
-        <div class="footer-kvk">KVK: 12345678</div>
-        <div class="footer-social">
-          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><img src="assets/images/instagram.svg" alt="Instagram"/></a>
-          <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><img src="assets/images/tiktok.svg" alt="TikTok"/></a>
-          <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="assets/images/facebook.svg" alt="Facebook"/></a>
-        </div>
-      </div>
     </footer>
     <script src="main.js"></script>
+    <script>
+        // Initialize map
+        document.addEventListener('DOMContentLoaded', function() {
+            const map = L.map('store-map').setView([53.2178, 6.5683], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+            
+            L.marker([53.2178, 6.5683])
+                .addTo(map)
+                .bindPopup('Desio Groningen<br>Oosterstraat 53')
+                .openPopup();
+        });
+    </script>
 </body>
 </html> 
