@@ -187,16 +187,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- TYPEWRITER/LETTER REVEAL ---
-    document.querySelectorAll('.typewriter').forEach(el => {
-      const text = el.textContent;
-      el.textContent = '';
-      gsap.to({}, {duration: 0.2}); // slight delay
-      text.split('').forEach((char, i) => {
-        setTimeout(() => {
-          el.textContent += char;
-        }, 40 * i);
+    if (window.gsap && window.SplitText) {
+      document.querySelectorAll('.typewriter').forEach(el => {
+        const split = new SplitText(el, {type: 'words,chars'});
+        gsap.set(el, {perspective:400});
+        gsap.from(split.chars, {
+          duration: 1.2,
+          opacity:0,
+          scale:0,
+          y:80,
+          rotationX:180,
+          transformOrigin:"0% 50% -50",
+          ease:"back",
+          stagger: 0.03
+        });
       });
-    });
+    }
 
     // --- Footer background SVG parallax ---
     const footerBg = document.querySelector('.footer-bg');
