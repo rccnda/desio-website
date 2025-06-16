@@ -345,4 +345,70 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
       });
     }
+
+    // Newsletter modal
+    const newsletterModal = document.querySelector('.newsletter-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const newsletterForm = document.querySelector('.newsletter-form');
+
+    if (newsletterModal && closeModal) {
+        // Show modal after 5 seconds
+        setTimeout(() => {
+            if (!localStorage.getItem('newsletterShown')) {
+                newsletterModal.classList.add('active');
+            }
+        }, 5000);
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            newsletterModal.classList.remove('active');
+            localStorage.setItem('newsletterShown', 'true');
+        });
+
+        // Close on outside click
+        newsletterModal.addEventListener('click', (e) => {
+            if (e.target === newsletterModal) {
+                newsletterModal.classList.remove('active');
+                localStorage.setItem('newsletterShown', 'true');
+            }
+        });
+
+        // Handle form submission
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('input[type="email"]').value;
+                // Here you would typically send the email to your backend
+                console.log('Newsletter signup:', email);
+                newsletterModal.classList.remove('active');
+                localStorage.setItem('newsletterShown', 'true');
+                // Show success message
+                alert('Thank you for subscribing to our newsletter!');
+            });
+        }
+    }
+
+    // Image hover effects
+    document.querySelectorAll('.image-item').forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.querySelector('img').style.transform = 'scale(1.1)';
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            item.querySelector('img').style.transform = 'scale(1)';
+        });
+    });
+
+    // Dish card hover effects
+    document.querySelectorAll('.dish-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px)';
+            card.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        });
+    });
 }); 
