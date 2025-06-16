@@ -1,4 +1,65 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                if (entry.target.classList.contains('stagger-item')) {
+                    entry.target.classList.add('revealed');
+                }
+                if (entry.target.classList.contains('text-reveal')) {
+                    entry.target.classList.add('revealed');
+                }
+                if (entry.target.classList.contains('section-transition')) {
+                    entry.target.classList.add('visible');
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    document.querySelectorAll('.scroll-fade, .stagger-item, .text-reveal, .section-transition').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Parallax effect
+    const parallaxElements = document.querySelectorAll('.parallax-element');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        parallaxElements.forEach(element => {
+            const speed = element.dataset.speed || 0.5;
+            const offset = scrolled * speed;
+            element.style.setProperty('--parallax-offset', `${offset}px`);
+        });
+    });
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId.startsWith('#')) {
+                const targetElement = document.getElementById(targetId.substring(1));
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    // Add loading animation class to elements
+    document.querySelectorAll('.loading-animation').forEach(element => {
+        element.style.animationDelay = `${element.dataset.delay || 0}s`;
+    });
+
     // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
