@@ -858,4 +858,45 @@ nav a:hover {
     text-align: center;
     font-weight: 700;
     letter-spacing: 0.01em;
+}
+
+.menu-buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 2.2rem 0 2.8rem 0;
+    flex-wrap: wrap;
+}
+.menu-btn {
+    font-family: 'RobotoCondensedCustom', 'Roboto Condensed', Arial, sans-serif;
+    color: #001514;
+    background: #fff;
+    border: none;
+    border-radius: 1.5em;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0.6em 2.2em;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    cursor: pointer;
+    outline: none;
+}
+.menu-btn:focus, .menu-btn.active {
+    background: #ede2d4;
+    color: #005728;
+    box-shadow: 0 4px 18px #c9e3ac44;
+}
+.menu-btn:hover {
+    background: #f9eed9;
+    color: #005728;
+}
+@media (max-width: 700px) {
+    .menu-buttons-row {
+        gap: 0.6rem;
+        margin: 1.2rem 0 1.8rem 0;
+    }
+    .menu-btn {
+        font-size: 1.05rem;
+        padding: 0.5em 1.2em;
+    }
 } 

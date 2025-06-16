@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=ITC+Franklin+Gothic+LT:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
 </head>
 <body>
     <div id="loading-overlay">
@@ -101,43 +101,14 @@
       </div>
     </footer>
     <main class="menu-main">
-      <h1 class="menu-title">Choose your side</h1>
-      <div class="menu-titles-centered">
-        <h2>Pasta</h2>
-        <h2>Panini</h2>
-        <h2>Sides</h2>
-        <h2>Drinks</h2>
-        <h2>Nutrition Calculator</h2>
+      <h1 class="menu-title">Menù</h1>
+      <div class="menu-buttons-row">
+        <button class="menu-btn" data-target="pasta">Pasta</button>
+        <button class="menu-btn" data-target="panini">Panini</button>
+        <button class="menu-btn" data-target="sides">Sides</button>
+        <button class="menu-btn" data-target="drinks">Drinks</button>
+        <button class="menu-btn" data-target="nutrition">Nutrition Calculator</button>
       </div>
-      <nav class="menu-categories">
-        <ul>
-          <li class="menu-cat-item"><a href="#pasta">Pasta</a>
-            <ul class="submenu">
-              <li><a href="#">Classic</a></li>
-              <li><a href="#">Special</a></li>
-            </ul>
-          </li>
-          <li class="menu-cat-item"><a href="#panini">Panini</a>
-            <ul class="submenu">
-              <li><a href="#">Veggie</a></li>
-              <li><a href="#">Meat</a></li>
-            </ul>
-          </li>
-          <li class="menu-cat-item"><a href="#sides">Sides</a>
-            <ul class="submenu">
-              <li><a href="#">Fries</a></li>
-              <li><a href="#">Salads</a></li>
-            </ul>
-          </li>
-          <li class="menu-cat-item"><a href="#drinks">Drinks</a>
-            <ul class="submenu">
-              <li><a href="#">Soft</a></li>
-              <li><a href="#">Wine</a></li>
-            </ul>
-          </li>
-          <li class="menu-cat-item"><a href="#nutrition">Nutrition Calculator</a></li>
-        </ul>
-      </nav>
       <section id="pasta" class="menu-section"><h2>Pasta</h2></section>
       <section id="panini" class="menu-section"><h2>Panini</h2></section>
       <section id="sides" class="menu-section"><h2>Sides</h2></section>

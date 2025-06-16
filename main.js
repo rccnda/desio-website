@@ -162,15 +162,19 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
     // --- FLOATING PASTA ICON ---
+    // Use pasta_icon.svg directly
     if (window.gsap) {
-      gsap.to('.floating-pasta', {
-        y: -18,
-        repeat: -1,
-        yoyo: true,
-        duration: 2.5,
-        ease: 'sine.inOut',
-        delay: 0.5
-      });
+      const pastaIcon = document.querySelector("img[src*='pasta_icon.svg']");
+      if (pastaIcon) {
+        gsap.to(pastaIcon, {
+          y: -18,
+          repeat: -1,
+          yoyo: true,
+          duration: 2.5,
+          ease: 'sine.inOut',
+          delay: 0.5
+        });
+      }
     }
 
     // --- PARALLAX SCROLL EFFECTS ---
@@ -226,37 +230,16 @@ document.addEventListener('DOMContentLoaded', function() {
       gsap.from('.footer-bg img', {opacity: 0, y: 60, scale: 1.1, duration: 1.2, ease: 'power2.out', delay: 0.5});
     }
 
-    // --- MENU PAGE: Submenu open/close on mobile ---
-    function handleMenuSubcategories() {
-      const isMobile = window.matchMedia('(max-width: 700px)').matches;
-      const menuItems = document.querySelectorAll('.menu-cat-item');
-      menuItems.forEach(item => {
-        const link = item.querySelector('a');
-        const submenu = item.querySelector('.submenu');
-        if (!submenu) return;
-        if (isMobile) {
-          // Remove previous listeners
-          link.onclick = null;
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Close all other submenus
-            menuItems.forEach(i => {
-              if (i !== item && i.querySelector('.submenu')) {
-                i.querySelector('.submenu').style.display = 'none';
-              }
-            });
-            // Toggle this submenu
-            submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
-          });
-        } else {
-          // Remove inline display for desktop
-          submenu.style.display = '';
-          link.onclick = null;
+    // --- MENU PAGE: Button scroll to section ---
+    document.querySelectorAll('.menu-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.getElementById(this.dataset.target);
+        if (target) {
+          target.scrollIntoView({behavior: 'smooth', block: 'start'});
         }
+        document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
       });
-    }
-    if (document.querySelector('.menu-categories')) {
-      handleMenuSubcategories();
-      window.addEventListener('resize', handleMenuSubcategories);
-    }
+    });
 }); 
