@@ -1,3 +1,25 @@
+/* Font Declarations */
+@font-face {
+    font-family: 'Barriecito';
+    src: url('assets/fonts/Barriecito-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITC Franklin Gothic LT';
+    src: url('assets/fonts/ITC Franklin Gothic LT Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('assets/fonts/RobotoCondensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
   --primary-color: #2C5530;
   --secondary-color: #4A7856;
@@ -35,6 +57,13 @@
   --z-index-overlay: 1001;
   --container-width: 1200px;
   --container-padding: 1rem;
+
+  --heading-font: 'Barriecito', cursive; /* For H1, H2, H3 */
+  --body-font: 'ITC Franklin Gothic LT', sans-serif; /* For paragraphs */
+  --button-font: 'Roboto Condensed', sans-serif; /* For buttons, menu, footer texts */
+  --base-font-size: 16px;
+  --body-line-height: 1.6;
+  --heading-line-height: 1.2;
 }
 
 * {
@@ -1316,4 +1345,13 @@ html {
     .hamburger {
         display: none;
     }
+}
+
+.btn,
+.main-nav a,
+.footer-main h2,
+.footer-policies a,
+.footer-kvk,
+.footer-social a {
+    font-family: var(--button-font);
 } 
