@@ -1281,4 +1281,39 @@ html {
 .newsletter-popup,
 .newsletter-popup-content {
     display: none;
+}
+
+/* Menu Page Specific Styles */
+.menu-main {
+    padding-top: var(--header-height); /* Ensure content is below fixed header */
+}
+
+.menu-buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.menu-btn {
+    margin-bottom: var(--spacing-xs);
+}
+
+.menu-section {
+    padding: var(--spacing-lg) 0;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Ensure logo SVG is hidden if not used dynamically */
+.logo-svg {
+    display: none;
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
 } 
