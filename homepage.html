@@ -9,8 +9,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://desio.nl" />
   <meta property="og:image" content="assets/images/logo_lettering.png" />
+  <meta http-equiv="refresh" content="0;url=https://www.desiofood.com">
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-  <title>Desio - Italian Eatery in Groningen</title>
+  <title>Desio - Redirecting...</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,13 +24,20 @@
       }
     </style>
   </noscript>
+  <script>
+    window.location.href = "https://www.desiofood.com";
+  </script>
 </head>
 <body>
+  <div class="loading-screen">
+    <img src="assets/images/loading_logo.png" alt="Loading...">
+  </div>
+
   <!-- Cover Page -->
   <div class="loading-overlay" id="loadingOverlay">
     <div class="loading-content">
-      <img src="assets/images/loading_logo.png" alt="Desio Loading" class="loading-logo">
-      <div class="loading-text">Loading...</div>
+        <h1>Desio</h1>
+        <p>Italian Eatery in Groningen</p>
     </div>
   </div>
 
@@ -169,21 +177,24 @@
     </div>
   </footer>
 
-  <!-- Newsletter Pop-up -->
-  <div id="newsletter-popup" class="newsletter-popup" role="dialog" aria-labelledby="newsletter-popup-title" aria-hidden="true">
-    <div class="newsletter-popup-content">
-      <button class="close-popup" aria-label="Close newsletter pop-up">×</button>
-      <h2 id="newsletter-popup-title">Come hungry, leave full</h2>
-      <p><strong>Drop your email below to get 10% off your first meal.</strong></p>
-      <p style="font-size:0.98em;opacity:0.8;">We will not overflow your mailbox, only your belly.</p>
-      <form id="newsletter-popup-form">
-        <input type="email" placeholder="Your email" required aria-label="Email address" />
-        <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
-      </form>
-    </div>
-  </div>
-
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    // Check if this is the first visit
+    if (!sessionStorage.getItem('hasVisited')) {
+      // Set the flag
+      sessionStorage.setItem('hasVisited', 'true');
+    } else {
+      // If not first visit, hide loading screen immediately
+      document.querySelector('.loading-screen').classList.add('hidden');
+    }
+
+    // Hide loading screen after content is loaded
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.querySelector('.loading-screen').classList.add('hidden');
+      }, 1000); // Show for at least 1 second
+    });
+  </script>
   <script src="main.js"></script>
 </body>
 </html>

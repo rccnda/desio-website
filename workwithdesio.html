@@ -12,20 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/all.min.js"></script>
 </head>
 <body>
-    <div id="loading-overlay">
-        <img src="assets/images/loading_logo.png" alt="Loading..." class="loading-logo" />
-    </div>
-    <div id="newsletter-modal" class="newsletter-modal">
-        <div class="newsletter-content">
-            <h2>Come hungry, leave full</h2>
-            <form>
-                <p><strong>Drop your email below to get 10% off your first meal.</strong></p>
-                <p style="font-size:0.98em;opacity:0.8;">We will not overflow your mailbox, only your belly.</p>
-                <input type="email" placeholder="Your email" required />
-                <button type="submit">Subscribe</button>
-            </form>
-            <button class="close-modal">×</button>
-        </div>
+    <div class="loading-screen">
+        <img src="assets/images/loading_logo.png" alt="Loading...">
     </div>
     <header class="main-header">
         <div class="header-container">
@@ -70,6 +58,23 @@
         </div>
       </div>
     </footer>
+    <script>
+        // Check if this is the first visit
+        if (!sessionStorage.getItem('hasVisited')) {
+            // Set the flag
+            sessionStorage.setItem('hasVisited', 'true');
+        } else {
+            // If not first visit, hide loading screen immediately
+            document.querySelector('.loading-screen').classList.add('hidden');
+        }
+
+        // Hide loading screen after content is loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loading-screen').classList.add('hidden');
+            }, 1000); // Show for at least 1 second
+        });
+    </script>
     <script src="main.js"></script>
 </body>
 </html> 
