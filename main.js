@@ -242,4 +242,25 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.add('active');
       });
     });
+
+    // Initialize Swiper
+    const heroSwiper = new Swiper('.hero-slider', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
 }); 
