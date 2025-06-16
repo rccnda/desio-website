@@ -1,10 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Add typewriter animation to text elements
-    const textElements = document.querySelectorAll('.text-content h1, .text-content p');
-    textElements.forEach(element => {
-        element.classList.add('typewriter');
-    });
-
     // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
@@ -124,9 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('newsletter-modal').classList.remove('active');
         });
     }
-    const newsletterForm = document.querySelector('#newsletter-modal form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
+    const modalNewsletterForm = document.querySelector('#newsletter-modal form');
+    if (modalNewsletterForm) {
+        modalNewsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             document.getElementById('newsletter-modal').classList.remove('active');
             // Optionally show a thank you message
@@ -198,24 +192,6 @@ document.addEventListener('DOMContentLoaded', function() {
           end: 'bottom top',
           scrub: 0.5
         }
-      });
-    }
-
-    // --- TYPEWRITER/LETTER REVEAL ---
-    if (window.gsap && window.SplitText) {
-      document.querySelectorAll('.typewriter').forEach(el => {
-        const split = new SplitText(el, {type: 'words,chars'});
-        gsap.set(el, {perspective:400});
-        gsap.from(split.chars, {
-          duration: 1.2,
-          opacity:0,
-          scale:0,
-          y:80,
-          rotationX:180,
-          transformOrigin:"0% 50% -50",
-          ease:"back",
-          stagger: 0.03
-        });
       });
     }
 
@@ -357,46 +333,14 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
-    // Newsletter modal
-    const newsletterModal = document.querySelector('.newsletter-modal');
-    const closeModal = document.querySelector('.close-modal');
-    const newsletterForm = document.querySelector('.newsletter-form');
-
-    if (newsletterModal && closeModal) {
-        // Show modal after 5 seconds
-        setTimeout(() => {
-            if (!localStorage.getItem('newsletterShown')) {
-                newsletterModal.classList.add('active');
-            }
-        }, 5000);
-
-        // Close modal
-        closeModal.addEventListener('click', () => {
-            newsletterModal.classList.remove('active');
-            localStorage.setItem('newsletterShown', 'true');
+    // --- Store Page Newsletter Form ---
+    const storeNewsletterForm = document.querySelector('.store-newsletter .newsletter-form');
+    if (storeNewsletterForm) {
+        storeNewsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!'); // Or some other feedback
+            storeNewsletterForm.reset();
         });
-
-        // Close on outside click
-        newsletterModal.addEventListener('click', (e) => {
-            if (e.target === newsletterModal) {
-                newsletterModal.classList.remove('active');
-                localStorage.setItem('newsletterShown', 'true');
-            }
-        });
-
-        // Handle form submission
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = newsletterForm.querySelector('input[type="email"]').value;
-                // Here you would typically send the email to your backend
-                console.log('Newsletter signup:', email);
-                newsletterModal.classList.remove('active');
-                localStorage.setItem('newsletterShown', 'true');
-                // Show success message
-                alert('Thank you for subscribing to our newsletter!');
-            });
-        }
     }
 
     // Image hover effects
@@ -583,4 +527,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize cookie manager when DOM is loaded
     const cookieManager = new CookieManager();
+
+    // --- LEAFLET MAP INITIALIZATION (for desio.html) ---
+    const storeMapElement = document.getElementById('store-map');
+    if (storeMapElement && typeof L !== 'undefined') {
+      fetch('assets/data/location_map.json')
+        .then(response => response.json())
+        .then(data => {
+          const groningenLocation = data.locations.find(loc => loc.id === 'groningen');
+          if (groningenLocation) {
+            const { lat, lng } = groningenLocation.coordinates;
+            const address = groningenLocation.address;
+
+            const map = L.map('store-map').setView([lat, lng], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+            
+            L.marker([lat, lng])
+                .addTo(map)
+                .bindPopup(`Desio Groningen<br>${address}`)
+                .openPopup();
+          }
+        })
+        .catch(error => console.error('Error loading location data:', error));
+    }
+
+    // --- SCROLL REVEAL ANIMATIONS ---
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const revealOnScroll = () => {
+        revealElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('active');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll(); // Initial check
+    }
 }); 

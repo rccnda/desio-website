@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desio - Our Location</title>
+    <title>Desio - Italian Eatery in Groningen</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=ITC+Franklin+Gothic+LT:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/all.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
@@ -51,18 +51,19 @@
     </header>
     <main class="store-page">
         <section class="store-hero">
-            <h1>DESIO GRONINGEN</h1>
+            <h1>Eat Fast. Dream Italian.</h1>
+            <p class="hero-description">Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be. With fast fresh italian attitude, come join us for your neat meal.</p>
             <div class="store-actions">
                 <a href="https://www.thuisbezorgd.nl/desio-groningen" class="btn btn-primary" target="_blank" rel="noopener">ORDER ONLINE</a>
-                <a href="https://maps.google.com/?q=Oosterstraat+53,+9711+NV+Groningen" class="btn btn-secondary" target="_blank" rel="noopener">GET DIRECTIONS</a>
+                <a href="https://maps.google.com/?q=Herestraat+82,+9711LL+Groningen" class="btn btn-secondary" target="_blank" rel="noopener">GET DIRECTIONS</a>
             </div>
         </section>
 
         <section class="store-info">
             <div class="store-details">
                 <div class="store-address">
-                    <h2>Oosterstraat 53</h2>
-                    <p>9711 NV Groningen</p>
+                    <h2>Herestraat 82</h2>
+                    <p>9711LL Groningen</p>
                 </div>
                 <div class="store-hours">
                     <h3>Opening Hours</h3>
@@ -126,8 +127,9 @@
         </section>
 
         <section class="store-newsletter">
-            <h2>Join Our Newsletter!</h2>
-            <p>Get exclusive offers, event invites, and news before anyone else</p>
+            <h2>Come hungry, leave full</h2>
+            <p><strong>Drop your email below to get 10% off your first meal.</strong></p>
+            <p style="font-size:0.98em;opacity:0.8;">We will not overflow your mailbox, only your belly.</p>
             <form class="newsletter-form">
                 <input type="email" placeholder="Your email" required />
                 <button type="submit" class="btn btn-primary">Subscribe</button>
@@ -152,19 +154,5 @@
         </div>
     </footer>
     <script src="main.js"></script>
-    <script>
-        // Initialize map
-        document.addEventListener('DOMContentLoaded', function() {
-            const map = L.map('store-map').setView([53.2178, 6.5683], 15);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
-            
-            L.marker([53.2178, 6.5683])
-                .addTo(map)
-                .bindPopup('Desio Groningen<br>Oosterstraat 53')
-                .openPopup();
-        });
-    </script>
 </body>
 </html> 
