@@ -98,22 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- FLOATING PASTA ICON ---
-    // Use pasta_icon.svg directly
-    if (window.gsap) {
-      const pastaIcon = document.querySelector("img[src*='pasta_icon.svg']");
-      if (pastaIcon) {
-        gsap.to(pastaIcon, {
-          y: -18,
-          repeat: -1,
-          yoyo: true,
-          duration: 2.5,
-          ease: 'sine.inOut',
-          delay: 0.5
-        });
-      }
-    }
-
     // --- PARALLAX SCROLL EFFECTS ---
     if (window.gsap && window.ScrollTrigger) {
       gsap.to('.floating-pasta', {

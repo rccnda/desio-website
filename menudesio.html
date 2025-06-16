@@ -7,201 +7,64 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=ITC+Franklin+Gothic+LT:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
 </head>
 <body>
     <div id="loading-overlay">
         <img src="assets/images/loading_logo.png" alt="Loading..." class="loading-logo" />
     </div>
-    <div id="newsletter-popup" class="newsletter-popup" role="dialog" aria-labelledby="newsletter-popup-title" aria-hidden="true">
-        <div class="newsletter-popup-content">
-            <button class="close-popup" aria-label="Close newsletter pop-up">×</button>
-            <h2 id="newsletter-popup-title">Come hungry, leave full</h2>
-            <p><strong>Drop your email below to get 10% off your first meal.</strong></p>
-            <p style="font-size:0.98em;opacity:0.8;">We will not overflow your mailbox, only your belly.</p>
-            <form id="newsletter-popup-form">
-                <input type="email" placeholder="Your email" required aria-label="Email address" />
-                <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+    <div id="newsletter-modal" class="newsletter-modal">
+        <div class="newsletter-content">
+            <h2>Come hungry, leave full</h2>
+            <form>
+                <p><strong>Drop your email below to get 10% off your first meal.</strong></p>
+                <p style="font-size:0.98em;opacity:0.8;">We will not overflow your mailbox, only your belly.</p>
+                <input type="email" placeholder="Your email" required />
+                <button type="submit">Subscribe</button>
             </form>
+            <button class="close-modal">×</button>
         </div>
     </div>
-    <header class="main-header">
-        <div class="header-container">
-            <a href="homepage.html" class="logo">
-                <svg id="logo-svg" class="logo-svg"></svg>
-                <img src="assets/images/logo_lettering.png" alt="Desio Logo" class="logo-img-png" />
-            </a>
-            <nav class="main-nav" role="navigation" aria-label="Main navigation">
-                <ul>
-                    <li><a href="homepage.html">Home</a></li>
-                    <li><a href="menudesio.html" aria-current="page">Menù</a></li>
-                    <li><a href="desio.html">Desio</a></li>
-                    <li><a href="funstuff.html">Fun Stuff</a></li>
-                    <li><a href="workwithdesio.html">Work with us</a></li>
-                </ul>
-            </nav>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <header>
+        <a href="homepage.html" class="logo">
+            <svg id="logo-svg" class="logo-svg"></svg>
+            <img src="assets/images/logo_lettering.png" alt="Desio Logo" class="logo-img-png" />
+        </a>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="menudesio.html">Menù</a></li>
+                <li><a href="desio.html">Desio</a></li>
+                <li><a href="funstuff.html">Fun Staff</a></li>
+                <li><a href="workwithdesio.html">Work with us</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </header>
-
+    </script>
+    <script src="main.js"></script>
     <main class="menu-main">
-        <section class="menu-hero-section">
-            <div class="container">
-                <h1 class="reveal-text">Our Menu</h1>
-                <p class="reveal-text">Discover our tasty, satisfying, and flavor-packed Italian dishes. Easy as-is, and customizable to fit your life.</p>
-                <div class="menu-actions">
-                    <a href="#" class="btn btn-primary" aria-label="Download our menu">Download Menu</a>
-                    <a href="#" class="btn btn-secondary" aria-label="View nutrition information">Nutrition Info</a>
-                    <a href="#" class="btn btn-secondary" aria-label="View allergen guide">Allergen Guide</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="signature-dishes-section">
-            <div class="container">
-                <h2 class="section-title reveal-text">Our Signature Dishes</h2>
-                <p class="section-description reveal-text">We offer a variety of authentic Italian dishes, with tastes ranging from classic pasta to delightful pizzas. All fully customizable.</p>
-                <div class="dishes-grid">
-                    <div class="dish-card reveal-card">
-                        <img src="assets/images/pasta-hands.jpg" alt="Fresh Pasta" />
-                        <div class="dish-content">
-                            <h3>Fresh Pasta</h3>
-                            <p>Handmade daily with traditional Italian recipes, customizable with your favorite sauces and toppings.</p>
-                            <a href="#" class="learn-more-btn">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="dish-card reveal-card">
-                        <img src="assets/images/pasta-hands.jpg" alt="Authentic Pizza" />
-                        <div class="dish-content">
-                            <h3>Authentic Pizza</h3>
-                            <p>Wood-fired pizzas with premium ingredients, a true taste of Italy in every bite.</p>
-                            <a href="#" class="learn-more-btn">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="dish-card reveal-card">
-                        <img src="assets/images/pasta-hands.jpg" alt="Classic Lasagna" />
-                        <div class="dish-content">
-                            <h3>Classic Lasagna</h3>
-                            <p>Layers of rich meat ragù, béchamel, and fresh pasta, baked to perfection.</p>
-                            <a href="#" class="learn-more-btn">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="dish-card reveal-card">
-                        <img src="assets/images/pasta-hands.jpg" alt="Risotto Funghi" />
-                        <div class="dish-content">
-                            <h3>Risotto Funghi</h3>
-                            <p>Creamy Arborio rice with wild mushrooms, Parmesan cheese, and a hint of truffle oil.</p>
-                            <a href="#" class="learn-more-btn">Learn More</a>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary load-more-btn">Load More</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="beverages-section">
-            <div class="container">
-                <h2 class="section-title reveal-text">Beverages</h2>
-                <p class="section-description reveal-text">Keep it easy. Keep it fresh. A selection of drinks to complement your meal.</p>
-                <div class="drinks-grid">
-                    <div class="drink-card reveal-card">
-                        <img src="assets/images/pasta-hands.jpg" alt="Italian Lemonade" />
-                        <div class="drink-content">
-                            <h3>Italian Lemonade</h3>
-                            <p>Refreshing lemonade with a hint of fresh basil, perfect for summer.</p>
-                            <a href="#" class="learn-more-btn">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="drink-card reveal-card">
-                        <img src="assets/images/pasta-hands.jpg" alt="Sparkling Water" />
-                        <div class="drink-content">
-                            <h3>Sparkling Water</h3>
-                            <p>Crisp and effervescent, a classic Italian staple.</p>
-                            <a href="#" class="learn-more-btn">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="btn btn-primary order-drinks-btn">Order Drinks Online</a>
-            </div>
-        </section>
-
-        <section class="ingredients-allergen-section">
-            <div class="container">
-                <h2 class="section-title reveal-text">Natural Ingredients & Allergen Guide</h2>
-                <p class="section-description reveal-text">We stay close to the way nature intended. From fresh vegetables to our homemade sauces, we keep our ingredients as simple and natural as we can.</p>
-
-                <div class="ingredients-list-grid">
-                    <div class="ingredients-category reveal-card">
-                        <h3>Dressings</h3>
-                        <ul>
-                            <li>Basil Pesto</li>
-                            <li>Creamy Gorgonzola</li>
-                            <li>Lemon Vinaigrette</li>
-                            <li>Balsamic Glaze</li>
-                        </ul>
-                    </div>
-                    <div class="ingredients-category reveal-card">
-                        <h3>Bases</h3>
-                        <ul>
-                            <li>Fresh Tagliatelle</li>
-                            <li>Penne Rigate</li>
-                            <li>Risotto Rice</li>
-                            <li>Mixed Greens</li>
-                        </ul>
-                    </div>
-                    <div class="ingredients-category reveal-card">
-                        <h3>Toppings (Grill)</h3>
-                        <ul>
-                            <li>Grilled Chicken</li>
-                            <li>Sautéed Mushrooms</li>
-                            <li>Spicy Italian Sausage</li>
-                            <li>Roasted Vegetables</li>
-                        </ul>
-                    </div>
-                    <div class="ingredients-category reveal-card">
-                        <h3>Other Ingredients</h3>
-                        <ul>
-                            <li>San Marzano Tomatoes</li>
-                            <li>Fresh Mozzarella</li>
-                            <li>Parmesan Reggiano</li>
-                            <li>Black Olives</li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="btn btn-secondary load-more-ingredients-btn">View All Ingredients</button>
-
-                <h2 class="section-title reveal-text">Allergen Guide</h2>
-                <p class="section-description reveal-text">We take food safety seriously. While we have ingredients on our line that contain, or are exposed to, common food allergens, we prioritize proper food storage and serving. If you have allergies not listed below – let us know. We're here to make ordering safe and easy.</p>
-                <div class="allergen-grid">
-                    <div class="allergen-item reveal-card">
-                        <h3>Gluten</h3>
-                        <p><strong>Ingredients:</strong> Pasta, Pizza Dough, Bread</p>
-                    </div>
-                    <div class="allergen-item reveal-card">
-                        <h3>Dairy</h3>
-                        <p><strong>Ingredients:</strong> Cheeses, Cream-based Sauces</p>
-                    </div>
-                    <div class="allergen-item reveal-card">
-                        <h3>Eggs</h3>
-                        <p><strong>Ingredients:</strong> Fresh Pasta (some types), Desserts</p>
-                    </div>
-                    <div class="allergen-item reveal-card">
-                        <h3>Nuts</h3>
-                        <p><strong>Ingredients:</strong> Pesto (pine nuts), some Desserts</p>
-                    </div>
-                </div>
-                <a href="#" class="btn btn-primary download-allergen-btn">Download Allergen Guide</a>
-            </div>
-        </section>
+      <h1 class="menu-title">Menù</h1>
+      <div class="menu-buttons-row">
+        <button class="menu-btn" data-target="pasta">Pasta</button>
+        <button class="menu-btn" data-target="panini">Panini</button>
+        <button class="menu-btn" data-target="sides">Sides</button>
+        <button class="menu-btn" data-target="drinks">Drinks</button>
+        <button class="menu-btn" data-target="nutrition">Nutrition Calculator</button>
+      </div>
+      <section id="pasta" class="menu-section"><h2>Pasta</h2></section>
+      <section id="panini" class="menu-section"><h2>Panini</h2></section>
+      <section id="sides" class="menu-section"><h2>Sides</h2></section>
+      <section id="drinks" class="menu-section"><h2>Drinks</h2></section>
+      <section id="nutrition" class="menu-section"><h2>Nutrition Calculator</h2></section>
     </main>
-
-    <footer class="site-footer">
+     <footer class="site-footer">
       <div class="footer-main">
         <h2>Created by / &copy; Sorm Studio</h2>
         <div class="footer-policies">
@@ -211,12 +74,11 @@
         </div>
         <div class="footer-kvk">KVK: 12345678</div>
         <div class="footer-social">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><img src="assets/images/instagram.svg" alt="Instagram"/></a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok"><img src="assets/images/tiktok.svg" alt="TikTok"/></a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><img src="assets/images/facebook.svg" alt="Facebook"/></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><img src="assets/images/instagram.svg" alt="Instagram"/></a>
+          <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><img src="assets/images/tiktok.svg" alt="TikTok"/></a>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="assets/images/facebook.svg" alt="Facebook"/></a>
         </div>
       </div>
     </footer>
-    <script src="main.js"></script>
 </body>
 </html> 
