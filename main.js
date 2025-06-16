@@ -212,4 +212,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }
+
+    // --- FOOTER ANIMATIONS ---
+    if (window.gsap) {
+      gsap.from('.footer-main h2', {opacity: 0, y: 30, scale: 0.8, duration: 1.1, ease: 'elastic.out(1,0.6)', delay: 0.7});
+      gsap.from('.footer-policies, .footer-kvk, .footer-social', {opacity: 0, y: 40, duration: 1.1, stagger: 0.18, ease: 'power2.out', delay: 1.1});
+      gsap.from('.footer-bg img', {opacity: 0, y: 60, scale: 1.1, duration: 1.2, ease: 'power2.out', delay: 0.5});
+    }
 }); 
