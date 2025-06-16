@@ -29,8 +29,12 @@
   </noscript>
 </head>
 <body>
-  <div id="loading-overlay" role="status" aria-label="Loading content">
-    <img src="assets/images/loading_logo.png" alt="Loading Desio website..." class="loading-logo" />
+  <!-- Cover Page -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-content">
+      <img src="assets/images/loading_logo.png" alt="Desio Loading" class="loading-logo">
+      <div class="loading-text">Loading...</div>
+    </div>
   </div>
 
   <div id="newsletter-modal" class="newsletter-modal" role="dialog" aria-labelledby="newsletter-title" aria-hidden="true">
@@ -198,6 +202,84 @@
     </div>
   </footer>
 
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-consent" id="cookieConsent">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <h3>We use cookies</h3>
+        <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. Read our <a href="/privacy-policy.html">Privacy Policy</a> for more information.</p>
+      </div>
+      <div class="cookie-preferences">
+        <div class="cookie-options">
+          <label class="cookie-option">
+            <input type="checkbox" id="necessaryCookies" checked disabled>
+            <span>Necessary</span>
+            <small>Required for the website to function properly</small>
+          </label>
+          <label class="cookie-option">
+            <input type="checkbox" id="analyticsCookies">
+            <span>Analytics</span>
+            <small>Help us understand how visitors interact with our website</small>
+          </label>
+          <label class="cookie-option">
+            <input type="checkbox" id="marketingCookies">
+            <span>Marketing</span>
+            <small>Used to deliver personalized advertisements</small>
+          </label>
+        </div>
+        <div class="cookie-buttons">
+          <button class="btn btn-secondary" id="customizeCookies">Customize</button>
+          <button class="btn btn-primary" id="acceptAllCookies">Accept All</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Settings Modal -->
+  <div class="cookie-settings-modal" id="cookieSettingsModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Cookie Settings</h2>
+        <button class="close-modal" id="closeCookieSettings">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="cookie-category">
+          <h3>Necessary Cookies</h3>
+          <p>These cookies are essential for the website to function properly. They cannot be disabled.</p>
+          <div class="cookie-list">
+            <div class="cookie-item">
+              <span class="cookie-name">Session Cookie</span>
+              <span class="cookie-duration">Session</span>
+            </div>
+          </div>
+        </div>
+        <div class="cookie-category">
+          <h3>Analytics Cookies</h3>
+          <p>These cookies help us understand how visitors interact with our website.</p>
+          <div class="cookie-list">
+            <div class="cookie-item">
+              <span class="cookie-name">Google Analytics</span>
+              <span class="cookie-duration">2 years</span>
+            </div>
+          </div>
+        </div>
+        <div class="cookie-category">
+          <h3>Marketing Cookies</h3>
+          <p>These cookies are used to deliver personalized advertisements.</p>
+          <div class="cookie-list">
+            <div class="cookie-item">
+              <span class="cookie-name">Facebook Pixel</span>
+              <span class="cookie-duration">3 months</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="rejectAllCookies">Reject All</button>
+        <button class="btn btn-primary" id="saveCookiePreferences">Save Preferences</button>
+      </div>
+    </div>
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
