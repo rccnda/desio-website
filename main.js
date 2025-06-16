@@ -98,35 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- NEWSLETTER MODAL: Only once per session ---
-    let newsletterShown = sessionStorage.getItem('newsletterShown') === 'yes';
-    function showNewsletterModal() {
-        if (!newsletterShown) {
-            document.getElementById('newsletter-modal').classList.add('active');
-            newsletterShown = true;
-            sessionStorage.setItem('newsletterShown', 'yes');
-        }
-    }
-    window.addEventListener('scroll', function() {
-        if (!newsletterShown && window.scrollY > 50) {
-            setTimeout(showNewsletterModal, 5000);
-        }
-    });
-    const closeModalBtn = document.querySelector('.close-modal');
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', function() {
-            document.getElementById('newsletter-modal').classList.remove('active');
-        });
-    }
-    const modalNewsletterForm = document.querySelector('#newsletter-modal form');
-    if (modalNewsletterForm) {
-        modalNewsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            document.getElementById('newsletter-modal').classList.remove('active');
-            // Optionally show a thank you message
-        });
-    }
-
     // --- LOGO SVG DRAW-IN & BOUNCE with fallback ---
     const logoSvg = document.getElementById('logo-svg');
     fetch('assets/images/logo_animation.svg')
@@ -263,6 +234,42 @@ document.addEventListener('DOMContentLoaded', function() {
         prevEl: '.swiper-button-prev',
       },
     });
+
+    // Newsletter Pop-up Logic
+    const newsletterPopup = document.getElementById('newsletter-popup');
+    const closePopupBtn = document.querySelector('.newsletter-popup .close-popup');
+    const newsletterPopupForm = document.getElementById('newsletter-popup-form');
+    let newsletterShownSession = sessionStorage.getItem('newsletterShown') === 'yes';
+
+    function showNewsletterPopup() {
+      if (!newsletterShownSession && newsletterPopup) {
+        newsletterPopup.classList.add('active');
+        newsletterShownSession = true;
+        sessionStorage.setItem('newsletterShown', 'yes');
+      }
+    }
+
+    if (closePopupBtn) {
+      closePopupBtn.addEventListener('click', () => {
+        newsletterPopup.classList.remove('active');
+      });
+    }
+
+    if (newsletterPopupForm) {
+      newsletterPopupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // You can add logic here to handle form submission (e.g., send to an API)
+        alert('Thank you for subscribing!'); // Placeholder for success message
+        newsletterPopup.classList.remove('active');
+      });
+    }
+
+    // Show newsletter pop-up after a delay on scroll, only once per session
+    window.addEventListener('scroll', () => {
+      if (!newsletterShownSession && window.scrollY > 200) { // Adjust scroll threshold as needed
+        setTimeout(showNewsletterPopup, 3000); // Show after 3 seconds of scrolling
+      }
+    }, { once: true }); // Ensure this event listener only fires once
 
     // Scroll Animations
     const revealElements = document.querySelectorAll('.reveal-text, .reveal-image, .reveal-card');

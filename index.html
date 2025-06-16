@@ -63,7 +63,7 @@
       <div class="hero-slider swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="assets/images/Plan.png" alt="Fresh Italian pasta being prepared" />
+            <img src="assets/images/pasta-hands.jpg" alt="Fresh Italian pasta being prepared" />
             <div class="slide-content">
               <h2 class="reveal-text">Eat Fast. Dream Italian.</h2>
               <p class="reveal-text">Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be.</p>
@@ -98,13 +98,13 @@
         </div>
         <div class="featured-image-grid">
           <div class="image-item reveal-image">
-            <img src="assets/images/Plan.png" alt="Traditional Italian dishes at Desio" />
+            <img src="assets/images/pasta-hands.jpg" alt="Traditional Italian dishes at Desio" />
           </div>
           <div class="image-item reveal-image">
             <img src="assets/images/pasta-hands.jpg" alt="Fresh pasta preparation at Desio" />
           </div>
           <div class="image-item reveal-image">
-            <img src="assets/images/Plan.png" alt="Cozy atmosphere at Desio restaurant" />
+            <img src="assets/images/pasta-hands.jpg" alt="Cozy atmosphere at Desio restaurant" />
           </div>
         </div>
       </div>
@@ -124,7 +124,7 @@
             </div>
           </div>
           <div class="dish-card reveal-card">
-            <img src="assets/images/Plan.png" alt="Authentic Italian pizza at Desio" />
+            <img src="assets/images/pasta-hands.jpg" alt="Authentic Italian pizza at Desio" />
             <div class="dish-content">
               <h3>Authentic Pizza</h3>
               <p>Wood-fired pizzas with premium ingredients</p>
@@ -150,7 +150,7 @@
           <h2 class="section-title reveal-text">Order Online</h2>
           <p class="section-description reveal-text">
             Skip the line and pre-order your favorite Italian dishes! 
-            Pick a time and place, and we'll have your order ready and waiting.
+            Pick a time and place, and we\'ll have your order ready and waiting.
           </p>
           <div class="order-buttons">
             <a href="#" class="btn btn-primary" aria-label="Order food online">Order Now</a>
@@ -158,14 +158,13 @@
           </div>
         </div>
         <div class="app-image reveal-image">
-          <img src="assets/images/Plan.png" alt="Order your favorite Italian dishes online" />
+          <img src="assets/images/pasta-hands.jpg" alt="Order your favorite Italian dishes online" />
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-bg"><img src="assets/images/footer_ciao.svg" alt="Ciao from Desio" /></div>
     <div class="footer-main">
       <h2>Created by / &copy; Sorm Studio</h2>
       <div class="footer-policies">
@@ -179,8 +178,54 @@
         <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok"><img src="assets/images/tiktok.svg" alt="TikTok"/></a>
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><img src="assets/images/facebook.svg" alt="Facebook"/></a>
       </div>
+      <!-- Cookie Consent Banner -->
+      <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+          <div class="cookie-text">
+            <h3>We use cookies</h3>
+            <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. Read our <a href="/privacy-policy.html">Privacy Policy</a> for more information.</p>
+          </div>
+          <div class="cookie-preferences">
+            <div class="cookie-options">
+              <label class="cookie-option">
+                <input type="checkbox" id="necessaryCookies" checked disabled>
+                <span>Necessary</span>
+                <small>Required for the website to function properly</small>
+              </label>
+              <label class="cookie-option">
+                <input type="checkbox" id="analyticsCookies">
+                <span>Analytics</span>
+                <small>Help us understand how visitors interact with our website</small>
+              </label>
+              <label class="cookie-option">
+                <input type="checkbox" id="marketingCookies">
+                <span>Marketing</span>
+                <small>Used to deliver personalized advertisements</small>
+              </label>
+            </div>
+            <div class="cookie-buttons">
+              <button class="btn btn-secondary" id="customizeCookies">Customize</button>
+              <button class="btn btn-primary" id="acceptAllCookies">Accept All</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- Newsletter Pop-up -->
+  <div id="newsletter-popup" class="newsletter-popup" role="dialog" aria-labelledby="newsletter-popup-title" aria-hidden="true">
+    <div class="newsletter-popup-content">
+      <button class="close-popup" aria-label="Close newsletter pop-up">×</button>
+      <h2 id="newsletter-popup-title">Come hungry, leave full</h2>
+      <p><strong>Drop your email below to get 10% off your first meal.</strong></p>
+      <p style="font-size:0.98em;opacity:0.8;">We will not overflow your mailbox, only your belly.</p>
+      <form id="newsletter-popup-form">
+        <input type="email" placeholder="Your email" required aria-label="Email address" />
+        <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+      </form>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>

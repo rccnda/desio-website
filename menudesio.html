@@ -15,16 +15,16 @@
     <div id="loading-overlay">
         <img src="assets/images/loading_logo.png" alt="Loading..." class="loading-logo" />
     </div>
-    <div id="newsletter-modal" class="newsletter-modal">
-        <div class="newsletter-content">
-            <h2>Come hungry, leave full</h2>
-            <form>
-                <p><strong>Drop your email below to get 10% off your first meal.</strong></p>
-                <p style="font-size:0.98em;opacity:0.8;">We will not overflow your mailbox, only your belly.</p>
-                <input type="email" placeholder="Your email" required />
-                <button type="submit">Subscribe</button>
+    <div id="newsletter-popup" class="newsletter-popup" role="dialog" aria-labelledby="newsletter-popup-title" aria-hidden="true">
+        <div class="newsletter-popup-content">
+            <button class="close-popup" aria-label="Close newsletter pop-up">×</button>
+            <h2 id="newsletter-popup-title">Come hungry, leave full</h2>
+            <p><strong>Drop your email below to get 10% off your first meal.</strong></p>
+            <p style="font-size:0.98em;opacity:0.8;">We will not overflow your mailbox, only your belly.</p>
+            <form id="newsletter-popup-form">
+                <input type="email" placeholder="Your email" required aria-label="Email address" />
+                <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
             </form>
-            <button class="close-modal">×</button>
         </div>
     </div>
     <header class="main-header">
@@ -82,7 +82,6 @@
     </main>
 
     <footer class="site-footer">
-      <div class="footer-bg"><img src="assets/images/footer_ciao.svg" alt="Ciao from Desio" /></div>
       <div class="footer-main">
         <h2>Created by / &copy; Sorm Studio</h2>
         <div class="footer-policies">
@@ -95,6 +94,38 @@
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><img src="assets/images/instagram.svg" alt="Instagram"/></a>
           <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok"><img src="assets/images/tiktok.svg" alt="TikTok"/></a>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><img src="assets/images/facebook.svg" alt="Facebook"/></a>
+        </div>
+        <!-- Cookie Consent Banner -->
+        <div class="cookie-consent" id="cookieConsent">
+          <div class="cookie-content">
+            <div class="cookie-text">
+              <h3>We use cookies</h3>
+              <p>We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. Read our <a href="/privacy-policy.html">Privacy Policy</a> for more information.</p>
+            </div>
+            <div class="cookie-preferences">
+              <div class="cookie-options">
+                <label class="cookie-option">
+                  <input type="checkbox" id="necessaryCookies" checked disabled>
+                  <span>Necessary</span>
+                  <small>Required for the website to function properly</small>
+                </label>
+                <label class="cookie-option">
+                  <input type="checkbox" id="analyticsCookies">
+                  <span>Analytics</span>
+                  <small>Help us understand how visitors interact with our website</small>
+                </label>
+                <label class="cookie-option">
+                  <input type="checkbox" id="marketingCookies">
+                  <span>Marketing</span>
+                  <small>Used to deliver personalized advertisements</small>
+                </label>
+              </div>
+              <div class="cookie-buttons">
+                <button class="btn btn-secondary" id="customizeCookies">Customize</button>
+                <button class="btn btn-primary" id="acceptAllCookies">Accept All</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

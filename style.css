@@ -6,6 +6,7 @@
   --accent-color: #E5E5E5;
   --transition: all 0.3s ease;
   --header-height: 80px;
+  --light-green-bg: #dcedc8; /* A light green for the footer */
 }
 
 * {
@@ -60,7 +61,6 @@ body {
 
 .header-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   max-width: 1400px;
@@ -73,6 +73,7 @@ body {
   align-items: center;
   text-decoration: none;
   transition: var(--transition);
+  margin-right: auto;
 }
 
 .logo:hover {
@@ -517,8 +518,8 @@ body {
 
 /* Footer Styles */
 .site-footer {
-  background: var(--secondary-color);
-  color: white;
+  background: var(--light-green-bg);
+  color: var(--text-color);
   padding: 60px 0 30px;
   position: relative;
 }
@@ -536,7 +537,7 @@ body {
 }
 
 .footer-policies a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   margin: 0 10px;
   transition: var(--transition);
@@ -557,12 +558,13 @@ body {
   width: 24px;
   height: 24px;
   transition: var(--transition);
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(0); /* Make social icons dark against light background */
 }
 
 .footer-social img:hover {
   transform: translateY(-3px);
-  filter: brightness(0) invert(1) sepia(100%) saturate(1000%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  /* Revert to original color on hover, or apply a primary color tint */
+  filter: brightness(0) invert(0) sepia(100%) saturate(1000%) hue-rotate(0deg) brightness(70%) contrast(100%);
 }
 
 @font-face {
@@ -1166,6 +1168,225 @@ body {
     .store-map {
         height: 300px;
     }
+}
+
+/* Cookie Consent Banner */
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-out;
+}
+
+.cookie-consent.active {
+  transform: translateY(0);
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cookie-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.cookie-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.cookie-text a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.cookie-preferences {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cookie-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.cookie-option {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: var(--background-color);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.cookie-option:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cookie-option input {
+  margin-right: 10px;
+  transform: scale(1.2);
+  accent-color: var(--primary-color);
+}
+
+.cookie-option span {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.cookie-option small {
+  font-size: 0.85rem;
+  color: var(--text-color-light);
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.cookie-buttons .btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+/* Newsletter Pop-up Styles */
+.newsletter-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.newsletter-popup.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.newsletter-popup-content {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.newsletter-popup.active .newsletter-popup-content {
+  transform: translateY(0);
+}
+
+.newsletter-popup-content .close-popup {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-color-light);
+  transition: color 0.3s ease;
+}
+
+.newsletter-popup-content .close-popup:hover {
+  color: var(--primary-color);
+}
+
+.newsletter-popup-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-family: 'ITC Franklin Gothic LT', sans-serif;
+}
+
+.newsletter-popup-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.newsletter-popup-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.newsletter-popup-content input {
+  padding: 12px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.newsletter-popup-content input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.1);
+}
+
+.newsletter-popup-content button {
+  background: var(--primary-color);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter-popup-content button:hover {
+  background: var(--primary-color-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .newsletter-popup-content {
+    padding: 30px 20px;
+  }
+
+  .newsletter-popup-content h2 {
+    font-size: 2rem;
+  }
+
+  .newsletter-popup-content p {
+    font-size: 1rem;
+  }
 }
 
 /* Rest of your existing styles */ 
