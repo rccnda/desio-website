@@ -230,6 +230,19 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
+    // --- GSAP PASTA SVG ANIMATION (for menudesio.html) ---
+    if (window.gsap && document.getElementById('pasta-svg')) {
+      gsap.to("#spaghetti1", { duration: 2, repeat: -1, yoyo: true, attr: { d: "M100,170 Q120,120 100,70 Q80,40 100,30" }, ease: "power1.inOut" });
+      gsap.to("#spaghetti2", { duration: 2.2, repeat: -1, yoyo: true, attr: { d: "M110,170 Q130,120 110,70 Q90,40 110,30" }, ease: "power1.inOut" });
+      gsap.to("#spaghetti3", { duration: 1.8, repeat: -1, yoyo: true, attr: { d: "M90,170 Q70,120 90,70 Q110,40 90,30" }, ease: "power1.inOut" });
+      gsap.to("#meatball", { duration: 2, repeat: -1, yoyo: true, cy: 50, ease: "power1.inOut" });
+
+      gsap.fromTo("#pasta-title", 
+          { scale: 0.8, opacity: 0.5, y: 20, letterSpacing: "0.5em" }, 
+          { scale: 1, opacity: 1, y: 0, letterSpacing: "0.1em", duration: 1.2, ease: "elastic.out(1, 0.5)", delay: 0.5 }
+      );
+    }
+
     // Initialize Swiper
     const heroSwiper = new Swiper('.hero-slider', {
       loop: true,

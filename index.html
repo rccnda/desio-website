@@ -7,8 +7,11 @@
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=ITC+Franklin+Gothic+LT:wght@400;700&display=swap" rel="stylesheet"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/all.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
   <div id="loading-overlay">
@@ -27,56 +30,142 @@
     </div>
   </div>
 
-  <header>
-    <a href="index.html" class="logo">
-      <svg id="logo-svg" class="logo-svg"></svg>
-      <img src="assets/images/logo_lettering.png" alt="Desio Logo" class="logo-img-png" />
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menù</a></li>
-        <li><a href="desio.html">Desio</a></li>
-        <li><a href="staff.html">Fun Staff</a></li>
-        <li><a href="work.html">Work with us</a></li>
-      </ul>
-    </nav>
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+  <header class="main-header">
+    <div class="header-container">
+      <a href="homepage.html" class="logo" aria-label="Desio Home">
+        <svg id="logo-svg" class="logo-svg" aria-hidden="true"></svg>
+        <img src="assets/images/logo_lettering.png" alt="Desio Logo" class="logo-img-png" />
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="homepage.html" aria-current="page">Home</a></li>
+          <li><a href="menudesio.html">Menù</a></li>
+          <li><a href="desio.html">Desio</a></li>
+          <li><a href="funstuff.html">Fun Stuff</a></li>
+          <li><a href="workwithdesio.html">Work with us</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#" class="btn btn-primary" aria-label="Order food online">Order Online</a>
+        <a href="#" class="btn btn-secondary" aria-label="Order catering">Catering</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <div class="hero-image-wrapper">
-    <img src="assets/images/pasta-hands.jpg" alt="Pasta being served" class="hero-image" />
-  </div>
-
-  <section class="about">
-    <div class="about-content">
-      <div class="icon floating-pasta">
-        <img src="assets/images/pasta_icon.svg" alt="Pasta Icon"/>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="assets/images/Plan.png" alt="Fresh Italian pasta being prepared" />
+            <div class="slide-content">
+              <h2 class="reveal-text">Eat Fast. Dream Italian.</h2>
+              <p class="reveal-text">Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be.</p>
+              <a href="https://www.google.com/maps" class="btn btn-primary" aria-label="View our location on Google Maps">Herestraat 82, 9711LL Groningen</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/pasta-hands.jpg" alt="Interior of Desio Italian restaurant" />
+            <div class="slide-content">
+              <h2 class="reveal-text">Fast Fresh Italian Attitude</h2>
+              <p class="reveal-text">Come join us for your neat meal</p>
+              <a href="menudesio.html" class="btn btn-primary" aria-label="View our menu">View Menu</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination" aria-label="Slide navigation"></div>
+        <div class="swiper-button-next" aria-label="Next slide"></div>
+        <div class="swiper-button-prev" aria-label="Previous slide"></div>
       </div>
-      <div class="text-content">
-        <div class="typewriter-wrapper">
-          <h1 class="typewriter">Eat Fast. Dream Italian.</h1>
+    </section>
+
+    <!-- Featured Section (from old 'about' section) -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="featured-content">
+          <h2 class="section-title reveal-text">Desio</h2>
+          <h3 class="section-subtitle reveal-text">Italian Eatery</h3>
+          <p class="section-description reveal-text">
+            With fast fresh italian attitude, we bring you the authentic taste of Italy in the heart of Groningen.
+          </p>
+          <a href="menudesio.html" class="btn btn-primary" aria-label="View our menu">View Menu</a>
         </div>
-        <div class="typewriter-wrapper">
-          <p class="typewriter">Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be. With fast fresh italian attitude, come join us for your neat meal.</p>
-        </div>
-        <div class="typewriter-wrapper">
-          <a href="https://www.google.com/maps" class="address typewriter">Herestraat 82, 9711LL Groningen</a>
+        <div class="featured-image-grid">
+          <div class="image-item reveal-image">
+            <img src="assets/images/Plan.png" alt="Traditional Italian dishes at Desio" />
+          </div>
+          <div class="image-item reveal-image">
+            <img src="assets/images/pasta-hands.jpg" alt="Fresh pasta preparation at Desio" />
+          </div>
+          <div class="image-item reveal-image">
+            <img src="assets/images/Plan.png" alt="Cozy atmosphere at Desio restaurant" />
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="cta">
-    <button class="hungry-btn">Hungry?</button>
-  </div>
+    <!-- Popular Dishes Section (copied from homepage.html for consistency) -->
+    <section class="popular-dishes">
+      <div class="container">
+        <h2 class="section-title reveal-text">Our Specialties</h2>
+        <div class="dishes-grid">
+          <div class="dish-card reveal-card">
+            <img src="assets/images/pasta-hands.jpg" alt="Fresh handmade pasta at Desio" />
+            <div class="dish-content">
+              <h3>Fresh Pasta</h3>
+              <p>Handmade daily with traditional Italian recipes</p>
+              <a href="menudesio.html" class="btn btn-secondary" aria-label="View pasta menu">View Menu</a>
+            </div>
+          </div>
+          <div class="dish-card reveal-card">
+            <img src="assets/images/Plan.png" alt="Authentic Italian pizza at Desio" />
+            <div class="dish-content">
+              <h3>Authentic Pizza</h3>
+              <p>Wood-fired pizzas with premium ingredients</p>
+              <a href="menudesio.html" class="btn btn-secondary" aria-label="View pizza menu">View Menu</a>
+            </div>
+          </div>
+          <div class="dish-card reveal-card">
+            <img src="assets/images/pasta-hands.jpg" alt="Traditional Italian desserts at Desio" />
+            <div class="dish-content">
+              <h3>Italian Desserts</h3>
+              <p>Sweet endings to your perfect Italian meal</p>
+              <a href="menudesio.html" class="btn btn-secondary" aria-label="View dessert menu">View Menu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Online Section (copied from homepage.html for consistency) -->
+    <section class="app-section">
+      <div class="container">
+        <div class="app-content">
+          <h2 class="section-title reveal-text">Order Online</h2>
+          <p class="section-description reveal-text">
+            Skip the line and pre-order your favorite Italian dishes! 
+            Pick a time and place, and we'll have your order ready and waiting.
+          </p>
+          <div class="order-buttons">
+            <a href="#" class="btn btn-primary" aria-label="Order food online">Order Now</a>
+            <a href="#" class="btn btn-secondary" aria-label="View our menu">View Menu</a>
+          </div>
+        </div>
+        <div class="app-image reveal-image">
+          <img src="assets/images/Plan.png" alt="Order your favorite Italian dishes online" />
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
-    <div class="footer-bg"><img src="assets/images/footer_ciao.svg" alt="" /></div>
+    <div class="footer-bg"><img src="assets/images/footer_ciao.svg" alt="Ciao from Desio" /></div>
     <div class="footer-main">
       <h2>Created by / &copy; Sorm Studio</h2>
       <div class="footer-policies">
@@ -86,9 +175,9 @@
       </div>
       <div class="footer-kvk">KVK: 12345678</div>
       <div class="footer-social">
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><img src="assets/images/instagram.svg" alt="Instagram"/></a>
-        <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><img src="assets/images/tiktok.svg" alt="TikTok"/></a>
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="assets/images/facebook.svg" alt="Facebook"/></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><img src="assets/images/instagram.svg" alt="Instagram"/></a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok"><img src="assets/images/tiktok.svg" alt="TikTok"/></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><img src="assets/images/facebook.svg" alt="Facebook"/></a>
       </div>
     </div>
   </footer>
