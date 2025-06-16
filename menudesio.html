@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desio - About Us</title>
+    <title>Menu - Desio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=ITC+Franklin+Gothic+LT:wght@400;700&display=swap" rel="stylesheet">
@@ -46,15 +46,42 @@
             <span></span>
         </div>
     </header>
-    <div class="about-content">
-        <div class="icon floating-pasta">
-            <img src="assets/images/pasta_icon.svg" alt="Pasta Icon"/>
-        </div>
-        <div class="text-content">
-            <h1 class="typewriter">Coming Soon</h1>
-            <p class="typewriter">Learn more about our story and passion for Italian cuisine.</p>
-        </div>
+
+    <!-- GSAP Pasta SVG Animation from CodePen -->
+    <div class="gsap-pasta-animation" style="display:flex;justify-content:center;margin-top:40px;">
+        <svg id="pasta-svg" width="200" height="200" viewBox="0 0 200 200">
+            <ellipse id="plate" cx="100" cy="170" rx="70" ry="20" fill="#f9eed9"/>
+            <path id="spaghetti1" d="M100,170 Q110,120 100,70 Q90,40 100,30" stroke="#e2b07a" stroke-width="6" fill="none"/>
+            <path id="spaghetti2" d="M110,170 Q120,120 110,70 Q100,40 110,30" stroke="#e2b07a" stroke-width="6" fill="none"/>
+            <path id="spaghetti3" d="M90,170 Q80,120 90,70 Q100,40 90,30" stroke="#e2b07a" stroke-width="6" fill="none"/>
+            <circle id="meatball" cx="100" cy="60" r="12" fill="#6e0e0a"/>
+        </svg>
     </div>
+
+    <!-- Animated "Pasta" Section Title from CodePen -->
+    <div class="animated-pasta-title" style="display:flex;justify-content:center;margin-top:10px;">
+        <h2 id="pasta-title" style="font-family:'ITC Franklin Gothic LT',sans-serif;font-size:2.5rem;color:#6e0e0a;letter-spacing:0.1em;">Pasta</h2>
+    </div>
+
+    <div class="coming-soon">
+        <h1 class="typewriter">Coming Soon</h1>
+        <p class="typewriter">Our menu is being carefully crafted to bring you the best Italian experience.</p>
+    </div>
+
+    <script>
+    // GSAP Pasta SVG Animation (inspired by https://codepen.io/ksenia-k/pen/NWmMxLg)
+    gsap.to("#spaghetti1", { duration: 2, repeat: -1, yoyo: true, attr: { d: "M100,170 Q120,120 100,70 Q80,40 100,30" }, ease: "power1.inOut" });
+    gsap.to("#spaghetti2", { duration: 2.2, repeat: -1, yoyo: true, attr: { d: "M110,170 Q130,120 110,70 Q90,40 110,30" }, ease: "power1.inOut" });
+    gsap.to("#spaghetti3", { duration: 1.8, repeat: -1, yoyo: true, attr: { d: "M90,170 Q70,120 90,70 Q110,40 90,30" }, ease: "power1.inOut" });
+    gsap.to("#meatball", { duration: 2, repeat: -1, yoyo: true, cy: 50, ease: "power1.inOut" });
+
+    // GSAP Animated "Pasta" Title (inspired by https://codepen.io/hexagoncircle/pen/ExoKBgW)
+    gsap.fromTo("#pasta-title", 
+        { scale: 0.8, opacity: 0.5, y: 20, letterSpacing: "0.5em" }, 
+        { scale: 1, opacity: 1, y: 0, letterSpacing: "0.1em", duration: 1.2, ease: "elastic.out(1, 0.5)", delay: 0.5 }
+    );
+    </script>
+    <script src="main.js"></script>
     <footer class="site-footer">
       <div class="footer-bg"><img src="assets/images/footer_ciao.svg" alt="" /></div>
       <div class="footer-main">
@@ -72,6 +99,5 @@
         </div>
       </div>
     </footer>
-    <script src="main.js"></script>
 </body>
 </html> 

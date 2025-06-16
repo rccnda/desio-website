@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const hungryBtn = document.querySelector('.hungry-btn');
     if (hungryBtn) {
         hungryBtn.addEventListener('click', function() {
-            window.location.href = 'menu.html';
+            window.location.href = 'menudesio.html';
         });
     }
 
@@ -197,4 +197,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 40 * i);
       });
     });
+
+    // --- Footer background SVG parallax ---
+    const footerBg = document.querySelector('.footer-bg');
+    if (footerBg && window.gsap && window.ScrollTrigger) {
+      gsap.to(footerBg, {
+        y: 60,
+        opacity: 0.28,
+        scrollTrigger: {
+          trigger: '.site-footer',
+          start: 'top bottom',
+          end: 'bottom bottom',
+          scrub: 0.7
+        }
+      });
+    }
 }); 
