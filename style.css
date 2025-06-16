@@ -90,7 +90,8 @@ body {
   max-width: var(--container-max-width);
   margin: 0 auto;
   height: var(--header-height);
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: var(--spacing-xl);
 }
 
 .logo {
@@ -98,6 +99,7 @@ body {
   align-items: center;
   text-decoration: none;
   transition: var(--transition);
+  margin-right: auto;
 }
 
 .logo:hover {
@@ -108,11 +110,15 @@ body {
   height: 40px;
 }
 
+.main-nav {
+  margin-left: auto;
+}
+
 .main-nav ul {
   display: flex;
   list-style: none;
-  gap: 2rem;
-  margin-right: 1.5rem;
+  gap: var(--spacing-lg);
+  margin-right: var(--spacing-md);
 }
 
 .main-nav a {
@@ -141,7 +147,8 @@ body {
 
 .header-cta {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-sm);
+  margin-left: var(--spacing-md);
 }
 
 /* Button Styles */
@@ -560,6 +567,19 @@ body {
 
     .store-map {
         height: 300px;
+    }
+
+    .header-container {
+        justify-content: flex-start;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .hamburger {
+        margin-left: auto;
     }
 }
 
