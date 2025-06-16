@@ -98,45 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- LOGO SVG DRAW-IN & BOUNCE with fallback ---
-    const logoSvg = document.getElementById('logo-svg');
-    fetch('assets/images/logo_animation.svg')
-      .then(res => res.text())
-      .then(svg => {
-        if (logoSvg) logoSvg.innerHTML = svg;
-        const paths = document.querySelectorAll('#logo-svg path');
-        paths.forEach(path => {
-          const length = path.getTotalLength();
-          path.style.strokeDasharray = length;
-          path.style.strokeDashoffset = length;
-          path.style.stroke = '#005728';
-          path.style.fill = 'none';
-          path.style.transition = 'fill 0.5s';
-        });
-        if (window.gsap) {
-          gsap.to('#logo-svg path', {
-            strokeDashoffset: 0,
-            duration: 1.5,
-            stagger: 0.2,
-            ease: 'power2.out',
-            onComplete: () => {
-              paths.forEach(path => path.style.fill = '#005728');
-            }
-          });
-          // Bounce on load
-          gsap.fromTo('#logo-svg', {y: -30, scale: 0.9}, {y: 0, scale: 1, duration: 0.7, ease: 'bounce.out', delay: 1.2});
-          // Bounce on hover
-          logoSvg.addEventListener('mouseenter', () => {
-            gsap.fromTo('#logo-svg', {y: 0, scale: 1}, {y: -18, scale: 1.08, duration: 0.3, yoyo: true, repeat: 1, ease: 'power1.inOut'});
-          });
-        }
-      })
-      .catch(() => {
-        // Fallback to PNG if SVG fails
-        const png = document.querySelector('.logo-img-png');
-        if (png) png.style.display = 'block';
-      });
-
     // --- FLOATING PASTA ICON ---
     // Use pasta_icon.svg directly
     if (window.gsap) {
@@ -164,12 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
           scrub: 0.5
         }
       });
-    }
-
-    // --- Footer background SVG parallax ---
-    const footerBg = document.querySelector('.footer-bg');
-    if (footerBg && window.gsap && window.ScrollTrigger) {
-      // Removed as footer-bg is no longer used
     }
 
     // --- FOOTER ANIMATIONS ---
@@ -256,24 +211,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.main-header');
     let lastScroll = 0;
 
+    // Combined scroll event listener for multiple functionalities
     window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll <= 0) {
-        header.classList.remove('scroll-up');
-        return;
-      }
-      
-      if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-        // Scroll Down
-        header.classList.remove('scroll-up');
-        header.classList.add('scroll-down');
-      } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-        // Scroll Up
-        header.classList.remove('scroll-down');
-        header.classList.add('scroll-up');
-      }
-      lastScroll = currentScroll;
+        // Header scroll effect
+        const currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+            header.classList.remove('scroll-up');
+        } else if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+            header.classList.remove('scroll-up');
+            header.classList.add('scroll-down');
+        } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+            header.classList.remove('scroll-down');
+            header.classList.add('scroll-up');
+        }
+        lastScroll = currentScroll;
+
+        // Newsletter popup
+        if (!newsletterShownSession && window.scrollY > 200) {
+            setTimeout(showNewsletterPopup, 3000);
+        }
+
+        // Reveal elements on scroll
+        revealElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
     });
 
     // Mobile Menu
@@ -297,12 +262,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+        const targetId = this.getAttribute('href');
+        if (targetId.startsWith('#')) {
+          const targetElement = document.getElementById(targetId.substring(1));
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       });
     });
@@ -350,167 +315,6 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
         });
     });
-
-    // Cookie Management
-    class CookieManager {
-        constructor() {
-            this.cookieConsent = document.getElementById('cookieConsent');
-            this.cookieSettingsModal = document.getElementById('cookieSettingsModal');
-            this.necessaryCookies = document.getElementById('necessaryCookies');
-            this.analyticsCookies = document.getElementById('analyticsCookies');
-            this.marketingCookies = document.getElementById('marketingCookies');
-            
-            this.initializeEventListeners();
-            this.checkCookieConsent();
-        }
-
-        initializeEventListeners() {
-            // Accept All button
-            document.getElementById('acceptAllCookies').addEventListener('click', () => {
-                this.acceptAllCookies();
-            });
-
-            // Customize button
-            document.getElementById('customizeCookies').addEventListener('click', () => {
-                this.openCookieSettings();
-            });
-
-            // Close settings modal
-            document.getElementById('closeCookieSettings').addEventListener('click', () => {
-                this.closeCookieSettings();
-            });
-
-            // Save preferences
-            document.getElementById('saveCookiePreferences').addEventListener('click', () => {
-                this.saveCookiePreferences();
-            });
-
-            // Reject all
-            document.getElementById('rejectAllCookies').addEventListener('click', () => {
-                this.rejectAllCookies();
-            });
-        }
-
-        checkCookieConsent() {
-            const consent = this.getCookie('cookie_consent');
-            if (!consent) {
-                this.showCookieConsent();
-            } else {
-                this.loadCookiePreferences();
-            }
-        }
-
-        showCookieConsent() {
-            this.cookieConsent.classList.add('active');
-        }
-
-        hideCookieConsent() {
-            this.cookieConsent.classList.remove('active');
-        }
-
-        openCookieSettings() {
-            this.cookieSettingsModal.classList.add('active');
-            this.hideCookieConsent();
-        }
-
-        closeCookieSettings() {
-            this.cookieSettingsModal.classList.remove('active');
-        }
-
-        acceptAllCookies() {
-            this.setCookie('cookie_consent', 'all', 365);
-            this.setCookie('analytics_cookies', 'true', 365);
-            this.setCookie('marketing_cookies', 'true', 365);
-            this.hideCookieConsent();
-            this.initializeCookies();
-        }
-
-        rejectAllCookies() {
-            this.setCookie('cookie_consent', 'necessary', 365);
-            this.setCookie('analytics_cookies', 'false', 365);
-            this.setCookie('marketing_cookies', 'false', 365);
-            this.closeCookieSettings();
-            this.initializeCookies();
-        }
-
-        saveCookiePreferences() {
-            const analytics = this.analyticsCookies.checked;
-            const marketing = this.marketingCookies.checked;
-            
-            this.setCookie('cookie_consent', 'custom', 365);
-            this.setCookie('analytics_cookies', analytics.toString(), 365);
-            this.setCookie('marketing_cookies', marketing.toString(), 365);
-            
-            this.closeCookieSettings();
-            this.initializeCookies();
-        }
-
-        loadCookiePreferences() {
-            const analytics = this.getCookie('analytics_cookies') === 'true';
-            const marketing = this.getCookie('marketing_cookies') === 'true';
-            
-            this.analyticsCookies.checked = analytics;
-            this.marketingCookies.checked = marketing;
-            
-            this.initializeCookies();
-        }
-
-        initializeCookies() {
-            const analytics = this.getCookie('analytics_cookies') === 'true';
-            const marketing = this.getCookie('marketing_cookies') === 'true';
-
-            // Initialize analytics if consented
-            if (analytics) {
-                this.initializeAnalytics();
-            }
-
-            // Initialize marketing if consented
-            if (marketing) {
-                this.initializeMarketing();
-            }
-        }
-
-        initializeAnalytics() {
-            // Initialize Google Analytics
-            if (typeof gtag !== 'undefined') {
-                gtag('consent', 'update', {
-                    'analytics_storage': 'granted'
-                });
-            }
-        }
-
-        initializeMarketing() {
-            // Initialize Facebook Pixel
-            if (typeof fbq !== 'undefined') {
-                fbq('consent', 'grant');
-            }
-        }
-
-        setCookie(name, value, days) {
-            const date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            const expires = `expires=${date.toUTCString()}`;
-            document.cookie = `${name}=${value};${expires};path=/;SameSite=Lax`;
-        }
-
-        getCookie(name) {
-            const nameEQ = `${name}=`;
-            const ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-
-        deleteCookie(name) {
-            document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
-        }
-    }
-
-    // Initialize cookie manager when DOM is loaded
-    const cookieManager = new CookieManager();
 
     // --- LEAFLET MAP INITIALIZATION (for desio.html) ---
     const storeMapElement = document.getElementById('store-map');
