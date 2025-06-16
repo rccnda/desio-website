@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     window.addEventListener('scroll', function() {
         if (!newsletterShown && window.scrollY > 50) {
-            setTimeout(showNewsletterModal, 2000);
+            setTimeout(showNewsletterModal, 5000);
         }
     });
     const closeModalBtn = document.querySelector('.close-modal');

@@ -33,22 +33,22 @@ header {
 }
 
 .logo {
-    height: 48px;
-    min-width: 48px;
+    height: 72px;
+    min-width: 72px;
     display: flex;
     align-items: center;
 }
 
 .logo-svg {
     display: block;
-    height: 48px;
+    height: 72px;
     width: auto;
     margin: 0;
 }
 
 .logo-img-png {
     display: block;
-    height: 48px;
+    height: 72px;
     width: auto;
     margin: 0;
 }
@@ -136,6 +136,7 @@ nav a:hover {
 
 .text-content {
     flex: 1;
+    margin-bottom: 1.2rem;
 }
 
 .text-content h1 {
@@ -201,7 +202,8 @@ nav a:hover {
 /* CTA Button Styles */
 .cta {
     text-align: center;
-    padding: 3rem 0;
+    padding: 1.2rem 0 2.2rem 0;
+    margin-top: -1.2rem;
 }
 
 .hungry-btn {
@@ -290,8 +292,8 @@ nav a:hover {
         min-height: 44px;
     }
     .logo, .logo-svg, .logo-img-png {
-        height: 36px;
-        min-width: 36px;
+        height: 48px;
+        min-width: 48px;
     }
     .hamburger {
         display: flex;
@@ -509,4 +511,65 @@ nav a:hover {
     0% { transform: translateY(0); }
     50% { transform: translateY(-18px); }
     100% { transform: translateY(0); }
+}
+
+.site-footer {
+    background: #f9eed9;
+    color: #005728;
+    padding: 2rem 1rem 1.2rem 1rem;
+    font-size: 1rem;
+    border-top: 1px solid #e0d6c2;
+    margin-top: 2rem;
+}
+.footer-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+}
+.footer-main span {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.footer-policies a {
+    color: #005728;
+    text-decoration: underline;
+    margin: 0 0.2em;
+    font-size: 0.98em;
+}
+.footer-policies a:hover {
+    color: #6e0e0a;
+}
+.footer-kvk {
+    font-size: 0.95em;
+    opacity: 0.7;
+}
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0.2em;
+    transition: transform 0.2s;
+}
+.footer-social a:hover {
+    transform: scale(1.18) rotate(-6deg);
+}
+.footer-social img {
+    width: 28px;
+    height: 28px;
+    filter: grayscale(0.2) brightness(0.95);
+}
+@media (max-width: 700px) {
+    .footer-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+    }
+    .site-footer {
+        font-size: 0.98rem;
+        padding: 1.2rem 0.5rem 0.8rem 0.5rem;
+    }
 } 
