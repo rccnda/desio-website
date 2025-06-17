@@ -1392,4 +1392,98 @@ html {
 .footer-kvk,
 .footer-social a {
     font-family: var(--button-font);
+}
+
+/* Catering Page Styles */
+.catering-main {
+    padding-top: var(--header-height);
+}
+
+.catering-hero {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    background-color: var(--light-background);
+}
+
+.catering-hero h1 {
+    font-size: var(--font-size-4xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.catering-hero .subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.catering-form-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.catering-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-md);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--body-font);
+    font-size: var(--font-size-sm);
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(44, 85, 48, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.catering-form .btn-primary {
+    width: 100%;
+    padding: 1rem;
+    font-size: var(--font-size-md);
+    margin-top: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .catering-form {
+        padding: var(--spacing-md);
+    }
+    
+    .catering-hero h1 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .catering-hero .subtitle {
+        font-size: var(--font-size-md);
+    }
 } 
