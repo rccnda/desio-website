@@ -1401,7 +1401,7 @@ html {
 
 .catering-hero {
     text-align: center;
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0 var(--spacing-md) 0;
     background-color: var(--light-background);
 }
 
@@ -1419,7 +1419,7 @@ html {
 }
 
 .catering-form-section {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-sm) 0 var(--spacing-lg) 0;
     background-color: var(--light-background);
 }
 
