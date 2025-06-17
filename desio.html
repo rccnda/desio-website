@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desio - Italian Eatery in Groningen</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ITC+Franklin+Gothic+LT:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="loading-screen">
@@ -33,12 +36,44 @@
         </div>
     </header>
     <main class="store-page">
-        <section class="store-hero">
-            <h1>Eat Fast. Dream Italian.</h1>
-            <p class="hero-description">Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be. With fast fresh italian attitude, come join us for your neat meal.</p>
-            <div class="store-actions">
-                <a href="https://www.thuisbezorgd.nl/desio-groningen" class="btn btn-primary" target="_blank" rel="noopener">ORDER ONLINE</a>
-                <a href="https://maps.google.com/?q=Herestraat+82,+9711LL+Groningen" class="btn btn-secondary" target="_blank" rel="noopener">GET DIRECTIONS</a>
+        <section class="store-hero hero-section">
+            <div class="swiper-container hero-slider">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide" style="background-image: url('assets/images/pasta-bowl.jpg');">
+                        <div class="slide-content">
+                            <h1>Eat Fast. Dream Italian.</h1>
+                            <p class="hero-description">Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be. With fast fresh Italian attitude, come join us for your neat meal.</p>
+                            <div class="store-actions">
+                                <a href="https://maps.google.com/?q=Herestraat+82,+9711LL+Groningen" class="btn btn-primary" target="_blank" rel="noopener">Herestraat 82, 9711LL Groningen</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat Slide for Slider Effect -->
+                    <div class="swiper-slide" style="background-image: url('assets/images/pasta-bowl.jpg');">
+                        <div class="slide-content">
+                            <h1>Eat Fast. Dream Italian.</h1>
+                            <p class="hero-description">Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be. With fast fresh Italian attitude, come join us for your neat meal.</p>
+                            <div class="store-actions">
+                                <a href="https://maps.google.com/?q=Herestraat+82,+9711LL+Groningen" class="btn btn-primary" target="_blank" rel="noopener">Herestraat 82, 9711LL Groningen</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image: url('assets/images/pasta-bowl.jpg');">
+                        <div class="slide-content">
+                            <h1>Eat Fast. Dream Italian.</h1>
+                            <p class="hero-description">Located in vibrant Groningen downtown, Nederland, Desio embraces the richness & tastiness of what Italian cuisine should be. With fast fresh Italian attitude, come join us for your neat meal.</p>
+                            <div class="store-actions">
+                                <a href="https://maps.google.com/?q=Herestraat+82,+9711LL+Groningen" class="btn btn-primary" target="_blank" rel="noopener">Herestraat 82, 9711LL Groningen</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </section>
 
@@ -142,6 +177,7 @@
             }, 1000); // Show for at least 1 second
         });
     </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html> 

@@ -232,47 +232,85 @@ p {
 .hero-section {
   height: 80vh;
   position: relative;
-  margin-top: 80px;
+  margin-top: 80px; /* Adjust based on header height */
+  overflow: hidden; /* Ensure content does not spill out */
 }
 
 .hero-slider {
+  width: 100%;
   height: 100%;
 }
 
 .swiper-slide {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   position: relative;
-  height: 100%;
 }
 
-.swiper-slide img {
+.swiper-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  background-color: rgba(0, 0, 0, 0.3); /* Dark overlay for text readability */
 }
 
 .slide-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  width: 90%;
-  max-width: 800px;
+  position: relative;
   z-index: 2;
+  color: white;
+  max-width: 800px;
+  padding: var(--spacing-md);
 }
 
-.slide-content h2 {
-  font-size: 3.5rem;
-  margin-bottom: var(--spacing-md);
+.slide-content h1 {
+  font-size: var(--font-size-5xl);
   color: white;
+  margin-bottom: var(--spacing-sm);
 }
 
 .slide-content p {
-  font-size: 1.25rem;
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--spacing-md);
+}
+
+.store-actions .btn-primary,
+.store-actions .btn-secondary {
   color: white;
+  border-color: white;
+}
+
+.store-actions .btn-secondary {
+  background-color: transparent;
+}
+
+.store-actions .btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-color);
+}
+
+/* Swiper Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  --swiper-navigation-size: 30px;
 }
 
 /* Featured Section */

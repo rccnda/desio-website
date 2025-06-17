@@ -147,26 +147,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Initialize Swiper
-    const heroSwiper = new Swiper('.hero-slider', {
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+    // Initialize Swiper for the hero section
+    if (document.querySelector('.hero-slider')) {
+        new Swiper('.hero-slider', {
+            loop: true, // Enable continuous loop
+            autoplay: {
+                delay: 5000, // 5 seconds between slides
+                disableOnInteraction: false, // Autoplay continues even after user interaction
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
 
     // Scroll Animations
     const revealElements = document.querySelectorAll('.reveal-text, .reveal-image, .reveal-card');
