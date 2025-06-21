@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize Leaflet Map
     if (document.getElementById('store-map')) {
-        fetch('map.json')
+        fetch('location.json')
             .then(response => response.json())
             .then(data => {
                 const map = L.map('store-map', {
