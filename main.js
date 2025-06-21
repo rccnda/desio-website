@@ -190,10 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 const map = L.map('store-map', {
                     scrollWheelZoom: false // Optional: disable scroll wheel zoom
-                }).setView([data.lat, data.lng], 16);
+                }).setView([data.lat, data.lng], 18);
 
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png', {
+                    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
 
                 const customMarker = L.icon({
