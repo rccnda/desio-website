@@ -839,17 +839,18 @@ p {
 
 .store-reviews h2,
 .store-newsletter h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-family: var(--heading-font);
+  font-size: var(--font-size-4xl);
   color: var(--primary-color);
-  font-family: 'ITC Franklin Gothic LT', sans-serif;
+  margin-bottom: 20px;
 }
 
 .store-reviews p,
 .store-newsletter p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  font-family: var(--body-font);
+  font-size: var(--font-size-md);
   color: var(--text-color);
+  margin-bottom: 30px;
 }
 
 .newsletter-form {
@@ -1615,4 +1616,51 @@ html {
     .catering-hero .subtitle {
         font-size: var(--font-size-md);
     }
+}
+
+#questionnaire-container {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.question {
+    margin-bottom: 1.5rem;
+}
+
+.question p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.question textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    min-height: 100px;
+    transition: var(--transition);
+}
+
+.question textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(44, 85, 48, 0.1);
+}
+
+.question-navigation {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+#final-message {
+    text-align: center;
+    padding: 2rem;
 } 

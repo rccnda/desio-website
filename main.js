@@ -183,6 +183,63 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Initial check
 
+    // Questionnaire Logic
+    const questionnaireContainer = document.getElementById('questionnaire-container');
+    if (questionnaireContainer) {
+        const questions = [
+            "How did you feel about the portion sizes—did they seem like a good value for the price?",
+            "Was there anything you were hoping to see on the menu that wasn't there?",
+            "Did our food give you that classic Italian vibe or remind you of a real Italian meal?",
+            "How was the speed of service—did everything come out in a timely way?"
+        ];
+        const answers = [];
+        let currentQuestionIndex = 0;
+
+        function displayQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                questionnaireContainer.innerHTML = `
+                    <div class="question">
+                        <p>${questions[currentQuestionIndex]}</p>
+                        <textarea id="answer-input" rows="4" placeholder="Your thoughts..."></textarea>
+                    </div>
+                    <div class="question-navigation">
+                        <button id="next-btn" class="btn btn-primary">Next</button>
+                    </div>
+                `;
+
+                document.getElementById('next-btn').addEventListener('click', () => {
+                    const answer = document.getElementById('answer-input').value;
+                    answers.push({ question: questions[currentQuestionIndex], answer: answer });
+                    currentQuestionIndex++;
+                    displayQuestion();
+                });
+            } else {
+                displayFinalStep();
+            }
+        }
+
+        function displayFinalStep() {
+            questionnaireContainer.style.display = 'none';
+            document.getElementById('final-message').style.display = 'block';
+
+            let emailBody = "Customer Feedback:\n\n";
+            answers.forEach(item => {
+                emailBody += `Q: ${item.question}\nA: ${item.answer}\n\n`;
+            });
+
+            const mailtoLink = `mailto:info@desiofood.com?subject=New Feedback from Website&body=${encodeURIComponent(emailBody)}`;
+            
+            const grazieBtn = document.createElement('a');
+            grazieBtn.href = mailtoLink;
+            grazieBtn.className = 'btn btn-primary';
+            grazieBtn.textContent = 'Grazie!';
+            
+            document.getElementById('final-message').appendChild(grazieBtn);
+        }
+
+        displayQuestion();
+    }
+
     // Initialize Leaflet Map
     if (document.getElementById('store-map')) {
         fetch('location.json')
