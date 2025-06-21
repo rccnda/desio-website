@@ -825,9 +825,9 @@ p {
 }
 
 .store-map {
-  height: 400px;
-  width: 100%;
-  background-color: #f0f0f0; /* Placeholder color */
+  height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .store-reviews,

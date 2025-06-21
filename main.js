@@ -183,6 +183,33 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Initial check
 
+    // Initialize Leaflet Map
+    if (document.getElementById('store-map')) {
+        fetch('map.json')
+            .then(response => response.json())
+            .then(data => {
+                const map = L.map('store-map', {
+                    scrollWheelZoom: false // Optional: disable scroll wheel zoom
+                }).setView([data.lat, data.lng], 16);
+
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                }).addTo(map);
+
+                const customMarker = L.icon({
+                    iconUrl: 'assets/images/map_marker.png',
+                    iconSize: [50, 50], // Adjust size as needed
+                    iconAnchor: [25, 50], // Point of the icon which will correspond to marker's location
+                    popupAnchor: [0, -50] // Point from which the popup should open relative to the iconAnchor
+                });
+
+                L.marker([data.lat, data.lng], { icon: customMarker }).addTo(map)
+                    .bindPopup(data.popupText)
+                    .openPopup();
+            })
+            .catch(error => console.error('Error loading map data:', error));
+    }
+
     // Header Scroll Effect
     const header = document.querySelector('.main-header');
     let lastScroll = 0;
@@ -212,40 +239,4 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenu.appendChild(navClone);
     mobileMenu.appendChild(headerCta);
     document.body.appendChild(mobileMenu);
-
-    // Make initMap globally available
-    window.initMap = initMap;
-});
-
-function initMap() {
-    const mapContainer = document.getElementById('store-map');
-    if (!mapContainer) return;
-
-    fetch('map.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const location = { lat: data.lat, lng: data.lng };
-            const map = new google.maps.Map(mapContainer, {
-                zoom: 15,
-                center: location,
-                styles: data.style, // Use the style array from map.json
-                disableDefaultUI: true,
-                zoomControl: true,
-            });
-
-            new google.maps.Marker({
-                position: location,
-                map: map,
-                title: data.popupText,
-            });
-        })
-        .catch(error => {
-            console.error('Error loading or parsing map data:', error);
-            mapContainer.innerHTML = 'Error loading map. Please check console for details.';
-        });
-} 
+}); 
