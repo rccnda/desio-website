@@ -183,6 +183,24 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Initial check
 
+    // Initialize the map if the map container exists
+    const mapContainer = document.getElementById('store-map');
+    if (mapContainer) {
+        // Use the location from map.json
+        fetch('map.json')
+            .then(response => response.json())
+            .then(data => {
+                const map = L.map(mapContainer).setView([data.lat, data.lng], 15);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                L.marker([data.lat, data.lng]).addTo(map)
+                    .bindPopup(data.popupText)
+                    .openPopup();
+            })
+            .catch(error => console.error('Error loading map data:', error));
+    }
+
     // Header Scroll Effect
     const header = document.querySelector('.main-header');
     let lastScroll = 0;
