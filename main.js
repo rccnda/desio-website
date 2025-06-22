@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const grazieBtn = document.createElement('a');
             grazieBtn.href = mailtoLink;
-            grazieBtn.className = 'btn btn-primary';
+            grazieBtn.className = 'btn btn-secondary';
             grazieBtn.textContent = 'Grazie!';
             
             document.getElementById('final-message').appendChild(grazieBtn);
@@ -249,11 +249,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     scrollWheelZoom: false // Optional: disable scroll wheel zoom
                 }).setView([data.lat, data.lng], 18);
 
-                L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.{ext}', {
-                    minZoom: 0,
-                    maxZoom: 18,
-                    attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                    ext: 'png'
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
 
                 const customMarker = L.icon({
