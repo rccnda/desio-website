@@ -222,19 +222,56 @@ document.addEventListener('DOMContentLoaded', function() {
             questionnaireContainer.style.display = 'none';
             document.getElementById('final-message').style.display = 'block';
 
-            let emailBody = "Customer Feedback:\n\n";
-            answers.forEach(item => {
-                emailBody += `Q: ${item.question}\nA: ${item.answer}\n\n`;
+            // Prepare answers for Formspree
+            const form = document.getElementById('formspree-form');
+            form.innerHTML = '';
+            answers.forEach((item, idx) => {
+                const qInput = document.createElement('input');
+                qInput.type = 'hidden';
+                qInput.name = `question_${idx+1}`;
+                qInput.value = item.question;
+                form.appendChild(qInput);
+                const aInput = document.createElement('input');
+                aInput.type = 'hidden';
+                aInput.name = `answer_${idx+1}`;
+                aInput.value = item.answer;
+                form.appendChild(aInput);
             });
 
-            const mailtoLink = `mailto:info@desiofood.com?subject=New Feedback from Website&body=${encodeURIComponent(emailBody)}`;
-            
-            const grazieBtn = document.createElement('a');
-            grazieBtn.href = mailtoLink;
+            // Grazie button
+            const grazieBtn = document.createElement('button');
+            grazieBtn.type = 'submit';
             grazieBtn.className = 'btn btn-secondary';
             grazieBtn.textContent = 'Grazie!';
-            
-            document.getElementById('final-message').appendChild(grazieBtn);
+            form.appendChild(grazieBtn);
+            form.style.display = 'block';
+
+            // AJAX submit
+            form.onsubmit = function(e) {
+                e.preventDefault();
+                grazieBtn.disabled = true;
+                grazieBtn.textContent = 'Sending...';
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        form.style.display = 'none';
+                        document.getElementById('final-message').innerHTML = '<h3>Grazie! Your feedback was sent.</h3>';
+                    } else {
+                        grazieBtn.disabled = false;
+                        grazieBtn.textContent = 'Grazie!';
+                        alert('There was a problem sending your feedback. Please try again.');
+                    }
+                })
+                .catch(() => {
+                    grazieBtn.disabled = false;
+                    grazieBtn.textContent = 'Grazie!';
+                    alert('There was a problem sending your feedback. Please try again.');
+                });
+            };
         }
 
         displayQuestion();
