@@ -187,10 +187,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const questionnaireContainer = document.getElementById('questionnaire-container');
     if (questionnaireContainer) {
         const questions = [
-            "How did you feel about the portion sizes—did they seem like a good value for the price?",
+            "How did you feel about the portion sizes - did they seem like a good value for the price?",
             "Was there anything you were hoping to see on the menu that wasn't there?",
             "Did our food give you that classic Italian vibe or remind you of a real Italian meal?",
-            "How was the speed of service—did everything come out in a timely way?"
+            "How was the speed of service - did everything come out in a timely way?"
         ];
         const answers = [];
         let currentQuestionIndex = 0;
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(response => {
                     if (response.ok) {
                         form.style.display = 'none';
-                        document.getElementById('final-message').innerHTML = '<h3>Grazie! Your feedback was sent.</h3>';
+                        document.getElementById('final-message').innerHTML = '<h3>Grazie! Your feedback was sent and appreciated.</h3>';
                     } else {
                         grazieBtn.disabled = false;
                         grazieBtn.textContent = 'Grazie!';
