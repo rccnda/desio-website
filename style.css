@@ -20,6 +20,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Sensei';
+    src: url('assets/fonts/Sensei-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
   --primary-color: #2C5530;
   --secondary-color: #4A7856;
@@ -58,7 +65,7 @@
   --container-width: 1200px;
   --container-padding: 1rem;
 
-  --heading-font: 'Barriecito', cursive; /* For H1, H2, H3 */
+  --heading-font: 'Sensei', cursive; /* For H1, H2, H3 */
   --body-font: 'ITC Franklin Gothic LT', sans-serif; /* For paragraphs */
   --button-font: 'Roboto Condensed', sans-serif; /* For buttons, menu, footer texts */
   --base-font-size: 16px;
