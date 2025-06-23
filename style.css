@@ -642,26 +642,252 @@ p {
 @media (max-width: 900px) {
   .footer-main {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .footer-links, .footer-center, .footer-right {
-    grid-column: 1 / 2 !important;
     align-items: flex-start !important;
     text-align: left !important;
   }
-  .footer-center {
-    align-items: flex-start;
-  }
-  .footer-right {
-    align-items: flex-start;
-  }
   .footer-social {
     justify-content: flex-start;
+    margin: 1rem 0 0 0;
   }
-  .footer-copyright {
-    text-align: left;
-    margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-width: 100vw;
+    --container-padding: 0.5rem;
+    --header-height: 60px;
+    --font-size-lg: 1.1rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 2.8rem;
+    --font-size-5xl: 3rem;
   }
+  .main-header {
+    height: var(--header-height);
+    min-height: var(--header-height);
+  }
+  .header-container {
+    height: var(--header-height);
+    padding: 0 0.5rem;
+  }
+  .logo-img-png {
+    height: 36px;
+  }
+  .header-cta {
+    gap: 0.5rem;
+  }
+  .promo-banner {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+  }
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .hero-section, .featured-section, .popular-dishes, .app-section {
+    padding: 2.5rem 0 2rem 0;
+  }
+  .slide-content {
+    padding: 1rem;
+  }
+  .slide-content h1, .slide-content h2 {
+    font-size: 2rem;
+  }
+  .slide-content p {
+    font-size: 1rem;
+  }
+  .featured-content h2, .featured-content h3 {
+    font-size: 1.3rem;
+  }
+  .featured-image-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .dishes-grid, .ingredients-list-grid, .allergen-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .dish-card img, .drink-card img {
+    height: 160px;
+  }
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0 0.5rem;
+  }
+  .footer-social {
+    gap: 1.2rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .footer-column, .footer-center {
+    align-items: flex-start;
+    font-size: 1.1rem;
+  }
+  .footer-column a {
+    font-size: 1.1rem;
+  }
+  .footer-center {
+    gap: 0.5rem;
+  }
+  .footer-social img {
+    width: 22px;
+    height: 22px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+  }
+  .newsletter-form input, .newsletter-form button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+  .catering-form {
+    padding: 1rem;
+  }
+  .catering-form .btn-primary {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  #questionnaire-container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+  .question p {
+    font-size: 1rem;
+  }
+  .question textarea {
+    font-size: 0.95rem;
+    min-height: 70px;
+  }
+  .question-navigation {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 0.2rem;
+    --header-height: 48px;
+    --font-size-lg: 1rem;
+    --font-size-xl: 1.2rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.8rem;
+    --font-size-4xl: 2rem;
+    --font-size-5xl: 2.2rem;
+  }
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  .main-header, .header-container {
+    height: var(--header-height);
+    min-height: var(--header-height);
+    padding: 0 0.2rem;
+  }
+  .logo-img-png {
+    height: 28px;
+  }
+  .promo-banner {
+    font-size: 0.7rem;
+    padding: 0.2rem;
+  }
+  .container {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+  .hero-section, .featured-section, .popular-dishes, .app-section {
+    padding: 1.2rem 0 1rem 0;
+  }
+  .slide-content {
+    padding: 0.5rem;
+  }
+  .slide-content h1, .slide-content h2 {
+    font-size: 1.2rem;
+  }
+  .slide-content p {
+    font-size: 0.9rem;
+  }
+  .featured-content h2, .featured-content h3 {
+    font-size: 1rem;
+  }
+  .featured-image-grid, .dishes-grid, .ingredients-list-grid, .allergen-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .dish-card img, .drink-card img {
+    height: 100px;
+  }
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    padding: 0 0.2rem;
+  }
+  .footer-social {
+    gap: 0.7rem;
+    padding: 0.3rem 0.4rem;
+  }
+  .footer-column, .footer-center {
+    font-size: 0.95rem;
+  }
+  .footer-column a {
+    font-size: 0.95rem;
+  }
+  .footer-social img {
+    width: 18px;
+    height: 18px;
+  }
+  .newsletter-form input, .newsletter-form button {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+  .catering-form {
+    padding: 0.5rem;
+  }
+  .catering-form .btn-primary {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+  #questionnaire-container {
+    padding: 0.5rem;
+  }
+  .question p {
+    font-size: 0.95rem;
+  }
+  .question textarea {
+    font-size: 0.9rem;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 375px) {
+  .slide-content h1, .slide-content h2 {
+    font-size: 1rem;
+  }
+  .slide-content p {
+    font-size: 0.8rem;
+  }
+  .footer-social img {
+    width: 14px;
+    height: 14px;
+  }
+  .footer-column, .footer-center {
+    font-size: 0.85rem;
+  }
+  .footer-column a {
+    font-size: 0.85rem;
+  }
+}
+
+/* Prevent horizontal scroll everywhere */
+html, body, .container, main, section, .site-footer, .main-header {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 @font-face {
