@@ -10,10 +10,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/all.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-  <div class="loading-screen">
-    <img src="assets/images/loading_logo.png" alt="Loading...">
+  <div class="loading-screen" id="loadingOverlay">
+    <div class="launch-content">
+      <img src="assets/images/logo_lettering.png" alt="Desio Logo" class="loading-logo" />
+      <div class="launch-text">
+        <p>Old school flavours, new school style.<br>Herestraat 82, 9711LL Groningen</p>
+      </div>
+      <div id="launch-map" class="launch-map"></div>
+    </div>
   </div>
 
   <header class="main-header">
@@ -188,5 +195,6 @@
     });
   </script>
   <script src="main.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </body>
 </html>
