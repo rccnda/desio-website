@@ -1947,9 +1947,10 @@ html {
 .launch-tagline {
   font-family: var(--heading-font);
   font-size: 1.5rem;
-  color: var(--primary-color);
+  color: #F5F5DC;
   margin-bottom: 1rem;
   font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .launch-address {
