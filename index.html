@@ -13,11 +13,12 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-  <div class="loading-screen" id="loadingOverlay">
+  <div class="launch-page" id="launchPage">
     <div class="launch-content">
-      <img src="assets/images/logo_lettering.png" alt="Desio Logo" class="loading-logo" />
+      <img src="assets/images/loading_logo.png" alt="Desio Logo" class="launch-logo">
       <div class="launch-text">
-        <p>Old school flavours, new school style.<br>Herestraat 82, 9711LL Groningen</p>
+        <p class="launch-tagline">Old school flavours, new school style.</p>
+        <p class="launch-address">Herestraat 82, 9711LL Groningen</p>
       </div>
       <div id="launch-map" class="launch-map"></div>
     </div>
@@ -169,32 +170,56 @@
             <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><img src="assets/images/tiktok.svg" alt="TikTok"/></a>
             <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="assets/images/facebook.svg" alt="Facebook"/></a>
           </div>
-        </div>
-        <div class="footer-copyright">
-          Created by Sorm Studio
+          </div>
+          <div class="footer-copyright">
+            Created by Sorm Studio
         </div>
       </div>
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
-    // Check if this is the first visit
-    if (!sessionStorage.getItem('hasVisited')) {
-      // Set the flag
-      sessionStorage.setItem('hasVisited', 'true');
-    } else {
-      // If not first visit, hide loading screen immediately
-      document.querySelector('.loading-screen').classList.add('hidden');
-    }
+    // Launch page logic - show until July 11th, 2025
+    const launchEndDate = new Date('2025-07-11');
+    const currentDate = new Date();
+    const launchPage = document.getElementById('launchPage');
+    
+    if (currentDate < launchEndDate) {
+      // Show launch page
+      launchPage.style.display = 'flex';
+      
+      // Initialize map on launch page
+      if (document.getElementById('launch-map')) {
+        fetch('location.json')
+          .then(response => response.json())
+          .then(data => {
+            const map = L.map('launch-map', {
+              scrollWheelZoom: false
+            }).setView([data.lat, data.lng], 18);
 
-    // Hide loading screen after content is loaded
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.querySelector('.loading-screen').classList.add('hidden');
-      }, 1000); // Show for at least 1 second
-    });
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            }).addTo(map);
+
+            const customMarker = L.icon({
+              iconUrl: 'assets/images/map_marker.png',
+              iconSize: [50, 50],
+              iconAnchor: [25, 50],
+              popupAnchor: [0, -50]
+            });
+
+            L.marker([data.lat, data.lng], { icon: customMarker }).addTo(map)
+              .bindPopup(data.popupText)
+              .openPopup();
+          })
+          .catch(error => console.error('Error loading map data:', error));
+      }
+    } else {
+      // Hide launch page after July 11th, 2025
+      launchPage.style.display = 'none';
+    }
   </script>
   <script src="main.js"></script>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </body>
 </html>

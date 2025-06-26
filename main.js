@@ -117,63 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // LAUNCH MASK LOGIC
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const launchMapContainer = document.getElementById('launch-map');
-    const now = new Date();
-    const launchDate = new Date('2025-07-11T00:00:00+02:00'); // July 11th, 2025, CEST
-
-    if (now < launchDate) {
-        // Show launch mask, hide site
-        if (loadingOverlay) {
-            loadingOverlay.style.display = 'flex';
-            loadingOverlay.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        // Initialize map in launch mask
-        if (launchMapContainer && typeof L !== 'undefined') {
-            fetch('location.json')
-                .then(response => response.json())
-                .then(data => {
-                    const map = L.map('launch-map', {
-                        scrollWheelZoom: false,
-                        zoomControl: false,
-                        attributionControl: false,
-                        dragging: false,
-                        doubleClickZoom: false,
-                        boxZoom: false,
-                        keyboard: false,
-                        tap: false,
-                    }).setView([data.lat, data.lng], 18);
-
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                        attribution: '',
-                    }).addTo(map);
-
-                    const customMarker = L.icon({
-                        iconUrl: 'assets/images/map_marker.png',
-                        iconSize: [50, 50],
-                        iconAnchor: [25, 50],
-                        popupAnchor: [0, -50]
-                    });
-
-                    L.marker([data.lat, data.lng], { icon: customMarker }).addTo(map);
-                })
-                .catch(error => console.error('Error loading map data:', error));
-        }
-        // Prevent rest of site from showing
-        return;
-    } else {
-        // After launch date: hide overlay, show site
-        if (loadingOverlay) {
-            loadingOverlay.classList.add('hidden');
-            setTimeout(() => {
-                loadingOverlay.style.display = 'none';
-                document.body.style.overflow = '';
-            }, 500);
-        }
-    }
-
     // Initialize Swiper for the hero section
     if (document.querySelector('.hero-slider')) {
         new Swiper('.hero-slider', {
