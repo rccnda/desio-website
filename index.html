@@ -180,8 +180,8 @@
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
-    // Launch page logic - show until July 11th, 2025
-    const launchEndDate = new Date('2025-07-11');
+    // Launch page logic - show until July 31st, 2025
+    const launchEndDate = new Date('2025-07-31');
     const currentDate = new Date();
     const launchPage = document.getElementById('launchPage');
     
@@ -216,7 +216,7 @@
           .catch(error => console.error('Error loading map data:', error));
       }
     } else {
-      // Hide launch page after July 11th, 2025
+      // Hide launch page after July 31st, 2025
       launchPage.style.display = 'none';
     }
   </script>
