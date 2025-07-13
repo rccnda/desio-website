@@ -1720,9 +1720,27 @@ html {
 
 /* Menu Page Specific Styles */
 .menu-main {
-    padding-top: var(--header-height); /* Ensure content is below fixed header */
+    padding-top: var(--header-height);
+    padding-bottom: 2rem;
 }
-
+.menu-main .menu-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+}
+.menu-placeholder {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.menu-ingredients {
+  text-align: center;
+  color: var(--light-text);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}
 .menu-buttons-row {
     display: flex;
     flex-wrap: wrap;
@@ -1752,7 +1770,9 @@ html {
 .menu-placeholder {
   text-align: center;
   color: var(--light-text);
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 .section-title.text-center {
   text-align: center;
