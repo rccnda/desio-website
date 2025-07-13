@@ -1911,6 +1911,54 @@ html {
     padding: 2rem;
 }
 
+/* Sliding Text Banner */
+.sliding-text-banner {
+  width: 100%;
+  background-color: #c9e3ac;
+  overflow: hidden;
+  padding: 1rem 0;
+  white-space: nowrap;
+}
+
+.sliding-text-container {
+  display: flex;
+  animation: slide-left 20s linear infinite;
+}
+
+.sliding-text {
+  font-family: 'ITC Franklin Gothic LT', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0 2rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .sliding-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sliding-text {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+}
+
 /* Launch Page Styles */
 .launch-page {
   position: fixed;
