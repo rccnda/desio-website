@@ -1741,6 +1741,23 @@ html {
     margin-bottom: var(--spacing-md);
 }
 
+.menu-buttons-row .menu-btn {
+  transition: background 0.2s, color 0.2s;
+}
+.menu-buttons-row .menu-btn:hover,
+.menu-buttons-row .menu-btn:focus {
+  background: var(--primary-color);
+  color: #fff;
+}
+.menu-placeholder {
+  text-align: center;
+  color: var(--light-text);
+  margin-bottom: 2rem;
+}
+.section-title.text-center {
+  text-align: center;
+}
+
 /* Ensure logo SVG is hidden if not used dynamically */
 .logo-svg {
     display: none;

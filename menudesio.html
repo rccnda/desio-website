@@ -50,6 +50,19 @@
         });
     </script>
     <script src="main.js"></script>
+    <script>
+      // Smooth scroll for menu buttons
+      document.querySelectorAll('.menu-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          var target = btn.getAttribute('data-target');
+          var section = document.getElementById(target);
+          if (section) {
+            e.preventDefault();
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    </script>
     <main class="menu-main container">
       <h1 class="menu-title text-center">Menù</h1>
       <div class="menu-buttons-row">
@@ -57,23 +70,28 @@
         <button class="menu-btn btn btn-secondary" data-target="panini">Panini</button>
         <button class="menu-btn btn btn-secondary" data-target="sides">Sides</button>
         <button class="menu-btn btn btn-secondary" data-target="drinks">Drinks</button>
-        <button class="menu-btn btn btn-secondary" data-target="nutrition">Nutrition Calculator</button>
+        <button class="menu-btn btn btn-secondary" data-target="allergens">Allergens</button>
       </div>
       <section id="pasta" class="menu-section content-section">
         <h2 class="section-title text-center">Pasta</h2>
-        </section>
+        <p class="menu-placeholder text-center">A selection of our fresh, handmade pasta dishes. (Placeholder text)</p>
+      </section>
       <section id="panini" class="menu-section content-section">
         <h2 class="section-title text-center">Panini</h2>
-        </section>
+        <p class="menu-placeholder text-center">Delicious Italian panini, made to order. (Placeholder text)</p>
+      </section>
       <section id="sides" class="menu-section content-section">
         <h2 class="section-title text-center">Sides</h2>
-        </section>
+        <p class="menu-placeholder text-center">Tasty sides to complement your meal. (Placeholder text)</p>
+      </section>
       <section id="drinks" class="menu-section content-section">
         <h2 class="section-title text-center">Drinks</h2>
-        </section>
-      <section id="nutrition" class="menu-section content-section">
-        <h2 class="section-title text-center">Nutrition Calculator</h2>
-        </section>
+        <p class="menu-placeholder text-center">Refreshing beverages to enjoy with your food. (Placeholder text)</p>
+      </section>
+      <section id="allergens" class="menu-section content-section">
+        <h2 class="section-title text-center">Allergens</h2>
+        <p class="menu-placeholder text-center">Please ask our staff for information about allergens. (Placeholder text)</p>
+      </section>
     </main>
      <footer class="site-footer">
       <div class="footer-main">
