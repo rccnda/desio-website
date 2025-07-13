@@ -49,20 +49,6 @@
             }, 1000); // Show for at least 1 second
         });
     </script>
-    <script src="main.js"></script>
-    <script>
-      // Smooth scroll for menu buttons
-      document.querySelectorAll('.menu-btn').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          var target = btn.getAttribute('data-target');
-          var section = document.getElementById(target);
-          if (section) {
-            e.preventDefault();
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
-    </script>
     <main class="menu-main container">
       <h1 class="menu-title text-center">Menù</h1>
       <div class="menu-buttons-row">
@@ -74,19 +60,46 @@
       </div>
       <section id="pasta" class="menu-section content-section">
         <h2 class="section-title text-center">Pasta</h2>
-        <p class="menu-placeholder text-center">A selection of our fresh, handmade pasta dishes. (Placeholder text)</p>
+        <p class="menu-placeholder text-center">Ragù Bolognese</p>
+        <p class="menu-placeholder text-center">Brasato</p>
+        <p class="menu-placeholder text-center">Puttanesca</p>
+        <p class="menu-placeholder text-center">Pesto</p>
+        <p class="menu-placeholder text-center">Salmone</p>
+        <p class="menu-placeholder text-center">Pomodoro</p>
+        <p class="menu-placeholder text-center">Tonno</p>
+
       </section>
       <section id="panini" class="menu-section content-section">
         <h2 class="section-title text-center">Panini</h2>
-        <p class="menu-placeholder text-center">Delicious Italian panini, made to order. (Placeholder text)</p>
+        <p class="menu-placeholder text-center">Brasato</p>
+        <p class="menu-placeholder text-center">Prosciutto Crudo</p>
+        <p class="menu-placeholder text-center">Mortadella</p>
+        <p class="menu-placeholder text-center">Pesto</p>
+        <p class="menu-placeholder text-center">Salmone</p>
+        <p class="menu-placeholder text-center">Tonno</p>
       </section>
       <section id="sides" class="menu-section content-section">
-        <h2 class="section-title text-center">Sides</h2>
-        <p class="menu-placeholder text-center">Tasty sides to complement your meal. (Placeholder text)</p>
+        <h2 class="section-title text-center">Salades</h2>
+        <p class="menu-placeholder text-center">Caprese with Burrata</p>
+      </section>
+      <section id="sides" class="menu-section content-section">
+        <h2 class="section-title text-center">Extras</h2>
+        <p class="menu-placeholder text-center">Parmigiano Cheese</p>
       </section>
       <section id="drinks" class="menu-section content-section">
         <h2 class="section-title text-center">Drinks</h2>
-        <p class="menu-placeholder text-center">Refreshing beverages to enjoy with your food. (Placeholder text)</p>
+        <p class="menu-placeholder text-center">Natural Water</p>
+        <p class="menu-placeholder text-center">Sparkling Water</p>
+        <p class="menu-placeholder text-center">Coca-Cola</p>
+        <p class="menu-placeholder text-center">Coca-Cola Zero</p>
+        <p class="menu-placeholder text-center">Fuze Tea Peach</p>
+        <p class="menu-placeholder text-center">Fuze Tea Green Tea</p>
+        <p class="menu-placeholder text-center">Appel Sap</p>
+        <p class="menu-placeholder text-center">Sinaasappel</p>
+        <p class="menu-placeholder text-center">Sprite Zero</p>
+        <p class="menu-placeholder text-center">Fanta Cassis</p>
+        <p class="menu-placeholder text-center">Fanta Orange</p>
+
       </section>
       <section id="allergens" class="menu-section content-section">
         <h2 class="section-title text-center">Allergens</h2>
@@ -126,5 +139,19 @@
         </div>
       </div>
     </footer>
-</body>
+    <script src="main.js"></script>
+    <script>
+      // Smooth scroll for menu buttons
+      document.querySelectorAll('.menu-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          var target = btn.getAttribute('data-target');
+          var section = document.getElementById(target);
+          if (section) {
+            e.preventDefault();
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    </script>
+  </body>
 </html> 

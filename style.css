@@ -1758,6 +1758,12 @@ html {
   text-align: center;
 }
 
+.menu-title.text-center {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
 /* Ensure logo SVG is hidden if not used dynamically */
 .logo-svg {
     display: none;
