@@ -180,45 +180,50 @@
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
-    // Launch page logic - show until July 31st, 2025
-    const launchEndDate = new Date('2025-07-31');
-    const currentDate = new Date();
+    // Launch page as loading buffer
     const launchPage = document.getElementById('launchPage');
     
-    if (currentDate < launchEndDate) {
-      // Show launch page
-      launchPage.style.display = 'flex';
-      
-      // Initialize map on launch page
-      if (document.getElementById('launch-map')) {
-        fetch('location.json')
-          .then(response => response.json())
-          .then(data => {
-            const map = L.map('launch-map', {
-              scrollWheelZoom: false
-            }).setView([data.lat, data.lng], 18);
+    // Show launch page immediately
+    launchPage.style.display = 'flex';
+    
+    // Initialize map on launch page
+    if (document.getElementById('launch-map')) {
+      fetch('location.json')
+        .then(response => response.json())
+        .then(data => {
+          const map = L.map('launch-map', {
+            scrollWheelZoom: false
+          }).setView([data.lat, data.lng], 18);
 
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            }).addTo(map);
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          }).addTo(map);
 
-            const customMarker = L.icon({
-              iconUrl: 'assets/images/map_marker.png',
-              iconSize: [50, 50],
-              iconAnchor: [25, 50],
-              popupAnchor: [0, -50]
-            });
+          const customMarker = L.icon({
+            iconUrl: 'assets/images/map_marker.png',
+            iconSize: [50, 50],
+            iconAnchor: [25, 50],
+            popupAnchor: [0, -50]
+          });
 
-            L.marker([data.lat, data.lng], { icon: customMarker }).addTo(map)
-              .bindPopup(data.popupText)
-              .openPopup();
-          })
-          .catch(error => console.error('Error loading map data:', error));
-      }
-    } else {
-      // Hide launch page after July 31st, 2025
-      launchPage.style.display = 'none';
+          L.marker([data.lat, data.lng], { icon: customMarker }).addTo(map)
+            .bindPopup(data.popupText)
+            .openPopup();
+        })
+        .catch(error => console.error('Error loading map data:', error));
     }
+    
+    // Hide launch page after content loads (3 seconds minimum)
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        launchPage.style.opacity = '0';
+        launchPage.style.transition = 'opacity 1s ease-out';
+        
+        setTimeout(() => {
+          launchPage.style.display = 'none';
+        }, 1000);
+      }, 3000);
+    });
   </script>
   <script src="main.js"></script>
 </body>

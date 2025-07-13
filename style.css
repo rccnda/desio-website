@@ -1925,6 +1925,8 @@ html {
   justify-content: center;
   flex-direction: column;
   padding: 2rem;
+  opacity: 1;
+  transition: opacity 1s ease-out;
 }
 
 .launch-content {
