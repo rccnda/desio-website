@@ -48,21 +48,35 @@
                         (yes, a wish come true)<br>
                     </h3>
                     <div class="hours-grid">
-                            <div class="day-hours">
-                            <span>MONDAY</span>
-                            <span>12:00 - 21:00</span>
-                            <span>TUESDAY</span>
-                            <span>12:00 - 21:00</span>
-                            <span>WEDNESDAY</span>
-                            <span>12:00 - 21:00</span>
-                            <span>THURSDAY</span>
-                            <span>12:00 - 21:00</span>
-                            <span>FRIDAY</span>
-                            <span>12:00 - 21:00</span>
-                            <span>SATURDAY</span>
-                            <span>12:00 - 21:00</span>
-                            <span>SUNDAY</span>
-                            <span>12:00 - 21:00</span>
+                        <div class="day-hours">
+                            <div class="day-row">
+                                <span class="day">MONDAY</span>
+                                <span class="hours">12:00 - 21:00</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day">TUESDAY</span>
+                                <span class="hours">12:00 - 21:00</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day">WEDNESDAY</span>
+                                <span class="hours">12:00 - 21:00</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day">THURSDAY</span>
+                                <span class="hours">12:00 - 21:00</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day">FRIDAY</span>
+                                <span class="hours">12:00 - 21:00</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day">SATURDAY</span>
+                                <span class="hours">12:00 - 21:00</span>
+                            </div>
+                            <div class="day-row">
+                                <span class="day">SUNDAY</span>
+                                <span class="hours">12:00 - 21:00</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -140,5 +154,33 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
+    <script>
+        // Initialize map
+        if (document.getElementById('store-map')) {
+            fetch('location.json')
+                .then(response => response.json())
+                .then(data => {
+                    const map = L.map('store-map', {
+                        scrollWheelZoom: false
+                    }).setView([data.lat, data.lng], 18);
+
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                    }).addTo(map);
+
+                    const customMarker = L.icon({
+                        iconUrl: 'assets/images/map_marker.png',
+                        iconSize: [50, 50],
+                        iconAnchor: [25, 50],
+                        popupAnchor: [0, -50]
+                    });
+
+                    L.marker([data.lat, data.lng], { icon: customMarker }).addTo(map)
+                        .bindPopup(data.popupText)
+                        .openPopup();
+                })
+                .catch(error => console.error('Error loading map data:', error));
+        }
+    </script>
 </body>
 </html> 
