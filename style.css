@@ -639,6 +639,28 @@ p {
   text-align: center;
 }
 
+.footer-green-line {
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color, #2C5530);
+  margin: 1.5rem auto 0 auto;
+  border-radius: 2px;
+}
+.footer-policies a {
+  color: #f9eed9 !important;
+  margin-right: 1.5rem;
+}
+.footer-social a[aria-label="TikTok"],
+.footer-social a[aria-label="Facebook"] {
+  display: none !important;
+}
+.footer-kvk {
+  color: #f9eed9;
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
 @media (max-width: 900px) {
   .footer-main {
     grid-template-columns: 1fr;
