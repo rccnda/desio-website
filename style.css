@@ -1089,9 +1089,18 @@ html, body, .container, main, section, .site-footer, .main-header {
 }
 
 .store-map {
-  height: 450px;
-  border-radius: 8px;
-  overflow: hidden;
+  width: 100%;
+  height: 350px;
+  min-height: 300px;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.hours-under {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .store-reviews,
