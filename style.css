@@ -1094,10 +1094,9 @@ html, body, .container, main, section, .site-footer, .main-header {
 
 .day-row {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
 }
 .day-row:last-child {
     border-bottom: none;
