@@ -2153,9 +2153,14 @@ html {
 .site-footer, .site-footer a, .footer-main, .footer-column, .footer-center, .footer-kvk, .footer-policies, .footer-policies a, .footer-copyright {
   color: #f9eed9 !important;
 }
-.footer-social img[alt="Instagram"], .footer-social a[aria-label="Instagram"] img {
-  width: 22px !important;
-  height: 22px !important;
+.footer-social img[alt="Instagram"], .footer-social a[aria-label="Instagram"] img, .footer-social-icon {
+  width: 80px !important;
+  height: 80px !important;
+  display: block;
+  margin: 0 auto 1rem auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+  transition: opacity 0.2s;
 }
 .footer-main, .footer-column, .footer-center, .footer-kvk, .footer-policies, .footer-copyright {
   text-align: center !important;
