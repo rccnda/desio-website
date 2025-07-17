@@ -17,10 +17,6 @@
 </style>
 </head>
 <body>
-    <div class="loading-screen">
-        
-        <img src="assets/images/loading_logo.png" alt="Loading...">
-    </div>
     <header class="main-header">
         <div class="header-container">
             <a href="index.html" class="logo">
@@ -110,23 +106,6 @@
     </main>
     <div id="footer-placeholder"></div>
     <script src="footer-inject.js"></script>
-    <script>
-        // Check if this is the first visit
-        if (!sessionStorage.getItem('hasVisited')) {
-            // Set the flag
-            sessionStorage.setItem('hasVisited', 'true');
-        } else {
-            // If not first visit, hide loading screen immediately
-            document.querySelector('.loading-screen').classList.add('hidden');
-        }
-
-        // Hide loading screen after content is loaded
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.querySelector('.loading-screen').classList.add('hidden');
-            }, 1000); // Show for at least 1 second
-        });
-    </script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="main.js"></script>

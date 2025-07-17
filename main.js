@@ -63,20 +63,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
-    
+    let mobileMenu = document.querySelector('.mobile-menu');
+
+    // If not present, create mobile menu (for backward compatibility)
+    if (!mobileMenu) {
+        mobileMenu = document.createElement('div');
+        mobileMenu.className = 'mobile-menu';
+        const navClone = document.querySelector('.main-nav').cloneNode(true);
+        mobileMenu.appendChild(navClone);
+        document.body.appendChild(mobileMenu);
+    }
+
+    function openMobileMenu() {
+        hamburger.classList.add('active');
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeMobileMenu() {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
     if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            nav.classList.toggle('active');
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
     }
 
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (!hamburger.contains(e.target) && !nav.contains(e.target) && nav.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            nav.classList.remove('active');
+        if (
+            mobileMenu.classList.contains('active') &&
+            !mobileMenu.contains(e.target) &&
+            !hamburger.contains(e.target)
+        ) {
+            closeMobileMenu();
         }
+    });
+
+    // Close menu when clicking a link inside mobile menu
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            closeMobileMenu();
+        });
     });
 
     // Smooth scroll for navigation links
@@ -294,9 +329,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Mobile Menu
-    const mobileMenu = document.createElement('div');
-    mobileMenu.className = 'mobile-menu';
-    
     const navClone = document.querySelector('.main-nav').cloneNode(true);
     const headerCta = document.querySelector('.header-cta').cloneNode(true);
     
