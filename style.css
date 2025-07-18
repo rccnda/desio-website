@@ -811,6 +811,9 @@ p {
   .question-navigation {
     margin-top: 0.5rem;
   }
+  .hamburger {
+    display: block;
+  }
 }
 
 @media (max-width: 480px) {
