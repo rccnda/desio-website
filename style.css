@@ -494,9 +494,37 @@ p {
 }
 
 .mobile-menu .main-nav ul {
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.mobile-menu .main-nav li {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+}
+.mobile-menu .main-nav a {
+  display: block;
+  width: 100%;
+  padding: 1.2rem 0;
+  font-size: 2rem;
+  color: var(--primary-color, #2C5530);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s, color 0.2s;
+}
+.mobile-menu .main-nav a:last-child {
+  border-bottom: none;
+}
+.mobile-menu .main-nav a:hover,
+.mobile-menu .main-nav a:focus {
+  background: var(--light-green-bg, #dcedc8);
+  color: var(--secondary-color, #4A7856);
 }
 
 .mobile-menu .header-cta {
@@ -2208,5 +2236,118 @@ html {
     text-align: left !important;
     align-items: flex-start !important;
     justify-content: flex-start !important;
+  }
+} 
+
+/* Privacy and Terms Pages Styling */
+.page-main.privacy-centered,
+.page-main.terms-centered {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  line-height: 1.7;
+}
+
+.page-main.privacy-centered h1,
+.page-main.terms-centered h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.page-main.privacy-centered h2,
+.page-main.terms-centered h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+.page-main.privacy-centered p,
+.page-main.terms-centered p {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.page-main.privacy-centered ul,
+.page-main.terms-centered ul {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.page-main.privacy-centered li,
+.page-main.terms-centered li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.page-main.privacy-centered a,
+.page-main.terms-centered a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.page-main.privacy-centered a:hover,
+.page-main.terms-centered a:hover {
+  color: var(--primary-color);
+}
+
+.page-main.privacy-centered strong,
+.page-main.terms-centered strong {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Mobile responsiveness for privacy and terms pages */
+@media (max-width: 768px) {
+  .page-main.privacy-centered,
+  .page-main.terms-centered {
+    padding: 1.5rem 1rem;
+    margin-top: 1rem;
+  }
+  
+  .page-main.privacy-centered h1,
+  .page-main.terms-centered h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .page-main.privacy-centered h2,
+  .page-main.terms-centered h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .page-main.privacy-centered p,
+  .page-main.terms-centered p,
+  .page-main.privacy-centered li,
+  .page-main.terms-centered li {
+    font-size: 1rem;
+  }
+  
+  .page-main.privacy-centered ul,
+  .page-main.terms-centered ul {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-main.privacy-centered,
+  .page-main.terms-centered {
+    padding: 1rem 0.75rem;
+  }
+  
+  .page-main.privacy-centered h1,
+  .page-main.terms-centered h1 {
+    font-size: 1.8rem;
+  }
+  
+  .page-main.privacy-centered h2,
+  .page-main.terms-centered h2 {
+    font-size: 1.3rem;
   }
 } 
