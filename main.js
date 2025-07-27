@@ -69,8 +69,19 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!mobileMenu) {
         mobileMenu = document.createElement('div');
         mobileMenu.className = 'mobile-menu';
-        const navClone = document.querySelector('.main-nav').cloneNode(true);
-        mobileMenu.appendChild(navClone);
+        // Clone only the <ul> from .main-nav
+        const navUl = document.querySelector('.main-nav ul');
+        if (navUl) {
+            const ulClone = navUl.cloneNode(true);
+            mobileMenu.appendChild(ulClone);
+        }
+        // Add a close button
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'mobile-menu-close';
+        closeBtn.setAttribute('aria-label', 'Close menu');
+        closeBtn.innerHTML = '&times;';
+        closeBtn.addEventListener('click', closeMobileMenu);
+        mobileMenu.appendChild(closeBtn);
         document.body.appendChild(mobileMenu);
     }
 

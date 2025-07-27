@@ -534,6 +534,27 @@ p {
   max-width: 300px;
 }
 
+.mobile-menu-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--primary-color, #2C5530);
+  cursor: pointer;
+  z-index: 1003;
+  padding: 0.5rem 1rem;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.mobile-menu-close:hover,
+.mobile-menu-close:focus {
+  color: var(--secondary-color, #4A7856);
+  background: var(--light-green-bg, #dcedc8);
+  border-radius: 50%;
+}
+
 .hamburger {
   display: none;
   background: none;
@@ -687,6 +708,38 @@ p {
   font-size: 1rem;
   margin-top: 1rem;
   text-align: center;
+}
+
+.footer-kvk-instagram {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 1rem 0 0.5rem 0;
+}
+.footer-order-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+@media (max-width: 900px) {
+  .footer-kvk-instagram {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+}
+@media (max-width: 768px) {
+  .footer-kvk-instagram {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .footer-order-btn {
+    margin-top: 0.5rem;
+  }
 }
 
 @media (max-width: 900px) {
