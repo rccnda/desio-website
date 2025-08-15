@@ -320,6 +320,33 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error loading map data:', error));
     }
 
+    // Initialize Leaflet Map for homepage location section
+    if (document.getElementById('map')) {
+        fetch('location.json')
+            .then(response => response.json())
+            .then(data => {
+                const map = L.map('map', {
+                    scrollWheelZoom: false
+                }).setView([data.lat, data.lng], 16);
+
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                }).addTo(map);
+
+                const customMarker = L.icon({
+                    iconUrl: 'assets/images/map_marker.png',
+                    iconSize: [40, 40],
+                    iconAnchor: [20, 40],
+                    popupAnchor: [0, -40]
+                });
+
+                L.marker([data.lat, data.lng], { icon: customMarker }).addTo(map)
+                    .bindPopup(data.popupText)
+                    .openPopup();
+            })
+            .catch(error => console.error('Error loading map data:', error));
+    }
+
     // Header Scroll Effect
     const header = document.querySelector('.main-header');
     let lastScroll = 0;
