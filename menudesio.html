@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Desio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
     <header class="main-header">
@@ -17,9 +19,9 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="menudesio.html">Menù</a></li>
-                    <li><a href="https://www.desiofood.com/about-desio.html">About Desio</a></li>
+                    <li><a href="about-desio.html">About Desio</a></li>
                     <li><a href="funstuff.html">Fun Stuff</a></li>
-                    <li><a href="https://nl.indeed.com/viewjob?jk=d1aca2e77a67c4d5" target="_blank" rel="noopener">Work with us</a></li>
+                    <li><a href="workwithdesio.html">Work with us</a></li>
                 </ul>
             </nav>
             <div class="hamburger">
@@ -29,105 +31,329 @@
             </div>
         </div>
     </header>
-    <main class="menu-main container">
-      <h1 class="menu-title text-center">Menù</h1>
-      <div class="menu-buttons-row">
-        <button class="menu-btn btn btn-primary" data-target="pasta">Pasta</button>
-        <button class="menu-btn btn btn-secondary" data-target="panini">Panini</button>
-        <button class="menu-btn btn btn-secondary" data-target="sides">Salades</button>
-        <button class="menu-btn btn btn-secondary" data-target="drinks">Drinks</button>
-        <button class="menu-btn btn btn-secondary" data-target="extras">Extras</button>
-        <button class="menu-btn btn btn-secondary" data-target="allergens">Allergens</button>
-      </div>
-      <section id="pasta" class="menu-section content-section">
-        <h2 class="section-title text-center">Pasta</h2>
-        <p class="menu-placeholder text-center">Ragù Bolognese <span class="menu-price">11</span></p>
-        <p class="menu-ingredients text-center">Beef, tomato sauce, onion, carrots, celery, laurel, oil, s/p</p>
-        <p class="menu-placeholder text-center">Brasato <span class="menu-price">11</span></p>
-        <p class="menu-ingredients text-center">Braised beef, garlic, sage, rosemary, tomatoes, carrots, red wine</p>
-        <p class="menu-placeholder text-center">Puttanesca <span class="menu-price">9</span></p>
-        <p class="menu-ingredients text-center">Tomatoes sauce with oregano, olives, capers and garlic.</p>
-        <p class="menu-placeholder text-center">Pesto <span class="menu-price">11</span></p>
-        <p class="menu-ingredients text-center">Basil, pine nuts, parmesan, garlic, olive oil</p>
-        <p class="menu-placeholder text-center">Salmone <span class="menu-price">11</span></p>
-        <p class="menu-ingredients text-center">Salmon, cream, dill, lemon, white wine</p>
-        <p class="menu-placeholder text-center">Pomodoro <span class="menu-price">9</span></p>
-        <p class="menu-ingredients text-center">Fresh tomatoes, basil, garlic, olive oil</p>
-        <p class="menu-placeholder text-center">Tonno <span class="menu-price">11</span></p>
-        <p class="menu-ingredients text-center">Tuna, cherry tomatoes, olives, capers</p>
-      </section>
-      <section id="panini" class="menu-section content-section">
-        <h2 class="section-title text-center">Panini</h2>
-        <p class="menu-placeholder text-center">Brasato <span class="menu-price">10</span></p>
-        <p class="menu-ingredients text-center">Braised beef, caramelized onions, carrots, celery, red wine, mustard, sage, rosemary, s/p</p>
-        <p class="menu-placeholder text-center">Prosciutto Crudo <span class="menu-price">10</span></p>
-        <p class="menu-ingredients text-center">Cured ham, burrata, sun-dried tomatoes, salad, balsamic</p>
-        <p class="menu-placeholder text-center">Mortadella <span class="menu-price">8</span></p>
-        <p class="menu-ingredients text-center">Italian mortadella with pistachios, cream cheese, truffle mayo, salad</p>
-        <p class="menu-placeholder text-center">Pesto <span class="menu-price">10</span></p>
-        <p class="menu-ingredients text-center">Fresh homemade pesto, burrata, tomatoes</p>
-        <p class="menu-placeholder text-center">Salmone <span class="menu-price">10</span></p>
-        <p class="menu-ingredients text-center">Smoked salmon, cream cheese, cucumber cream salad, dill oil</p>
-        <p class="menu-placeholder text-center">Tonno <span class="menu-price">8</span></p>
-        <p class="menu-ingredients text-center">Tuna, capers, mayo, olives</p>
-      </section>
-      <section id="sides" class="menu-section content-section">
-        <h2 class="section-title text-center">Salades</h2>
-        <p class="menu-placeholder text-center">Caprese with Burrata <span class="menu-price">8</span></p>
-        <p class="menu-ingredients text-center">Fresh burrata, tomatoes, basil, balsamic, oil, salt, pepper</p>
-      </section>
-      <section id="extras" class="menu-section content-section">
-        <h2 class="section-title text-center">Extras</h2>
-        <p class="menu-placeholder text-center">Parmigiano Cheese <span class="menu-price">0.5</span></p>
-        <p class="menu-ingredients text-center">Aged 24 months, grated fresh</p>
-      </section>
-      <section id="drinks" class="menu-section content-section">
-        <h2 class="section-title text-center">Drinks</h2>
-        <p class="menu-placeholder text-center">Natural Water <span class="menu-price">2</span></p>
-        <p class="menu-ingredients text-center">Still mineral water</p>
-        <p class="menu-placeholder text-center">Sparkling Water <span class="menu-price">2</span></p>
-        <p class="menu-ingredients text-center">Carbonated mineral water</p>
-        <p class="menu-placeholder text-center">Coca-Cola <span class="menu-price">2.5</span></p>
-        <p class="menu-ingredients text-center">Classic cola</p>
-        <p class="menu-placeholder text-center">Coca-Cola Zero <span class="menu-price">2.5</span></p>
-        <p class="menu-ingredients text-center">Sugar-free cola</p>
-        <p class="menu-placeholder text-center">Fuze Tea Peach <span class="menu-price">2.5</span></p>
-        <p class="menu-ingredients text-center">Peach flavored iced tea</p>
-        <p class="menu-placeholder text-center">Fuze Tea Green Tea <span class="menu-price">2.5</span></p>
-        <p class="menu-ingredients text-center">Green tea blend</p>
-        <p class="menu-placeholder text-center">Appel Sap <span class="menu-price">2.5</span></p>
-        <p class="menu-ingredients text-center">Fresh apple juice</p>
-        <p class="menu-placeholder text-center">Sinaasappel <span class="menu-price">2.5</span></p>
-        <p class="menu-ingredients text-center">Fresh orange juice</p>
-        <p class="menu-placeholder text-center">Sprite Zero <span class="menu-price">2.5</span></p>
-        <p class="menu-ingredients text-center">Sugar-free lemon-lime soda</p>
-        <p class="menu-placeholder text-center">Fanta Cassis <span class="menu-price">2.5</span></p>
-        <p class="menu-ingredients text-center">Blackcurrant flavored soda</p>
-        <p class="menu-placeholder text-center">Fanta Orange <span class="menu-price">2.5</span></p>
-        <p class="menu-ingredients text-center">Orange flavored soda</p>
-      </section>
-      <section id="allergens" class="menu-section content-section">
-        <h2 class="section-title text-center">Allergens</h2>
-        <p class="menu-placeholder text-center">
-          <a href="https://drive.google.com/file/d/14blOxjCqOwphfFXgsrmFJAUl68ulJnAL/view?usp=sharing" target="_blank" rel="noopener">Check the food matrix about allergens</a>
-        </p>
-      </section>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="menu-hero">
+            <div class="container">
+                <div class="menu-hero-content">
+                    <h1>Our Menu</h1>
+                    <p>Discover our authentic Italian dishes, from fresh pasta to delicious panini, all made with passion and the finest ingredients.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Navigation -->
+        <section class="menu-navigation">
+            <div class="container">
+                <div class="menu-nav-buttons">
+                    <button class="menu-nav-btn active" data-target="pasta">
+                        <span class="menu-nav-icon">🍝</span>
+                        <span class="menu-nav-text">Pasta</span>
+                    </button>
+                    <button class="menu-nav-btn" data-target="panini">
+                        <span class="menu-nav-icon">🥪</span>
+                        <span class="menu-nav-text">Panini</span>
+                    </button>
+                    <button class="menu-nav-btn" data-target="sides">
+                        <span class="menu-nav-icon">🥗</span>
+                        <span class="menu-nav-text">Salades</span>
+                    </button>
+                    <button class="menu-nav-btn" data-target="drinks">
+                        <span class="menu-nav-icon">🥤</span>
+                        <span class="menu-nav-text">Drinks</span>
+                    </button>
+                    <button class="menu-nav-btn" data-target="extras">
+                        <span class="menu-nav-icon">🧀</span>
+                        <span class="menu-nav-text">Extras</span>
+                    </button>
+                    <button class="menu-nav-btn" data-target="allergens">
+                        <span class="menu-nav-icon">⚠️</span>
+                        <span class="menu-nav-text">Allergens</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Sections -->
+        <section class="menu-sections">
+            <div class="container">
+                <!-- Pasta Section -->
+                <div id="pasta" class="menu-section active">
+                    <div class="section-header">
+                        <h2>Pasta</h2>
+                        <p>Fresh handmade pasta with authentic Italian sauces</p>
+                    </div>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Ragù Bolognese</h3>
+                                <span class="price">€11</span>
+                            </div>
+                            <p class="ingredients">Beef, tomato sauce, onion, carrots, celery, laurel, oil, s/p</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Brasato</h3>
+                                <span class="price">€11</span>
+                            </div>
+                            <p class="ingredients">Braised beef, garlic, sage, rosemary, tomatoes, carrots, red wine</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Puttanesca</h3>
+                                <span class="price">€9</span>
+                            </div>
+                            <p class="ingredients">Tomatoes sauce with oregano, olives, capers and garlic.</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Pesto</h3>
+                                <span class="price">€11</span>
+                            </div>
+                            <p class="ingredients">Basil, pine nuts, parmesan, garlic, olive oil</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Salmone</h3>
+                                <span class="price">€11</span>
+                            </div>
+                            <p class="ingredients">Salmon, cream, dill, lemon, white wine</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Pomodoro</h3>
+                                <span class="price">€9</span>
+                            </div>
+                            <p class="ingredients">Fresh tomatoes, basil, garlic, olive oil</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Tonno</h3>
+                                <span class="price">€11</span>
+                            </div>
+                            <p class="ingredients">Tuna, cherry tomatoes, olives, capers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panini Section -->
+                <div id="panini" class="menu-section">
+                    <div class="section-header">
+                        <h2>Panini</h2>
+                        <p>Fresh Italian sandwiches with premium ingredients</p>
+                    </div>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Brasato</h3>
+                                <span class="price">€10</span>
+                            </div>
+                            <p class="ingredients">Braised beef, caramelized onions, carrots, celery, red wine, mustard, sage, rosemary, s/p</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Prosciutto Crudo</h3>
+                                <span class="price">€10</span>
+                            </div>
+                            <p class="ingredients">Cured ham, burrata, sun-dried tomatoes, salad, balsamic</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Mortadella</h3>
+                                <span class="price">€8</span>
+                            </div>
+                            <p class="ingredients">Italian mortadella with pistachios, cream cheese, truffle mayo, salad</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Pesto</h3>
+                                <span class="price">€10</span>
+                            </div>
+                            <p class="ingredients">Fresh homemade pesto, burrata, tomatoes</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Salmone</h3>
+                                <span class="price">€10</span>
+                            </div>
+                            <p class="ingredients">Smoked salmon, cream cheese, cucumber cream salad, dill oil</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Tonno</h3>
+                                <span class="price">€8</span>
+                            </div>
+                            <p class="ingredients">Tuna, capers, mayo, olives</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Salades Section -->
+                <div id="sides" class="menu-section">
+                    <div class="section-header">
+                        <h2>Salades</h2>
+                        <p>Fresh and healthy Italian-inspired salads</p>
+                    </div>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Caprese with Burrata</h3>
+                                <span class="price">€8</span>
+                            </div>
+                            <p class="ingredients">Fresh burrata, tomatoes, basil, balsamic, oil, salt, pepper</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extras Section -->
+                <div id="extras" class="menu-section">
+                    <div class="section-header">
+                        <h2>Extras</h2>
+                        <p>Additional toppings and accompaniments</p>
+                    </div>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Parmigiano Cheese</h3>
+                                <span class="price">€0.5</span>
+                            </div>
+                            <p class="ingredients">Aged 24 months, grated fresh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks Section -->
+                <div id="drinks" class="menu-section">
+                    <div class="section-header">
+                        <h2>Drinks</h2>
+                        <p>Refreshing beverages to complement your meal</p>
+                    </div>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Natural Water</h3>
+                                <span class="price">€2</span>
+                            </div>
+                            <p class="ingredients">Still mineral water</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Sparkling Water</h3>
+                                <span class="price">€2</span>
+                            </div>
+                            <p class="ingredients">Carbonated mineral water</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Coca-Cola</h3>
+                                <span class="price">€2.5</span>
+                            </div>
+                            <p class="ingredients">Classic cola</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Coca-Cola Zero</h3>
+                                <span class="price">€2.5</span>
+                            </div>
+                            <p class="ingredients">Sugar-free cola</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Fuze Tea Peach</h3>
+                                <span class="price">€2.5</span>
+                            </div>
+                            <p class="ingredients">Peach flavored iced tea</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Fuze Tea Green Tea</h3>
+                                <span class="price">€2.5</span>
+                            </div>
+                            <p class="ingredients">Green tea blend</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Appel Sap</h3>
+                                <span class="price">€2.5</span>
+                            </div>
+                            <p class="ingredients">Fresh apple juice</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Sinaasappel</h3>
+                                <span class="price">€2.5</span>
+                            </div>
+                            <p class="ingredients">Fresh orange juice</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Sprite Zero</h3>
+                                <span class="price">€2.5</span>
+                            </div>
+                            <p class="ingredients">Sugar-free lemon-lime soda</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Fanta Cassis</h3>
+                                <span class="price">€2.5</span>
+                            </div>
+                            <p class="ingredients">Blackcurrant flavored soda</p>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>Fanta Orange</h3>
+                                <span class="price">€2.5</span>
+                            </div>
+                            <p class="ingredients">Orange flavored soda</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Allergens Section -->
+                <div id="allergens" class="menu-section">
+                    <div class="section-header">
+                        <h2>Allergens</h2>
+                        <p>Important information about food allergens</p>
+                    </div>
+                    <div class="allergens-content">
+                        <div class="allergens-card">
+                            <h3>Food Allergen Information</h3>
+                            <p>For detailed information about allergens in our dishes, please check our comprehensive food matrix.</p>
+                            <a href="https://drive.google.com/file/d/14blOxjCqOwphfFXgsrmFJAUl68ulJnAL/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary">
+                                View Allergen Matrix
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
     <div id="footer-placeholder"></div>
     <script src="footer-inject.js"></script>
     <script src="main.js"></script>
-    <script>
-      // Smooth scroll for menu buttons
-      document.querySelectorAll('.menu-btn').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          var target = btn.getAttribute('data-target');
-          var section = document.getElementById(target);
-          if (section) {
-            e.preventDefault();
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
-    </script>
-  </body>
+    <script src="js/menu.js"></script>
+</body>
 </html> 

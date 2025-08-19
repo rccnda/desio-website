@@ -1,0 +1,330 @@
+/* Menu Page Styles - Matching Homepage Design */
+
+/* Menu Hero Section */
+.menu-hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 6rem 0;
+  text-align: center;
+  color: white;
+}
+
+.menu-hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.menu-hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #f9eed9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu Navigation */
+.menu-navigation {
+  background: white;
+  padding: 2rem 0;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: var(--header-height);
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.menu-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--light-background);
+  border: 2px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--button-font);
+  font-weight: 600;
+  color: var(--text-color);
+  min-width: 100px;
+}
+
+.menu-nav-btn:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
+}
+
+.menu-nav-btn.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.menu-nav-icon {
+  font-size: 1.5rem;
+}
+
+.menu-nav-text {
+  font-size: 0.9rem;
+}
+
+/* Menu Sections */
+.menu-sections {
+  padding: 4rem 0;
+  background: var(--light-background);
+  min-height: 60vh;
+}
+
+.menu-section {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.menu-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--light-text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.menu-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow-sm);
+  transition: var(--transition);
+  border-left: 4px solid var(--accent-color);
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-md);
+  border-left-color: var(--primary-color);
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.menu-item-header h3 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin: 0;
+  flex: 1;
+}
+
+.price {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.ingredients {
+  color: var(--light-text);
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Allergens Section */
+.allergens-content {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.allergens-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow-md);
+  text-align: center;
+  max-width: 600px;
+  border: 2px solid var(--accent-color);
+}
+
+.allergens-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.allergens-card p {
+  font-size: 1.1rem;
+  color: var(--light-text);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .menu-hero-content p {
+    font-size: 1rem;
+  }
+  
+  .menu-nav-buttons {
+    gap: 0.5rem;
+  }
+  
+  .menu-nav-btn {
+    padding: 0.8rem 1rem;
+    min-width: 80px;
+  }
+  
+  .menu-nav-icon {
+    font-size: 1.2rem;
+  }
+  
+  .menu-nav-text {
+    font-size: 0.8rem;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .menu-item {
+    padding: 1.5rem;
+  }
+  
+  .menu-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .price {
+    align-self: flex-end;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .allergens-card {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-hero {
+    padding: 4rem 0;
+  }
+  
+  .menu-hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .menu-nav-buttons {
+    justify-content: space-between;
+  }
+  
+  .menu-nav-btn {
+    min-width: 70px;
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .menu-nav-icon {
+    font-size: 1rem;
+  }
+  
+  .menu-nav-text {
+    font-size: 0.7rem;
+  }
+  
+  .menu-item {
+    padding: 1rem;
+  }
+  
+  .menu-item-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .price {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Smooth scrolling for menu navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animation for menu sections */
+.menu-section.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Focus states for accessibility */
+.menu-nav-btn:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.menu-item:focus-within {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
