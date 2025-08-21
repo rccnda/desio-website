@@ -3,7 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Desio - Italian Eatery in Groningen</title>
+  <title>Desio - Best Italian Eatery in Groningen | Fresh Pasta & Authentic Italian Food</title>
+  <meta name="description" content="Desio - The best Italian eatery in Groningen. Fresh handmade pasta, authentic panini, and delicious Italian dishes made with passion. Located in Herestraat, open daily 12:00-21:00.">
+  <meta name="keywords" content="Italian restaurant Groningen, best Italian food Groningen, fresh pasta Groningen, Italian eatery Netherlands, authentic Italian cuisine, pasta restaurant Groningen">
+  <meta name="author" content="Desio Italian Eatery">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="restaurant.restaurant">
+  <meta property="og:url" content="https://desiofood.com/">
+  <meta property="og:title" content="Desio - Best Italian Eatery in Groningen">
+  <meta property="og:description" content="Fresh handmade pasta, authentic panini, and delicious Italian dishes made with passion. Located in Herestraat, Groningen.">
+  <meta property="og:image" content="https://desiofood.com/assets/images/logo_lettering.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://desiofood.com/">
+  <meta property="twitter:title" content="Desio - Best Italian Eatery in Groningen">
+  <meta property="twitter:description" content="Fresh handmade pasta, authentic panini, and delicious Italian dishes made with passion.">
+  <meta property="twitter:image" content="https://desiofood.com/assets/images/logo_lettering.png">
+  
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Desio",
+    "description": "Authentic Italian eatery serving fresh pasta, panini, and traditional Italian dishes in Groningen",
+    "url": "https://desiofood.com",
+    "telephone": "+31-50-1234567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Herestraat 82",
+      "addressLocality": "Groningen",
+      "postalCode": "9711LL",
+      "addressCountry": "NL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 53.21495,
+      "longitude": 6.56885
+    },
+    "openingHours": [
+      "Mo-Su 12:00-21:00"
+    ],
+    "servesCuisine": ["Italian", "Mediterranean"],
+    "priceRange": "€€",
+    "image": "https://desiofood.com/assets/images/logo_lettering.png",
+    "sameAs": [
+      "https://www.instagram.com/desiofood/",
+      "https://g.page/r/CabpxELQIG-xEBM/review"
+    ]
+  }
+  </script>
+  
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="css/styles.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
@@ -47,7 +100,8 @@
             <div class="slide-content">
               <h1>Eat Fast. Dream Italian.</h1>
               <p>Located in vibrant Groningen downtown, Nederland, Desìo embraces the richness & tastiness of what Italian cuisine should be.</p>
-              <a href="https://maps.app.goo.gl/jsGu7BLtxVCqFXnn9" class="btn btn-primary">Check our location</a>
+              <a href="https://maps.app.goo.gl/jsGu7BLtxVCqFXnn9" class="btn btn-primary">📍 Check our location</a>
+              <a href="menudesio.html" class="btn btn-secondary">🍝 View Menu</a>
             </div>
           </div>
           <div class="swiper-slide">
@@ -83,7 +137,7 @@
           
           <div class="value-item">
             <div class="value-icon">
-              <img src="assets/images/pasta_spaghetti.png" alt="Fast cooking" class="value-image">
+              <img src="assets/images/pasta_spaghetti.jpg" alt="Fast cooking" class="value-image">
             </div>
             <h2>Meal ready to eat in minutes</h2>
             <p>Thanks to our fast preparation and cooking methods that preserve authentic Italian flavors</p>
@@ -222,7 +276,7 @@
       </div>
     </section>
 
-    <!-- Social Media Section -->
+    <!-- Social Media & Reviews Section -->
     <section class="social-section">
       <div class="container">
         <h2>Desio on the social network!</h2>
@@ -232,6 +286,32 @@
             <img src="assets/images/instagram.svg" alt="Instagram">
             <span>Follow us on Instagram</span>
           </a>
+        </div>
+        
+        <!-- Google Reviews Section -->
+        <div class="reviews-section">
+          <h3>What Our Customers Say</h3>
+          <div class="reviews-grid">
+            <div class="review-card">
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p class="review-text">"Proper food, proper service and a proper new hot spot for quality Italian food. I know I'll be dreaming Italian tonight."</p>
+              <p class="review-author">- Cleo</p>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p class="review-text">"I got the brasato pasta today and it was really fresh and tasty! The service was also super nice and the atmosphere is very cozy. Really wanna try other pastas, I’m especially curious about the pesto one :)"</p>
+              <p class="review-author">- Sylwia</p>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p class="review-text">"Lovely authentic little sandwich pasta shop for a quick lunch. Highly recommend 👌"</p>
+              <p class="review-author">- George</p>
+            </div>
+          </div>
+          <div class="reviews-cta">
+            <a href="https://g.page/r/CabpxELQIG-xEBM/review" target="_blank" class="btn btn-primary">📝 Add Your Review</a>
+            <a href="https://www.google.com/search?q=desio+groningen+reviews" target="_blank" class="btn btn-secondary">⭐ Read More Reviews</a>
+          </div>
         </div>
       </div>
     </section>
