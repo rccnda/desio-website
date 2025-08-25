@@ -51,21 +51,21 @@
                         <span class="menu-nav-icon">🍝</span>
                         <span class="menu-nav-text">Pasta</span>
                     </button>
-                    <button class="menu-nav-btn" data-target="panini">
+                    <button class="menu-nav-btn" data-target="sandwiches">
                         <span class="menu-nav-icon">🥪</span>
-                        <span class="menu-nav-text">Panini</span>
+                        <span class="menu-nav-text">Sandwiches</span>
                     </button>
                     <button class="menu-nav-btn" data-target="sides">
                         <span class="menu-nav-icon">🥗</span>
-                        <span class="menu-nav-text">Salades</span>
+                        <span class="menu-nav-text">Sides</span>
+                    </button>
+                    <button class="menu-nav-btn" data-target="tiramisu">
+                        <span class="menu-nav-icon">🍰</span>
+                        <span class="menu-nav-text">Tiramisù</span>
                     </button>
                     <button class="menu-nav-btn" data-target="drinks">
                         <span class="menu-nav-icon">🥤</span>
                         <span class="menu-nav-text">Drinks</span>
-                    </button>
-                    <button class="menu-nav-btn" data-target="extras">
-                        <span class="menu-nav-icon">🧀</span>
-                        <span class="menu-nav-text">Extras</span>
                     </button>
                     <button class="menu-nav-btn" data-target="allergens">
                         <span class="menu-nav-icon">⚠️</span>
@@ -209,10 +209,10 @@
                     </div>
                 </div>
 
-                <!-- Panini Section -->
-                <div id="panini" class="menu-section">
+                <!-- Sandwiches Section -->
+                <div id="sandwiches" class="menu-section">
                     <div class="section-header">
-                        <h2>Panini</h2>
+                        <h2>Sandwiches</h2>
                         <p>Fresh Italian sandwiches with premium ingredients</p>
                     </div>
                     <div class="menu-grid">
@@ -327,40 +327,133 @@
                     </div>
                 </div>
 
-                <!-- Salades Section -->
+                <!-- Sides Section -->
                 <div id="sides" class="menu-section">
                     <div class="section-header">
-                        <h2>Salades</h2>
-                        <p>Fresh and healthy Italian-inspired salads</p>
+                        <h2>Sides</h2>
+                        <p>Fresh and delicious Italian sides and accompaniments</p>
                     </div>
                     <div class="menu-grid">
-                        <div class="menu-item" data-dish="caprese-burrata">
+                        <div class="menu-item" data-dish="caprese-stracciatella">
                             <div class="menu-item-image">
-                                <img src="assets/images/burrata.jpg" alt="Caprese with Burrata">
+                                <img src="assets/images/burrata.jpg" alt="Caprese with Stracciatella">
                             </div>
                             <div class="menu-item-content">
                                 <div class="menu-item-header">
-                                    <h3>Caprese with Burrata</h3>
+                                    <h3>Caprese with Stracciatella</h3>
                                     <span class="price">€8</span>
                                 </div>
-                                <p class="ingredients">Fresh burrata, tomatoes, basil, balsamic, oil, salt, pepper</p>
+                                <p class="ingredients">Fresh stracciatella, tomatoes, basil, balsamic, oil, salt, pepper</p>
                                 <div class="allergy-tags">
                                     <span class="allergy-tag dairy">🥛 Dairy</span>
                                     <span class="allergy-tag vegetarian">🥬 Vegetarian</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Extras Section -->
-                <div id="extras" class="menu-section">
-                    <div class="section-header">
-                        <h2>Extras</h2>
-                        <p>Additional toppings and accompaniments</p>
-                    </div>
-                    <div class="menu-grid">
-                        <div class="menu-item" data-dish="parmigiano">
+                        
+                        <div class="menu-item" data-dish="bread-bruschetta">
+                            <div class="menu-item-image">
+                                <img src="assets/images/bruschetta.jpg" alt="Bread with Bruschetta">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Bread with Bruschetta</h3>
+                                    <span class="price">€4</span>
+                                </div>
+                                <p class="ingredients">Fresh bread with tomatoes, garlic, basil, olive oil</p>
+                                <div class="allergy-tags">
+                                    <span class="allergy-tag gluten">🌾 Gluten</span>
+                                    <span class="allergy-tag vegan">🌱 Vegan</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item" data-dish="bread-truffle-butter">
+                            <div class="menu-item-image">
+                                <img src="assets/images/butter.jpg" alt="Bread with Truffle Butter">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Bread with Truffle Butter</h3>
+                                    <span class="price">€4</span>
+                                </div>
+                                <p class="ingredients">Fresh bread with truffle butter</p>
+                                <div class="allergy-tags">
+                                    <span class="allergy-tag gluten">🌾 Gluten</span>
+                                    <span class="allergy-tag dairy">🥛 Dairy</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item" data-dish="bread-pesto">
+                            <div class="menu-item-image">
+                                <img src="assets/images/pesto fresco.jpg" alt="Bread with Pesto">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Bread with Pesto</h3>
+                                    <span class="price">€4</span>
+                                </div>
+                                <p class="ingredients">Fresh bread with homemade pesto</p>
+                                <div class="allergy-tags">
+                                    <span class="allergy-tag gluten">🌾 Gluten</span>
+                                    <span class="allergy-tag nuts">🥜 Nuts</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item" data-dish="bread-burrata">
+                            <div class="menu-item-image">
+                                <img src="assets/images/burrata.jpg" alt="Bread with Burrata">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Bread with Burrata</h3>
+                                    <span class="price">€5</span>
+                                </div>
+                                <p class="ingredients">Fresh bread with creamy burrata</p>
+                                <div class="allergy-tags">
+                                    <span class="allergy-tag gluten">🌾 Gluten</span>
+                                    <span class="allergy-tag dairy">🥛 Dairy</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item" data-dish="taralli">
+                            <div class="menu-item-image">
+                                <img src="assets/images/taralli.jpg" alt="Taralli">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Taralli</h3>
+                                    <span class="price">€3</span>
+                                </div>
+                                <p class="ingredients">Traditional Italian bread rings</p>
+                                <div class="allergy-tags">
+                                    <span class="allergy-tag gluten">🌾 Gluten</span>
+                                    <span class="allergy-tag vegan">🌱 Vegan</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item" data-dish="olives">
+                            <div class="menu-item-image">
+                                <img src="assets/images/olives.jpg" alt="Olives">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Olives</h3>
+                                    <span class="price">€3</span>
+                                </div>
+                                <p class="ingredients">Mixed Italian olives</p>
+                                <div class="allergy-tags">
+                                    <span class="allergy-tag vegan">🌱 Vegan</span>
+                                    <span class="allergy-tag gluten-free">✅ Gluten Free</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item" data-dish="parmigiano-cheese">
                             <div class="menu-item-image">
                                 <img src="assets/images/parmigiano.jpg" alt="Parmigiano Cheese">
                             </div>
@@ -373,6 +466,50 @@
                                 <div class="allergy-tags">
                                     <span class="allergy-tag dairy">🥛 Dairy</span>
                                     <span class="allergy-tag vegetarian">🥬 Vegetarian</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item" data-dish="stracciatella-burrata">
+                            <div class="menu-item-image">
+                                <img src="assets/images/burrata.jpg" alt="Stracciatella Burrata">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Stracciatella Burrata</h3>
+                                    <span class="price">€6</span>
+                                </div>
+                                <p class="ingredients">Fresh stracciatella burrata cheese</p>
+                                <div class="allergy-tags">
+                                    <span class="allergy-tag dairy">🥛 Dairy</span>
+                                    <span class="allergy-tag vegetarian">🥬 Vegetarian</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tiramisù Section -->
+                <div id="tiramisu" class="menu-section">
+                    <div class="section-header">
+                        <h2>Tiramisù</h2>
+                        <p>Classic Italian dessert made with love</p>
+                    </div>
+                    <div class="menu-grid">
+                        <div class="menu-item" data-dish="classic-tiramisu">
+                            <div class="menu-item-image">
+                                <img src="assets/images/classic_tiramisù.png" alt="Classic Tiramisù">
+                            </div>
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h3>Classic Tiramisù</h3>
+                                    <span class="price">€6</span>
+                                </div>
+                                <p class="ingredients">Mascarpone cream, coffee-soaked ladyfingers, cocoa powder</p>
+                                <div class="allergy-tags">
+                                    <span class="allergy-tag dairy">🥛 Dairy</span>
+                                    <span class="allergy-tag eggs">🥚 Eggs</span>
+                                    <span class="allergy-tag gluten">🌾 Gluten</span>
                                 </div>
                             </div>
                         </div>

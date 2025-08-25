@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'ragu-bolognese': {
             name: 'Ragù Bolognese',
             price: '€11',
-            image: 'assets/images/pasta_placeholder_1.png',
+            image: 'assets/images/pasta_ragù.jpg',
             ingredients: 'Beef, tomato sauce, onion, carrots, celery, laurel, oil, s/p',
             story: 'Our Ragù Bolognese is a tribute to the traditional recipe from Bologna, the culinary heart of Italy. This slow-cooked meat sauce has been perfected over generations, combining tender beef with aromatic vegetables and herbs. The secret lies in the long simmering process that allows all flavors to meld together, creating a rich, hearty sauce that clings perfectly to our fresh pasta.',
             allergies: ['🥩 Meat', '🌾 Gluten']
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'brasato': {
             name: 'Brasato',
             price: '€11',
-            image: 'assets/images/pasta_placeholder_2.png',
+            image: 'assets/images/pasta_brasato.jpg',
             ingredients: 'Braised beef, garlic, sage, rosemary, tomatoes, carrots, red wine',
             story: 'Brasato, meaning "braised" in Italian, represents the art of slow cooking that defines Italian comfort food. Our beef is carefully braised in red wine with aromatic herbs until it becomes fork-tender. This method, perfected in Northern Italy, transforms simple ingredients into a dish of extraordinary depth and flavor, perfect for those seeking authentic Italian warmth.',
             allergies: ['🥩 Meat', '🌾 Gluten', '🍷 Wine']
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'puttanesca': {
             name: 'Puttanesca',
             price: '€9',
-            image: 'assets/images/pasta_placeholder_3.png',
+            image: 'assets/images/pasta_puttanesca.jpg',
             ingredients: 'Tomatoes sauce with oregano, olives, capers and garlic.',
             story: 'Puttanesca sauce has a fascinating history from Naples, where it was created by resourceful cooks using pantry staples. The bold combination of olives, capers, and garlic creates a sauce that\'s both simple and sophisticated. Despite its humble origins, this dish has become a beloved classic, representing the ingenuity and passion of Italian cooking.',
             allergies: ['🌾 Gluten', '🌱 Vegan']
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'pesto': {
             name: 'Pesto',
             price: '€11',
-            image: 'assets/images/pasta_placeholder_1.png',
+            image: 'assets/images/pasta_pesto.jpg',
             ingredients: 'Basil, pine nuts, parmesan, garlic, olive oil',
             story: 'Our pesto is made fresh daily using the traditional Genovese method from Liguria. We hand-crush fresh basil leaves with pine nuts, aged Parmigiano-Reggiano, and garlic to create a vibrant, aromatic sauce. This ancient technique preserves the essential oils and flavors, resulting in a pesto that\'s both authentic and unforgettable.',
             allergies: ['🌾 Gluten', '🥛 Dairy', '🥜 Nuts']
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'salmone': {
             name: 'Salmone',
             price: '€11',
-            image: 'assets/images/pasta_placeholder_2.png',
+            image: 'assets/images/pasta_salmone.jpg',
             ingredients: 'Salmon, cream, dill, lemon, white wine',
             story: 'Our salmon pasta celebrates the coastal influences of Italian cuisine. Fresh salmon is gently poached in white wine and finished with a light cream sauce infused with dill and lemon. This dish reflects the Italian love for seafood and showcases how simple, quality ingredients can create a dish of remarkable elegance and flavor.',
             allergies: ['🐟 Fish', '🌾 Gluten', '🥛 Dairy']
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'pomodoro': {
             name: 'Pomodoro',
             price: '€9',
-            image: 'assets/images/pasta_placeholder_3.png',
+            image: 'assets/images/pasta_pomodoro.jpg',
             ingredients: 'Fresh tomatoes, basil, garlic, olive oil',
             story: 'Pomodoro sauce is the essence of Italian simplicity and tradition. Made with vine-ripened tomatoes, fresh basil, and extra virgin olive oil, this sauce celebrates the natural sweetness of tomatoes. It\'s a testament to the Italian philosophy that the best dishes are those that let quality ingredients speak for themselves.',
             allergies: ['🌾 Gluten', '🌱 Vegan']
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'tonno': {
             name: 'Tonno',
             price: '€11',
-            image: 'assets/images/pasta_placeholder_1.png',
+            image: 'assets/images/pasta_tonno.jpg',
             ingredients: 'Tuna, cherry tomatoes, olives, capers',
             story: 'Our tonno pasta draws inspiration from the coastal regions of Sicily and Sardinia, where tuna fishing has been a tradition for centuries. The combination of fresh tuna with Mediterranean staples like olives and capers creates a dish that\'s both light and satisfying, perfect for warm days when you crave the taste of the Italian coast.',
             allergies: ['🐟 Fish', '🌾 Gluten']
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'panini-brasato': {
             name: 'Brasato Panini',
             price: '€10',
-            image: 'assets/images/panino_brasato.png',
+            image: 'assets/images/panino_brasato.jpg',
             ingredients: 'Braised beef, caramelized onions, carrots, celery, red wine, mustard, sage, rosemary, s/p',
             story: 'Our Brasato panini transforms the classic braised beef into a portable masterpiece. The tender beef is complemented by caramelized onions and a hint of mustard, creating a sandwich that\'s both sophisticated and satisfying. This panini represents the perfect marriage of traditional Italian cooking with modern convenience.',
             allergies: ['🥩 Meat', '🌾 Gluten', '🍷 Wine']
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'prosciutto-crudo': {
             name: 'Prosciutto Crudo',
             price: '€10',
-            image: 'assets/images/pasta_placeholder_2.png',
+            image: 'assets/images/Panino_crudo.jpg',
             ingredients: 'Cured ham, burrata, sun-dried tomatoes, salad, balsamic',
             story: 'Prosciutto Crudo, Italy\'s most celebrated cured meat, takes center stage in this elegant panini. Paired with creamy burrata and sun-dried tomatoes, this combination showcases the Italian art of balancing flavors and textures. Each bite reveals the careful craftsmanship that goes into creating this timeless Italian classic.',
             allergies: ['🥩 Meat', '🌾 Gluten', '🥛 Dairy']
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'mortadella': {
             name: 'Mortadella',
             price: '€8',
-            image: 'assets/images/pasta_placeholder_3.png',
+            image: 'assets/images/panino_mortadella.jpg',
             ingredients: 'Italian mortadella with pistachios, cream cheese, truffle mayo, salad',
             story: 'Mortadella, the pride of Bologna, is elevated in our panini with the addition of pistachios and truffle mayo. This combination celebrates the rich culinary heritage of Emilia-Romagna, where mortadella has been crafted for centuries. The subtle truffle notes add a touch of luxury to this traditional Italian favorite.',
             allergies: ['🥩 Meat', '🌾 Gluten', '🥛 Dairy', '🥜 Nuts']
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'panini-pesto': {
             name: 'Pesto Panini',
             price: '€10',
-            image: 'assets/images/pasta_placeholder_1.png',
+            image: 'assets/images/panino_pesto.jpg',
             ingredients: 'Fresh homemade pesto, burrata, tomatoes',
             story: 'Our Pesto Panini brings the vibrant flavors of Liguria to your hands. Fresh basil pesto is paired with creamy burrata and ripe tomatoes, creating a sandwich that\'s both refreshing and indulgent. This panini captures the essence of Italian summer and the Mediterranean lifestyle.',
             allergies: ['🌾 Gluten', '🥛 Dairy', '🥜 Nuts']
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'panini-salmone': {
             name: 'Salmone Panini',
             price: '€10',
-            image: 'assets/images/pasta_placeholder_2.png',
+            image: 'assets/images/panino_salmone.jpg',
             ingredients: 'Smoked salmon, cream cheese, cucumber cream salad, dill oil',
             story: 'Our Salmone Panini offers a sophisticated take on the classic salmon sandwich. Smoked salmon is paired with a refreshing cucumber cream salad and finished with dill oil, creating a combination that\'s both elegant and satisfying. This panini reflects the Italian love for fresh, quality ingredients.',
             allergies: ['🐟 Fish', '🌾 Gluten', '🥛 Dairy']
@@ -108,26 +108,90 @@ document.addEventListener('DOMContentLoaded', function() {
         'panini-tonno': {
             name: 'Tonno Panini',
             price: '€8',
-            image: 'assets/images/pasta_placeholder_3.png',
+            image: 'assets/images/bread.jpg',
             ingredients: 'Tuna, capers, mayo, olives',
             story: 'The Tonno Panini celebrates the Mediterranean tradition of tuna fishing. Fresh tuna is combined with briny capers and olives, creating a flavor profile that\'s both bold and balanced. This panini represents the coastal Italian lifestyle and the importance of preserving traditional flavors.',
             allergies: ['🐟 Fish', '🌾 Gluten', '🥚 Eggs']
         },
-        'caprese-burrata': {
-            name: 'Caprese with Burrata',
+        'caprese-stracciatella': {
+            name: 'Caprese with Stracciatella',
             price: '€8',
-            image: 'assets/images/pasta_placeholder_1.png',
-            ingredients: 'Fresh burrata, tomatoes, basil, balsamic, oil, salt, pepper',
-            story: 'Our Caprese with Burrata is a celebration of Italian simplicity and the beauty of fresh ingredients. Burrata, the creamy cousin of mozzarella, adds luxurious texture to this classic salad. This dish represents the Italian philosophy that the best food comes from respecting and highlighting natural flavors.',
+            image: 'assets/images/burrata.jpg',
+            ingredients: 'Fresh stracciatella, tomatoes, basil, balsamic, oil, salt, pepper',
+            story: 'Our Caprese with Stracciatella is a celebration of Italian simplicity and the beauty of fresh ingredients. Stracciatella, the creamy heart of burrata, adds luxurious texture to this classic salad. This dish represents the Italian philosophy that the best food comes from respecting and highlighting natural flavors.',
             allergies: ['🥛 Dairy', '🥬 Vegetarian']
         },
-        'parmigiano': {
+        'bread-bruschetta': {
+            name: 'Bread with Bruschetta',
+            price: '€4',
+            image: 'assets/images/bruschetta.jpg',
+            ingredients: 'Fresh bread with tomatoes, garlic, basil, olive oil',
+            story: 'Our Bruschetta celebrates the rustic charm of Italian antipasti. Fresh bread is toasted and topped with a vibrant mixture of ripe tomatoes, fragrant basil, and garlic. This simple yet flavorful dish embodies the Italian tradition of turning humble ingredients into something extraordinary.',
+            allergies: ['🌾 Gluten', '🌱 Vegan']
+        },
+        'bread-truffle-butter': {
+            name: 'Bread with Truffle Butter',
+            price: '€4',
+            image: 'assets/images/butter.jpg',
+            ingredients: 'Fresh bread with truffle butter',
+            story: 'Our Bread with Truffle Butter offers a luxurious twist on simple bread service. The earthy, aromatic truffle butter transforms ordinary bread into an indulgent treat. This combination showcases the Italian love for bold, distinctive flavors and the art of elevating everyday ingredients.',
+            allergies: ['🌾 Gluten', '🥛 Dairy']
+        },
+        'bread-pesto': {
+            name: 'Bread with Pesto',
+            price: '€4',
+            image: 'assets/images/pesto fresco.jpg',
+            ingredients: 'Fresh bread with homemade pesto',
+            story: 'Our Bread with Pesto brings the vibrant flavors of Liguria to your table. Fresh basil pesto, made with pine nuts and aged Parmigiano, is spread generously on warm bread. This simple preparation highlights the authentic taste of Italian pesto and the Mediterranean lifestyle.',
+            allergies: ['🌾 Gluten', '🥜 Nuts']
+        },
+        'bread-burrata': {
+            name: 'Bread with Burrata',
+            price: '€5',
+            image: 'assets/images/burrata.jpg',
+            ingredients: 'Fresh bread with creamy burrata',
+            story: 'Our Bread with Burrata celebrates the creamy indulgence of Italian cheese culture. The rich, velvety texture of burrata paired with fresh bread creates a perfect harmony of textures and flavors. This combination represents the Italian art of simple yet sophisticated food pairings.',
+            allergies: ['🌾 Gluten', '🥛 Dairy']
+        },
+        'taralli': {
+            name: 'Taralli',
+            price: '€3',
+            image: 'assets/images/taralli.jpg',
+            ingredients: 'Traditional Italian bread rings',
+            story: 'Taralli are traditional Italian bread rings that have been enjoyed for centuries. These crisp, savory snacks are perfect for dipping in olive oil or enjoying with a glass of wine. They represent the Italian tradition of creating simple, satisfying foods that bring people together.',
+            allergies: ['🌾 Gluten', '🌱 Vegan']
+        },
+        'olives': {
+            name: 'Olives',
+            price: '€3',
+            image: 'assets/images/olives.jpg',
+            ingredients: 'Mixed Italian olives',
+            story: 'Our selection of mixed Italian olives celebrates the rich diversity of Italian olive varieties. Each olive brings its own unique flavor profile, from the mild and buttery to the bold and briny. This selection represents the Italian commitment to quality and the Mediterranean way of life.',
+            allergies: ['🌱 Vegan', '✅ Gluten Free']
+        },
+        'parmigiano-cheese': {
             name: 'Parmigiano Cheese',
             price: '€0.5',
-            image: 'assets/images/pasta_placeholder_2.png',
+            image: 'assets/images/parmigiano.jpg',
             ingredients: 'Aged 24 months, grated fresh',
             story: 'Parmigiano-Reggiano, the "King of Cheeses," is aged for 24 months to develop its complex, nutty flavor. This cheese has been produced in the same way for over 800 years in the Parma region. Each piece represents centuries of tradition and the dedication of Italian cheesemakers to preserving authentic methods.',
             allergies: ['🥛 Dairy', '🥬 Vegetarian']
+        },
+        'stracciatella-burrata': {
+            name: 'Stracciatella Burrata',
+            price: '€6',
+            image: 'assets/images/burrata.jpg',
+            ingredients: 'Fresh stracciatella burrata cheese',
+            story: 'Our Stracciatella Burrata showcases the delicate art of Italian cheesemaking. The creamy, stringy stracciatella wrapped in fresh mozzarella creates a textural masterpiece. This cheese represents the Italian dedication to craftsmanship and the celebration of simple, pure flavors.',
+            allergies: ['🥛 Dairy', '🥬 Vegetarian']
+        },
+        'classic-tiramisu': {
+            name: 'Classic Tiramisù',
+            price: '€6',
+            image: 'assets/images/classic_tiramisù.png',
+            ingredients: 'Mascarpone cream, coffee-soaked ladyfingers, cocoa powder',
+            story: 'Our Classic Tiramisù is a tribute to the beloved Italian dessert that originated in Veneto. Layers of coffee-soaked ladyfingers are alternated with rich mascarpone cream, creating a dessert that\'s both light and indulgent. This timeless recipe represents the perfect balance of coffee, cream, and sweetness that has made tiramisù a global favorite.',
+            allergies: ['🥛 Dairy', '🥚 Eggs', '🌾 Gluten']
         }
     };
 
