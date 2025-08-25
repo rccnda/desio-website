@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to show a specific menu section
     function showMenuSection(targetId) {
-        console.log('showMenuSection called with:', targetId);
         
         // Hide all sections
         menuSections.forEach(section => {
@@ -158,18 +157,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
             targetSection.classList.add('active');
-            console.log('Section activated:', targetId);
-        } else {
-            console.log('Section not found:', targetId);
         }
 
         // Add active class to clicked button
         const activeButton = document.querySelector(`[data-target="${targetId}"]`);
         if (activeButton) {
             activeButton.classList.add('active');
-            console.log('Button activated:', targetId);
-        } else {
-            console.log('Button not found:', targetId);
         }
 
         // Update ARIA states
@@ -178,8 +171,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to show dish modal
     function showDishModal(dishId) {
+        
         const dish = dishData[dishId];
-        if (!dish) return;
+        if (!dish) {
+            return;
+        }
 
         // Populate modal content
         document.getElementById('modal-dish-image').src = dish.image;
@@ -198,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show modal
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        
     }
 
     // Function to close modal
@@ -211,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('data-target');
+            
             showMenuSection(targetId);
         });
     });
@@ -219,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.menu-item').forEach(item => {
         item.addEventListener('click', function() {
             const dishId = this.getAttribute('data-dish');
+            
             if (dishId) {
                 showDishModal(dishId);
             }
@@ -253,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target.classList.contains('add-to-favorites-btn')) {
             const dishName = document.getElementById('modal-dish-name').textContent;
             e.target.textContent = '❤️ Added to Favorites!';
-            e.target.style.background = var(--accent-color);
+            e.target.style.background = getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
             
             // Store in localStorage
             const favorites = JSON.parse(localStorage.getItem('desioFavorites') || '[]');

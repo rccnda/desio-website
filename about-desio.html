@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Desio - Italian Eatery in Groningen</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=ITC+Franklin+Gothic+LT:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-.hours-under {
-  color: #000 !important;
-  font-weight: 500;
-}
-</style>
 </head>
 <body>
     <header class="main-header">
@@ -39,71 +35,117 @@
             </div>
         </div>
     </header>
-    <main class="store-page">
-        <section class="store-info">
-            <div class="store-details">
-                <div class="store-address">
-                    <h2>Herestraat 82</h2>
-                    <p>9711LL Groningen</p>
-                </div>
-                <div class="store-hours">
-                    <h3>ITALIAN FOOD ALL DAY LONG<br>
-                        (yes, a wish come true)<br>
-                    </h3>
-                    <div class="hours-grid">
-                        <div class="day-hours">
-                            <div class="day-row">
+
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="about-hero-content">
+                <h1>About Desio</h1>
+                <p>Discover the story behind Groningen's most authentic Italian eatery, where passion meets tradition in every dish we serve.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <section class="about-content">
+            <div class="container">
+                <div class="info-grid">
+                    <!-- Address Card -->
+                    <div class="info-card address-card">
+                        <h2>Location</h2>
+                        <div class="address">
+                            <div class="street">Herestraat 82</div>
+                            <div class="city">9711LL Groningen</div>
+                        </div>
+                    </div>
+
+                    <!-- Hours Card -->
+                    <div class="info-card hours-card">
+                        <h2>Opening Hours</h2>
+                        <div class="hours-intro">ITALIAN FOOD ALL DAY LONG<br>(yes, a wish come true)</div>
+                        <div class="hours-list">
+                            <div class="hour-item">
                                 <span class="day">MONDAY</span>
-                                <div class="hours-under">12:00 - 21:00</div>
+                                <span class="time">12:00 - 21:00</span>
                             </div>
-                            <div class="day-row">
+                            <div class="hour-item">
                                 <span class="day">TUESDAY</span>
-                                <div class="hours-under">12:00 - 21:00</div>
+                                <span class="time">12:00 - 21:00</span>
                             </div>
-                            <div class="day-row">
+                            <div class="hour-item">
                                 <span class="day">WEDNESDAY</span>
-                                <div class="hours-under">12:00 - 21:00</div>
+                                <span class="time">12:00 - 21:00</span>
                             </div>
-                            <div class="day-row">
+                            <div class="hour-item">
                                 <span class="day">THURSDAY</span>
-                                <div class="hours-under">12:00 - 21:00</div>
+                                <span class="time">12:00 - 21:00</span>
                             </div>
-                            <div class="day-row">
+                            <div class="hour-item">
                                 <span class="day">FRIDAY</span>
-                                <div class="hours-under">12:00 - 21:00</div>
+                                <span class="time">12:00 - 21:00</span>
                             </div>
-                            <div class="day-row">
+                            <div class="hour-item">
                                 <span class="day">SATURDAY</span>
-                                <div class="hours-under">12:00 - 21:00</div>
+                                <span class="time">12:00 - 21:00</span>
                             </div>
-                            <div class="day-row">
+                            <div class="hour-item">
                                 <span class="day">SUNDAY</span>
-                                <div class="hours-under">12:00 - 21:00</div>
+                                <span class="time">12:00 - 21:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Card -->
+                    <div class="info-card contact-card">
+                        <h2>Contact Us</h2>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <div class="icon">📱</div>
+                                <div class="details">
+                                    <h4>Phone</h4>
+                                    <a href="tel:+31621261108">+31 6 2126 1108</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">✉️</div>
+                                <div class="details">
+                                    <h4>Email</h4>
+                                    <a href="mailto:info@desiofood.com">info@desiofood.com</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="store-contact">
-                    <h3>Contact Us</h3>
-                    <p>Phone: <a href="tel:+31621261108">+31 6 2126 1108</a></p>
-                    <p>Email: <a href="mailto:info@desiofood.com">info@desiofood.com</a></p>
-                </div>
             </div>
-            <div id="store-map" class="store-map"></div>
         </section>
 
-        <section class="store-reviews">
-            <h2>We'd love to hear from you!</h2>
-            <p>Share your experience at Desio Groningen</p>
-            <div id="questionnaire-container">
-                <!-- Questions will be dynamically inserted here -->
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <h2>Find Us</h2>
+                <p>Located in the heart of Groningen, just steps away from the city center</p>
+                <div class="map-container">
+                    <div id="store-map" class="store-map"></div>
+                </div>
             </div>
-            <form id="formspree-form" action="https://formspree.io/f/mkgbqnrg" method="POST" style="display:none;"></form>
-            <div id="final-message" style="display: none;">
-                <h3>Thank you for your feedback!</h3>
+        </section>
+
+        <!-- Store Reviews Section -->
+        <section class="store-reviews">
+            <div class="container">
+                <h2>We'd love to hear from you!</h2>
+                <p>Share your experience at Desio Groningen</p>
+                <div id="questionnaire-container">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+                <form id="formspree-form" action="https://formspree.io/f/mkgbqnrg" method="POST" style="display:none;"></form>
+                <div id="final-message" style="display: none;">
+                    <h3>Thank you for your feedback!</h3>
+                    <p>We appreciate you taking the time to share your experience with us.</p>
+                </div>
             </div>
         </section>
     </main>
+
     <div id="footer-placeholder"></div>
     <script src="footer-inject.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
