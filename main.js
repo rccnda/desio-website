@@ -64,27 +64,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
     const mobileMenu = document.querySelector('.mobile-menu');
+    
+    console.log('Mobile menu element found:', mobileMenu);
+    console.log('Hamburger element found:', hamburger);
 
     function openMobileMenu() {
+        console.log('Opening mobile menu');
         hamburger.classList.add('active');
         mobileMenu.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
     function closeMobileMenu() {
+        console.log('Closing mobile menu');
         hamburger.classList.remove('active');
         mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
     }
 
     if (hamburger) {
+        console.log('Hamburger found, adding event listener');
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
+            console.log('Hamburger clicked, current state:', mobileMenu.classList.contains('active'));
             if (mobileMenu.classList.contains('active')) {
                 closeMobileMenu();
             } else {
                 openMobileMenu();
             }
         });
+    } else {
+        console.log('Hamburger not found');
     }
 
     // Add event listener for mobile menu close button
