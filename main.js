@@ -63,27 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
-    let mobileMenu = document.querySelector('.mobile-menu');
-
-    // If not present, create mobile menu (for backward compatibility)
-    if (!mobileMenu) {
-        mobileMenu = document.createElement('div');
-        mobileMenu.className = 'mobile-menu';
-        // Clone only the <ul> from .main-nav
-        const navUl = document.querySelector('.main-nav ul');
-        if (navUl) {
-            const ulClone = navUl.cloneNode(true);
-            mobileMenu.appendChild(ulClone);
-        }
-        // Add a close button
-        const closeBtn = document.createElement('button');
-        closeBtn.className = 'mobile-menu-close';
-        closeBtn.setAttribute('aria-label', 'Close menu');
-        closeBtn.innerHTML = '&times;';
-        closeBtn.addEventListener('click', closeMobileMenu);
-        mobileMenu.appendChild(closeBtn);
-        document.body.appendChild(mobileMenu);
-    }
+    const mobileMenu = document.querySelector('.mobile-menu');
 
     function openMobileMenu() {
         hamburger.classList.add('active');
@@ -107,6 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Add event listener for mobile menu close button
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+    }
+
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (
@@ -119,11 +105,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close menu when clicking a link inside mobile menu
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function() {
-            closeMobileMenu();
+    if (mobileMenu) {
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
         });
-    });
+    }
 
     // Smooth scroll for navigation links
     document.querySelectorAll('nav a').forEach(anchor => {

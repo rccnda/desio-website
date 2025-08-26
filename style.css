@@ -501,6 +501,7 @@ p {
   width: 100%;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 .mobile-menu .main-nav li {
   width: 100%;
@@ -517,6 +518,7 @@ p {
   font-weight: bold;
   border-bottom: 1px solid #eee;
   transition: background 0.2s, color 0.2s;
+  text-align: center;
 }
 .mobile-menu .main-nav a:last-child {
   border-bottom: none;
@@ -542,6 +544,7 @@ p {
     padding: 1rem 0;
     border-radius: 8px;
     transition: all 0.3s ease;
+    text-decoration: none;
   }
   
   .mobile-menu .main-nav a:hover,
