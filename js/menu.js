@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('order-now-btn')) {
             // Redirect to ordering platform or show ordering options
-            window.open('https://order-now-toolkit.takeaway.com/widgets/button?restId=10739861&language=en&horizontal', '_blank');
+            window.open('https://www.thuisbezorgd.nl/menu/desio', '_blank');
         }
     });
 
