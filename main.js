@@ -67,9 +67,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Toggle mobile menu
     function toggleMobileMenu() {
+        console.log('toggleMobileMenu called');
+        const isActive = mobileMenu.classList.contains('active');
+        console.log('Menu currently active:', isActive);
+        
         hamburger.classList.toggle('active');
         mobileMenu.classList.toggle('active');
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        
+        const newState = mobileMenu.classList.contains('active');
+        console.log('Menu new state:', newState);
+        
+        document.body.style.overflow = newState ? 'hidden' : 'auto';
+        
+        // Force a reflow to ensure the transition works
+        mobileMenu.offsetHeight;
     }
 
     // Close mobile menu
@@ -81,18 +92,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners for mobile menu
     if (hamburger && mobileMenu && mobileMenuClose) {
-        hamburger.addEventListener('click', toggleMobileMenu);
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        console.log('Mobile menu elements found, adding event listeners');
+        
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Hamburger clicked, toggling menu');
+            toggleMobileMenu();
+        });
+        
+        mobileMenuClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Close button clicked, closing menu');
+            closeMobileMenu();
+        });
 
         // Close mobile menu when clicking on a link
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');
         mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
+            link.addEventListener('click', function(e) {
+                console.log('Menu link clicked, closing menu');
+                closeMobileMenu();
+            });
         });
 
         // Close mobile menu when clicking outside
         mobileMenu.addEventListener('click', function(e) {
             if (e.target === mobileMenu) {
+                console.log('Clicked outside menu, closing');
                 closeMobileMenu();
             }
         });
@@ -100,8 +128,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close mobile menu on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                console.log('Escape key pressed, closing menu');
                 closeMobileMenu();
             }
+        });
+        
+        console.log('Mobile menu event listeners added successfully');
+    } else {
+        console.log('Mobile menu elements not found:', {
+            hamburger: !!hamburger,
+            mobileMenu: !!mobileMenu,
+            mobileMenuClose: !!mobileMenuClose
         });
     }
 
