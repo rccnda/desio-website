@@ -378,5 +378,136 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScroll = currentScroll;
     });
 
+    // Reviews Carousel Functionality
+    function initializeReviewsCarousel() {
+        const carousel = document.querySelector('.reviews-carousel');
+        if (!carousel) return;
+
+        const track = carousel.querySelector('.reviews-track');
+        const cards = carousel.querySelectorAll('.review-card');
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+        const dots = carousel.querySelectorAll('.dot');
+        
+        let currentIndex = 0;
+        const totalCards = cards.length;
+
+        // Function to update carousel position
+        function updateCarousel(index) {
+            // Update track position
+            track.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Update active card
+            cards.forEach((card, i) => {
+                card.classList.toggle('active', i === index);
+            });
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            
+            // Update button states
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === totalCards - 1;
+            
+            currentIndex = index;
+        }
+
+        // Event listeners for navigation buttons
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    updateCarousel(currentIndex - 1);
+                }
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < totalCards - 1) {
+                    updateCarousel(currentIndex + 1);
+                }
+            });
+        }
+
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateCarousel(index);
+            });
+        });
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+        let isDragging = false;
+
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        track.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            endX = e.touches[0].clientX;
+        });
+
+        track.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            
+            const diffX = startX - endX;
+            const threshold = 50; // Minimum swipe distance
+            
+            if (Math.abs(diffX) > threshold) {
+                if (diffX > 0 && currentIndex < totalCards - 1) {
+                    // Swipe left - next
+                    updateCarousel(currentIndex + 1);
+                } else if (diffX < 0 && currentIndex > 0) {
+                    // Swipe right - previous
+                    updateCarousel(currentIndex - 1);
+                }
+            }
+            
+            isDragging = false;
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                updateCarousel(currentIndex - 1);
+            } else if (e.key === 'ArrowRight' && currentIndex < totalCards - 1) {
+                updateCarousel(currentIndex + 1);
+            }
+        });
+
+        // Auto-play functionality (optional)
+        let autoPlayInterval;
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                const nextIndex = (currentIndex + 1) % totalCards;
+                updateCarousel(nextIndex);
+            }, 5000); // Change every 5 seconds
+        }
+        
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+            }
+        }
+
+        // Start auto-play and stop on user interaction
+        startAutoPlay();
+        
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+        
+        // Initialize first card
+        updateCarousel(0);
+    }
+
+    // Initialize carousel when DOM is ready
+    initializeReviewsCarousel();
 
 }); 

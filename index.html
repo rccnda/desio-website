@@ -31,7 +31,7 @@
     "name": "Desio",
     "description": "Authentic Italian eatery serving fresh pasta, panini, and traditional Italian dishes in Groningen",
     "url": "https://desiofood.com",
-    "telephone": "+31-50-1234567",
+    "telephone": "+31-6-21261108",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Herestraat 82",
@@ -319,21 +319,61 @@
         <!-- Google Reviews Section -->
         <div class="reviews-section">
           <h3>What Our Customers Say</h3>
-          <div class="reviews-grid">
-            <div class="review-card">
-              <div class="review-stars">⭐⭐⭐⭐⭐</div>
-              <p class="review-text">"Proper food, proper service and a proper new hot spot for quality Italian food. I know I'll be dreaming Italian tonight."</p>
-              <p class="review-author">- Cleo</p>
-            </div>
+          <!-- Reviews Carousel -->
+          <div class="reviews-carousel">
+            <div class="reviews-track">
+              <div class="review-card active">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Proper food, proper service and a proper new hot spot for quality Italian food. I know I'll be dreaming Italian tonight."</p>
+                <p class="review-author">- Cleo</p>
+              </div>
             <div class="review-card">
               <div class="review-stars">⭐⭐⭐⭐⭐</div>
               <p class="review-text">"I got the brasato pasta today and it was really fresh and tasty! The service was also super nice and the atmosphere is very cozy. Really wanna try other pastas, I’m especially curious about the pesto one :)"</p>
               <p class="review-author">- Sylwia</p>
             </div>
-            <div class="review-card">
-              <div class="review-stars">⭐⭐⭐⭐⭐</div>
-              <p class="review-text">"Lovely authentic little sandwich pasta shop for a quick lunch. Highly recommend 👌"</p>
-              <p class="review-author">- George</p>
+                          <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Lovely authentic little sandwich pasta shop for a quick lunch. Highly recommend 👌"</p>
+                <p class="review-author">- George</p>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Amazing Italian food! The pasta is fresh and the flavors are authentic. Great atmosphere and friendly staff. Will definitely come back!"</p>
+                <p class="review-author">- Maria</p>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Best Italian restaurant in Groningen! The tiramisu is to die for and the pasta is always perfectly cooked. Highly recommend!"</p>
+                <p class="review-author">- Luca</p>
+              </div>
+              <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Incredible food and service! The panini are delicious and the pasta is homemade. This place is a gem in the city center."</p>
+                <p class="review-author">- Sofia</p>
+              </div>
+            </div>
+            
+            <!-- Carousel Navigation -->
+            <div class="carousel-nav">
+              <button class="carousel-btn prev-btn" aria-label="Previous review">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 18l-6-6 6-6"/>
+                </svg>
+              </button>
+              <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+                <span class="dot" data-index="5"></span>
+              </div>
+              <button class="carousel-btn next-btn" aria-label="Next review">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
             </div>
           </div>
           <div class="reviews-cta">

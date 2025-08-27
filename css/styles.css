@@ -407,6 +407,9 @@
   border-radius: 50px;
   transition: var(--transition);
   box-shadow: var(--box-shadow-sm);
+  border: 2px solid transparent;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .social-link:hover {
@@ -415,10 +418,21 @@
   box-shadow: var(--box-shadow-md);
 }
 
+.social-link:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(139, 168, 136, 0.3);
+}
+
 .social-link img {
   width: 24px;
   height: 24px;
   filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover img {
+  transform: scale(1.1);
 }
 
 /* Buttons */
@@ -492,6 +506,12 @@
   .social-links {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+  }
+  
+  .social-link {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -528,6 +548,56 @@
   color: var(--primary-color);
 }
 
+.reviews-carousel {
+  position: relative;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.reviews-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 0;
+  width: 100%;
+}
+
+.review-card {
+  min-width: 100%;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transform: scale(0.95);
+  transition: all 0.5s ease-in-out;
+  padding: 1.8rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow-sm);
+  border-left: 4px solid var(--accent-color);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.review-card.active {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: var(--box-shadow-md);
+  border-left-width: 6px;
+}
+
+.review-card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--box-shadow-lg);
+}
+
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -551,23 +621,27 @@
 
 .review-stars {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: #ffd700;
+  text-align: center;
 }
 
 .review-text {
   font-style: italic;
   color: var(--light-text);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   font-size: 1rem;
+  flex-grow: 1;
+  max-width: 100%;
 }
 
 .review-author {
   color: var(--primary-color);
   font-weight: 600;
-  text-align: right;
+  text-align: center;
   margin: 0;
+  font-size: 1rem;
 }
 
 .reviews-cta {
@@ -579,6 +653,80 @@
 
 .reviews-cta .btn {
   min-width: 200px;
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.carousel-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow-sm);
+  border: 2px solid transparent;
+}
+
+.carousel-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
+}
+
+.carousel-btn:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(139, 168, 136, 0.3);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.carousel-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 0.8rem;
+  margin: 0 1rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(44, 85, 48, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background: var(--secondary-color);
 }
 
 /* Responsive adjustments for reviews */
@@ -595,5 +743,25 @@
   
   .reviews-cta .btn {
     min-width: 250px;
+  }
+  
+  .carousel-nav {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
   }
 }
