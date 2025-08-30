@@ -1,4 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Swiper with lazy loading
+    const heroSlider = new Swiper('.hero-slider', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 1,
+        },
+        preloadImages: false,
+        watchSlidesProgress: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 800,
+        // Optimize for mobile
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            }
+        }
+    });
+
     // Intersection Observer for scroll animations
     const observerOptions = {
         root: null,
@@ -27,6 +62,37 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.scroll-fade, .stagger-item, .text-reveal, .section-transition').forEach(el => {
         observer.observe(el);
     });
+
+    // Optimize image loading for mobile
+    function optimizeImages() {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        
+        // Use Intersection Observer for better lazy loading
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+        });
+
+        images.forEach(img => {
+            if (img.dataset.src) {
+                imageObserver.observe(img);
+            }
+        });
+    }
+
+    // Initialize image optimization
+    optimizeImages();
 
     // Parallax effect
     const parallaxElements = document.querySelectorAll('.parallax-element');
@@ -172,25 +238,6 @@ document.addEventListener('DOMContentLoaded', function() {
         addressLink.addEventListener('click', function(e) {
             e.preventDefault();
             window.open('https://www.google.com/maps/place/Herestraat+82,+9711LL+Groningen', '_blank');
-        });
-    }
-
-    // Initialize Swiper for the hero section
-    if (document.querySelector('.hero-slider')) {
-        new Swiper('.hero-slider', {
-            loop: true, // Enable continuous loop
-            autoplay: {
-                delay: 5000, // 5 seconds between slides
-                disableOnInteraction: false, // Autoplay continues even after user interaction
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
         });
     }
 
