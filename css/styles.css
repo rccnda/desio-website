@@ -451,49 +451,67 @@
 }
 
 .social-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 2rem;
-  background: var(--primary-color);
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: white;
   text-decoration: none;
   border-radius: 50px;
-  transition: var(--transition);
-  box-shadow: var(--box-shadow-sm);
-  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(44, 85, 48, 0.3);
+  border: none;
   font-weight: 600;
-  font-size: 1rem;
-  /* Fix button overflow and ensure responsive behavior */
-  white-space: nowrap;
+  font-size: 0.9rem;
+  /* Responsive button that adapts to content */
+  min-width: fit-content;
+  max-width: none;
+  justify-content: center;
+  text-align: center;
+  position: relative;
   overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: 0;
-  flex-shrink: 0;
+  /* Allow text to wrap if needed */
+  white-space: normal;
+  line-height: 1.2;
 }
 
 .social-link:hover {
-  background: var(--secondary-color);
-  transform: translateY(-2px);
-  box-shadow: var(--box-shadow-md);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(44, 85, 48, 0.4);
 }
 
 .social-link:focus {
   outline: none;
-  border-color: var(--accent-color);
   box-shadow: 0 0 0 3px rgba(139, 168, 136, 0.3);
 }
 
 .social-link img {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
   flex-shrink: 0;
 }
 
 .social-link:hover img {
-  transform: scale(1.1);
+  transform: scale(1.15);
+}
+
+/* Shimmer effect */
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.social-link:hover::before {
+  left: 100%;
 }
 
 /* Buttons */
@@ -1140,5 +1158,329 @@
   
   .swiper-slide {
     transition: none;
+  }
+}
+
+/* Photo Gallery Section - Clean Responsive Design */
+.gallery-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+.gallery-section h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.gallery-section p {
+  font-size: 1.2rem;
+  color: var(--light-text);
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Clean Responsive Gallery Grid */
+.gallery-section .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.gallery-section .gallery-item {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  background: white;
+  border: 1px solid rgba(44, 85, 48, 0.05);
+  position: relative;
+  aspect-ratio: 4/3;
+}
+
+.gallery-section .gallery-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.gallery-section .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.gallery-section .gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Gallery overlay effect */
+.gallery-section .gallery-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(44, 85, 48, 0.1), rgba(139, 168, 136, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.gallery-section .gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* Gallery item info overlay */
+.gallery-section .gallery-item::before {
+  content: '📸';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.gallery-section .gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* Gallery caption overlay */
+.gallery-section .gallery-item .gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  padding: 1.5rem 1rem 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.gallery-section .gallery-item:hover .gallery-caption {
+  transform: translateY(0);
+}
+
+/* Gallery loading animation */
+.gallery-item {
+  animation: galleryItemFadeIn 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes galleryItemFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design for Enhanced Sections */
+@media (max-width: 768px) {
+  /* Gallery Mobile */
+  .gallery-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .gallery-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .gallery-section .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .gallery-section .gallery-item {
+    aspect-ratio: 3/2;
+  }
+  
+  /* Social Section Mobile */
+  .social-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .social-section p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .social-link {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.9rem;
+    max-width: 190px;
+  }
+  
+  .social-link img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Reviews Section Mobile */
+  .reviews-section h3 {
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .reviews-carousel {
+    max-width: 90%;
+    padding: 1.5rem;
+    margin: 0 auto;
+  }
+  
+  .review-card {
+    padding: 1.8rem 1.5rem;
+  }
+  
+  .review-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .carousel-nav {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .carousel-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .carousel-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .reviews-cta {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .reviews-cta .btn {
+    min-width: 160px;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Gallery Small Mobile */
+  .gallery-section h2 {
+    font-size: 2.2rem;
+  }
+  
+  .gallery-section p {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .gallery-section .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .gallery-section .gallery-item {
+    aspect-ratio: 4/3;
+  }
+  
+  /* Social Section Small Mobile */
+  .social-section h2 {
+    font-size: 2rem;
+  }
+  
+  .social-section p {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+  
+  .social-link {
+    padding: 0.8rem 1.25rem;
+    font-size: 0.85rem;
+    max-width: 170px;
+  }
+  
+  .social-link img {
+    width: 18px;
+    height: 18px;
+  }
+  
+  /* Reviews Section Small Mobile */
+  .reviews-section h3 {
+    font-size: 1.9rem;
+  }
+  
+  .reviews-carousel {
+    max-width: 95%;
+    padding: 1.25rem;
+  }
+  
+  .review-card {
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .review-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .carousel-nav {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .carousel-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .reviews-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .reviews-cta .btn {
+    width: 100%;
+    max-width: 260px;
+    min-width: auto;
   }
 }
