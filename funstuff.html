@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun Stuff - Desio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/funstuff.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/all.min.js"></script>
@@ -42,24 +43,119 @@
                 <li><a href="menudesio.html">Menù</a></li>
                 <li><a href="about-desio.html">About Desio</a></li>
                 <li><a href="funstuff.html">Fun Stuff</a></li>
-                <li><a href="workwithdesio.html">Work with us</a></li>
+                <li><a href="https://nl.indeed.com/viewjob?jk=d1aca2e67c4d5" target="_blank" rel="noopener">Work with us</a></li>
             </ul>
         </nav>
     </div>
+
     <main class="page-main">
-        <h1>Fun Stuff</h1>
-        <h2 class="text-center" style="text-align:center;">Meet our amazing team</h2>
-        <div style="text-align:center; margin-bottom:2rem;">
-            <a href="https://sikkom.nl/grunngids/horeca/nieuw-in-groningen-desio-46880007.html" target="_blank" rel="noopener" style="display:inline-block; margin:1em;">
-                <img src="https://images.sikkom.nl/sikkom/incoming/ppxv5e-20250715-115615.jpg/alternates/FREE_640/20250715_115615.jpg" alt="Desio Sikkom Article" style="width:180px; height:auto; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-                <div style="margin-top:0.5em; font-size:1rem;">Sikkom Article</div>
-            </a>
-            <a href="https://www.instagram.com/p/DMHpvtltPgm/" target="_blank" rel="noopener" style="display:inline-block; margin:1em;">
-                <img src="assets/images/team.jpg" alt="Instagram Team Feature" style="width:180px; height:auto; aspect-ratio: 640/480; object-fit: cover; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-                <div style="margin-top:0.5em; font-size:1rem;">oogstgroningen</div>
-            </a>
-        </div>
+        <!-- Hero Section -->
+        <section class="fun-hero">
+            <div class="hero-content">
+                <h1>Fun Stuff</h1>
+                <p>Discover the stories, music, and moments that make Desio special</p>
+            </div>
+        </section>
+
+        <!-- Featured Content Section -->
+        <section class="featured-content">
+            <div class="container">
+                <h2>Featured Stories</h2>
+                <p class="section-intro">Check out what people are saying about us and catch a glimpse of our team in action</p>
+                
+                <div class="content-grid">
+                    <!-- Blog Article Card -->
+                    <div class="content-card blog-card">
+                        <div class="card-image">
+                            <img src="https://images.sikkom.nl/sikkom/incoming/ppxv5e-20250715-115615.jpg/alternates/FREE_640/20250715_115615.jpg" alt="Desio Sikkom Article">
+                            <div class="card-overlay">
+                                <span class="card-tag">Press</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Sikkom Article</h3>
+                            <p>Read about our journey and what makes Desio special in Groningen's food scene</p>
+                            <a href="https://sikkom.nl/grunngids/horeca/nieuw-in-groningen-desio-46880007.html" target="_blank" rel="noopener" class="card-btn">
+                                Read Article →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Reel Card -->
+                    <div class="content-card instagram-card">
+                        <div class="card-image">
+                            <img src="assets/images/team.jpg" alt="Instagram Team Feature">
+                            <div class="card-overlay">
+                                <span class="card-tag">Social</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Team Feature on Instagram</h3>
+                            <p>Watch our amazing team in action, featured by oogstgroningen</p>
+                            <a href="https://www.instagram.com/p/DMHpvtltPgm/" target="_blank" rel="noopener" class="card-btn">
+                                Watch Reel →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section class="music-section">
+            <div class="container">
+                <h2>Our Vibe</h2>
+                <p class="section-intro">The music that keeps our kitchen grooving and our guests smiling</p>
+                
+                <div class="spotify-card">
+                    <div class="spotify-content">
+                        <div class="spotify-info">
+                            <h3>Desio Kitchen Playlist</h3>
+                            <p>Curated by our team - the perfect soundtrack for your Italian dining experience</p>
+                            <div class="playlist-stats">
+                                <span class="stat">🎵 50+ tracks</span>
+                                <span class="stat">⏱️ 3+ hours</span>
+                                <span class="stat">🇮🇹 Italian vibes</span>
+                            </div>
+                        </div>
+                        <div class="spotify-embed">
+                            <iframe 
+                                style="border-radius:12px" 
+                                src="https://open.spotify.com/embed/playlist/5rQvxOYb4BTNgYgGLXxjcu?utm_source=generator" 
+                                width="100%" 
+                                height="352" 
+                                frameborder="0" 
+                                allowfullscreen="" 
+                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <h2>Meet Our Amazing Team</h2>
+                <p class="section-intro">The passionate people behind every delicious dish and warm smile</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="assets/images/team.jpg" alt="Desio Team">
+                        </div>
+                        <div class="member-info">
+                            <h3>The Desio Family</h3>
+                            <p>From our chefs crafting authentic Italian flavors to our friendly staff making every visit memorable</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
     <div id="footer-placeholder"></div>
     <script src="footer-inject.js"></script>
     <script src="main.js"></script>

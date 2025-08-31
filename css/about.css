@@ -99,6 +99,11 @@
   gap: 0.8rem;
 }
 
+/* Special styling for contact card header to ensure readability */
+.contact-card h2 {
+  color: var(--primary-color);
+}
+
 .info-card h2::before {
   font-size: 1.5rem;
 }
@@ -186,13 +191,18 @@
   gap: 1rem;
   padding: 1rem;
   background: var(--light-background);
+  color: var(--text-color);
   border-radius: 10px;
   transition: var(--transition);
+  border: 2px solid var(--light-background);
 }
 
 .contact-item:hover {
   background: var(--accent-color);
-  color: white;
+  color: var(--text-color);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-md);
 }
 
 .contact-item .icon {
@@ -205,16 +215,29 @@
   font-size: 1rem;
   margin-bottom: 0.2rem;
   color: inherit;
+  font-weight: 600;
 }
 
 .contact-item .details a {
   color: inherit;
   text-decoration: none;
   font-weight: 600;
+  transition: var(--transition);
 }
 
 .contact-item:hover .details a {
-  color: white;
+  color: var(--text-color);
+}
+
+/* Ensure contact card has good contrast */
+.contact-card {
+  background: white;
+  border-top: 4px solid var(--primary-color);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-lg);
 }
 
 /* Map Section */
