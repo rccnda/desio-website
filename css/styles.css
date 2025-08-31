@@ -633,6 +633,7 @@
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+  touch-action: pan-y pinch-zoom;
 }
 
 .reviews-track {
@@ -656,6 +657,12 @@
   left: 0;
   right: 0;
   display: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.review-card:active {
+  cursor: grabbing;
 }
 
 .review-card.active {
@@ -663,6 +670,12 @@
   transform: translateX(0);
   display: block;
   position: relative;
+}
+
+/* Swipe Visual Feedback */
+.review-card.swiping {
+  transition: none;
+  cursor: grabbing;
 }
 
 /* Compact Star Rating */
@@ -1478,5 +1491,40 @@
     width: 100%;
     max-width: 260px;
     min-width: auto;
+  }
+}
+
+/* Mobile Touch Enhancements */
+@media (max-width: 768px) {
+  .reviews-carousel {
+    touch-action: pan-x pan-y;
+  }
+  
+  .review-card {
+    cursor: grab;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .review-card:active {
+    cursor: grabbing;
+  }
+  
+  /* Hide arrow buttons on mobile for cleaner look */
+  .carousel-btn {
+    display: none;
+  }
+  
+  .carousel-nav {
+    margin-top: 1.5rem;
+  }
+  
+  /* Larger touch targets for dots */
+  .dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 0.25rem;
   }
 }

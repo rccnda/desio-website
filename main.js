@@ -132,116 +132,158 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Enhanced Reviews Carousel
+    // Reviews Carousel with Touch/Swipe Support
     let currentReviewIndex = 0;
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    function showReview(index) {
+      const reviews = document.querySelectorAll('.review-card');
+      const dots = document.querySelectorAll('.dot');
+      
+      // Hide all reviews
+      reviews.forEach(review => {
+        review.classList.remove('active');
+      });
+      
+      // Remove active class from all dots
+      dots.forEach(dot => {
+        dot.classList.remove('active');
+      });
+      
+      // Show current review and activate corresponding dot
+      if (reviews[index]) {
+        reviews[index].classList.add('active');
+        if (dots[index]) {
+          dots[index].classList.add('active');
+        }
+      }
+      
+      currentReviewIndex = index;
+    }
+
+    function nextReview() {
+      const reviews = document.querySelectorAll('.review-card');
+      const nextIndex = (currentReviewIndex + 1) % reviews.length;
+      showReview(nextIndex);
+    }
+
+    function prevReview() {
+      const reviews = document.querySelectorAll('.review-card');
+      const prevIndex = (currentReviewIndex - 1 + reviews.length) % reviews.length;
+      showReview(prevIndex);
+    }
+
+    // Touch/Swipe Event Handlers
+    function handleTouchStart(e) {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      
+      // Add visual feedback
+      const activeReview = document.querySelector('.review-card.active');
+      if (activeReview) {
+        activeReview.style.transition = 'none';
+      }
+    }
+
+    function handleTouchMove(e) {
+      if (!isDragging) return;
+      
+      currentX = e.touches[0].clientX;
+      const diffX = currentX - startX;
+      
+      // Add visual feedback during swipe
+      const activeReview = document.querySelector('.review-card.active');
+      if (activeReview && Math.abs(diffX) > 10) {
+        activeReview.style.transform = `translateX(${diffX * 0.3}px)`;
+      }
+    }
+
+    function handleTouchEnd(e) {
+      if (!isDragging) return;
+      
+      isDragging = false;
+      const diffX = currentX - startX;
+      const threshold = 50; // Minimum swipe distance
+      
+      // Reset transform
+      const activeReview = document.querySelector('.review-card.active');
+      if (activeReview) {
+        activeReview.style.transition = 'all 0.4s ease';
+        activeReview.style.transform = 'translateX(0)';
+      }
+      
+      // Determine swipe direction and navigate
+      if (Math.abs(diffX) > threshold) {
+        if (diffX > 0) {
+          // Swipe right - go to previous review
+          prevReview();
+        } else {
+          // Swipe left - go to next review
+          nextReview();
+        }
+      }
+    }
+
+      // Initialize Reviews Carousel
+  function initReviewsCarousel() {
     const reviews = document.querySelectorAll('.review-card');
-    const reviewsTrack = document.querySelector('.reviews-track');
+    const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    const dots = document.querySelectorAll('.dot');
     
-    if (reviews.length > 0 && reviewsTrack) {
-        // Initialize reviews carousel
-        function showReview(index) {
-            // Update active review
-            reviews.forEach((review, i) => {
-                review.classList.toggle('active', i === index);
-            });
-            
-            // Update dots
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            
-            // Update current index
-            currentReviewIndex = index;
-            
-            // Update navigation buttons
-            if (prevBtn) prevBtn.disabled = index === 0;
-            if (nextBtn) nextBtn.disabled = index === reviews.length - 1;
-        }
-        
-        // Navigation functions
-        function nextReview() {
-            const nextIndex = (currentReviewIndex + 1) % reviews.length;
-            showReview(nextIndex);
-        }
-        
-        function prevReview() {
-            const prevIndex = currentReviewIndex === 0 ? reviews.length - 1 : currentReviewIndex - 1;
-            showReview(prevIndex);
-        }
-        
-        // Event listeners for navigation
-        if (nextBtn) {
-            nextBtn.addEventListener('click', nextReview);
-        }
-        
-        if (prevBtn) {
-            prevBtn.addEventListener('click', prevReview);
-        }
-        
-        // Dot navigation
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => showReview(index));
-        });
-        
-        // Touch/Swipe support for mobile
-        let startX = 0;
-        let endX = 0;
-        
-        function handleTouchStart(e) {
-            startX = e.touches[0].clientX;
-        }
-        
-        function handleTouchEnd(e) {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        }
-        
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = startX - endX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    // Swipe left - next review
-                    nextReview();
-                } else {
-                    // Swipe right - previous review
-                    prevReview();
-                }
-            }
-        }
-        
-        // Add touch events to reviews track
-        reviewsTrack.addEventListener('touchstart', handleTouchStart, { passive: true });
-        reviewsTrack.addEventListener('touchend', handleTouchEnd, { passive: true });
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                prevReview();
-            } else if (e.key === 'ArrowRight') {
-                nextReview();
-            }
-        });
-        
-        // Auto-advance reviews
-        let autoAdvanceInterval = setInterval(nextReview, 8000);
-        
-        // Pause auto-advance on hover
-        reviewsTrack.addEventListener('mouseenter', () => {
-            clearInterval(autoAdvanceInterval);
-        });
-        
-        reviewsTrack.addEventListener('mouseleave', () => {
-            autoAdvanceInterval = setInterval(nextReview, 8000);
-        });
-        
-        // Initialize first review
-        showReview(0);
+    if (reviews.length === 0) return;
+    
+    // Show first review by default
+    showReview(0);
+    
+    // Add event listeners for navigation buttons
+    if (prevBtn) {
+      prevBtn.addEventListener('click', prevReview);
     }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextReview);
+    }
+    
+    // Add event listeners for dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showReview(index));
+    });
+    
+    // Add touch/swipe event listeners
+    const carousel = document.querySelector('.reviews-carousel');
+    if (carousel) {
+      carousel.addEventListener('touchstart', handleTouchStart, { passive: false });
+      carousel.addEventListener('touchmove', handleTouchMove, { passive: false });
+      carousel.addEventListener('touchend', handleTouchEnd, { passive: false });
+    }
+    
+    // Auto-advance reviews every 5 seconds
+    let autoAdvanceInterval = setInterval(nextReview, 5000);
+    
+    // Pause auto-advance on hover
+    carousel.addEventListener('mouseenter', () => {
+      clearInterval(autoAdvanceInterval);
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+      autoAdvanceInterval = setInterval(nextReview, 5000);
+    });
+    
+    // Keyboard navigation support
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevReview();
+      } else if (e.key === 'ArrowRight') {
+        nextReview();
+      }
+    });
+  }
+  
+  // Call the initialization function
+  initReviewsCarousel();
 
     // Enhanced Gallery Masonry Layout
     function initMasonryGallery() {

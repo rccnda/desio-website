@@ -65,12 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
             story: 'Our tonno pasta draws inspiration from the coastal regions of Sicily and Sardinia, where tuna fishing has been a tradition for centuries. The combination of fresh tuna with Mediterranean staples like olives and capers creates a dish that\'s both light and satisfying, perfect for warm days when you crave the taste of the Italian coast.',
             allergies: ['🐟 Fish', '🌾 Gluten']
         },
-        'panini-brasato': {
-            name: 'Brasato Panini',
+        'sandwich-brasato': {
+            name: 'Brasato Sandwich',
             price: '€10',
             image: 'assets/images/panino_brasato.jpg',
             ingredients: 'Braised beef, caramelized onions, carrots, celery, red wine, mustard, sage, rosemary, s/p',
-            story: 'Our Brasato panini transforms the classic braised beef into a portable masterpiece. The tender beef is complemented by caramelized onions and a hint of mustard, creating a sandwich that\'s both sophisticated and satisfying. This panini represents the perfect marriage of traditional Italian cooking with modern convenience.',
+            story: 'Our Brasato sandwich transforms the classic braised beef into a portable masterpiece. The tender beef is complemented by caramelized onions and a hint of mustard, creating a sandwich that\'s both sophisticated and satisfying. This sandwich represents the perfect marriage of traditional Italian cooking with modern convenience.',
             allergies: ['🥩 Meat', '🌾 Gluten', '🍷 Wine']
         },
         'prosciutto-crudo': {
@@ -89,28 +89,28 @@ document.addEventListener('DOMContentLoaded', function() {
             story: 'Mortadella, the pride of Bologna, is elevated in our panini with the addition of pistachios and truffle mayo. This combination celebrates the rich culinary heritage of Emilia-Romagna, where mortadella has been crafted for centuries. The subtle truffle notes add a touch of luxury to this traditional Italian favorite.',
             allergies: ['🥩 Meat', '🌾 Gluten', '🥛 Dairy', '🥜 Nuts']
         },
-        'panini-pesto': {
-            name: 'Pesto Panini',
+        'sandwich-pesto': {
+            name: 'Pesto Sandwich',
             price: '€10',
             image: 'assets/images/panino_pesto.jpg',
             ingredients: 'Fresh homemade pesto, burrata, tomatoes',
-            story: 'Our Pesto Panini brings the vibrant flavors of Liguria to your hands. Fresh basil pesto is paired with creamy burrata and ripe tomatoes, creating a sandwich that\'s both refreshing and indulgent. This panini captures the essence of Italian summer and the Mediterranean lifestyle.',
+            story: 'Our Pesto Sandwich brings the vibrant flavors of Liguria to your hands. Fresh basil pesto is paired with creamy burrata and ripe tomatoes, creating a sandwich that\'s both refreshing and indulgent. This sandwich captures the essence of Italian summer and the Mediterranean lifestyle.',
             allergies: ['🌾 Gluten', '🥛 Dairy', '🥜 Nuts']
         },
-        'panini-salmone': {
-            name: 'Salmone Panini',
+        'sandwich-salmone': {
+            name: 'Salmone Sandwich',
             price: '€10',
             image: 'assets/images/panino_salmone.jpg',
             ingredients: 'Smoked salmon, cream cheese, cucumber cream salad, dill oil',
-            story: 'Our Salmone Panini offers a sophisticated take on the classic salmon sandwich. Smoked salmon is paired with a refreshing cucumber cream salad and finished with dill oil, creating a combination that\'s both elegant and satisfying. This panini reflects the Italian love for fresh, quality ingredients.',
+            story: 'Our Salmone Sandwich offers a sophisticated take on the classic salmon sandwich. Smoked salmon is paired with a refreshing cucumber cream salad and finished with dill oil, creating a combination that\'s both elegant and satisfying. This sandwich reflects the Italian love for fresh, quality ingredients.',
             allergies: ['🐟 Fish', '🌾 Gluten', '🥛 Dairy']
         },
-        'panini-tonno': {
-            name: 'Tonno Panini',
+        'sandwich-tonno': {
+            name: 'Tonno Sandwich',
             price: '€8',
             image: 'assets/images/bread.jpg',
             ingredients: 'Tuna, capers, mayo, olives',
-            story: 'The Tonno Panini celebrates the Mediterranean tradition of tuna fishing. Fresh tuna is combined with briny capers and olives, creating a flavor profile that\'s both bold and balanced. This panini represents the coastal Italian lifestyle and the importance of preserving traditional flavors.',
+            story: 'The Tonno Sandwich celebrates the Mediterranean tradition of tuna fishing. Fresh tuna is combined with briny capers and olives, creating a flavor profile that\'s both bold and balanced. This sandwich represents the coastal Italian lifestyle and the importance of preserving traditional flavors.',
             allergies: ['🐟 Fish', '🌾 Gluten', '🥚 Eggs']
         },
         'caprese-stracciatella': {
@@ -235,9 +235,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to show dish modal
     function showDishModal(dishId) {
+        console.log('showDishModal called with dishId:', dishId); // Debug log
+        console.log('Available dishes:', Object.keys(dishData)); // Debug log
         
         const dish = dishData[dishId];
+        console.log('Found dish data:', dish); // Debug log
+        
         if (!dish) {
+            console.log('No dish found for ID:', dishId); // Debug log
             return;
         }
 
@@ -281,8 +286,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.menu-item').forEach(item => {
         item.addEventListener('click', function() {
             const dishId = this.getAttribute('data-dish');
+            console.log('Menu item clicked, dishId:', dishId); // Debug log
             
             if (dishId) {
+                console.log('Showing modal for dish:', dishId); // Debug log
                 showDishModal(dishId);
             }
         });
