@@ -614,169 +614,119 @@
   }
 }
 
-/* Reviews Section */
+/* Reviews Section - Minimal Modern Design */
 .reviews-section {
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 1px solid #eee;
+  margin-top: 3rem;
+  padding: 2rem 0;
 }
 
 .reviews-section h3 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 1.8rem;
   color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
 }
 
+/* Clean Reviews Carousel */
 .reviews-carousel {
+  max-width: 800px;
+  margin: 0 auto;
   position: relative;
-  margin-bottom: 3rem;
-  overflow: hidden;
-  width: 100%;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 1.5rem;
 }
 
 .reviews-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  gap: 0;
-  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Minimal Review Cards */
 .review-card {
-  min-width: 100%;
-  flex-shrink: 0;
-  opacity: 0.7;
-  transform: scale(0.95);
-  transition: all 0.5s ease-in-out;
-  padding: 1.8rem;
   background: white;
-  border-radius: 15px;
-  box-shadow: var(--box-shadow-sm);
-  border-left: 4px solid var(--accent-color);
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(44, 85, 48, 0.08);
   text-align: center;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
 }
 
 .review-card.active {
   opacity: 1;
-  transform: scale(1);
-  box-shadow: var(--box-shadow-md);
-  border-left-width: 6px;
+  transform: translateX(0);
+  display: block;
+  position: relative;
 }
 
-.review-card:hover {
-  transform: scale(1.02);
-  box-shadow: var(--box-shadow-lg);
-}
-
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.review-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: var(--box-shadow-sm);
-  transition: var(--transition);
-  border-left: 4px solid var(--accent-color);
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--box-shadow-md);
-}
-
+/* Compact Star Rating */
 .review-stars {
-  font-size: 1.5rem;
-  margin-bottom: 1.2rem;
-  color: #ffd700;
-  text-align: center;
-}
-
-.review-text {
-  font-style: italic;
-  color: var(--light-text);
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
   font-size: 1rem;
-  flex-grow: 1;
-  max-width: 100%;
+  margin-bottom: 1rem;
+  color: #ffd700;
 }
 
+/* Review Text - Clean Typography */
+.review-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+  font-style: italic;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Author - Subtle Design */
 .review-author {
+  font-size: 0.9rem;
   color: var(--primary-color);
   font-weight: 600;
-  text-align: center;
   margin: 0;
-  font-size: 1rem;
 }
 
-.reviews-cta {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.reviews-cta .btn {
-  min-width: 200px;
-}
-
-/* Carousel Navigation */
+/* Minimal Navigation */
 .carousel-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 2rem;
-  position: relative;
-  z-index: 10;
 }
 
+/* Clean Navigation Buttons */
 .carousel-btn {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  width: 48px;
-  height: 48px;
+  background: white;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: var(--box-shadow-sm);
-  border: 2px solid transparent;
+  box-shadow: 0 2px 8px rgba(44, 85, 48, 0.1);
 }
 
 .carousel-btn:hover {
-  background: var(--secondary-color);
+  background: var(--primary-color);
+  color: white;
   transform: translateY(-2px);
-  box-shadow: var(--box-shadow-md);
+  box-shadow: 0 4px 16px rgba(44, 85, 48, 0.2);
 }
 
 .carousel-btn:focus {
   outline: none;
-  border-color: var(--accent-color);
   box-shadow: 0 0 0 3px rgba(139, 168, 136, 0.3);
-}
-
-.carousel-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
 }
 
 .carousel-btn svg {
@@ -784,17 +734,18 @@
   height: 20px;
 }
 
+/* Minimal Dots Navigation */
 .carousel-dots {
   display: flex;
-  gap: 0.8rem;
-  margin: 0 1rem;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: rgba(44, 85, 48, 0.3);
+  background: rgba(44, 85, 48, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -806,6 +757,51 @@
 
 .dot:hover {
   background: var(--secondary-color);
+}
+
+/* Reviews CTA - Clean Design */
+.reviews-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.reviews-cta .btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reviews-cta .btn-primary {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 16px rgba(44, 85, 48, 0.2);
+}
+
+.reviews-cta .btn-primary:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 85, 48, 0.3);
+}
+
+.reviews-cta .btn-secondary {
+  background: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.reviews-cta .btn-secondary:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
 }
 
 /* Responsive adjustments for reviews */
@@ -1281,18 +1277,18 @@
 }
 
 /* Gallery loading animation */
-.gallery-item {
+.gallery-section .gallery-item {
   animation: galleryItemFadeIn 0.6s ease-out forwards;
   opacity: 0;
   transform: translateY(30px);
 }
 
-.gallery-item:nth-child(1) { animation-delay: 0.1s; }
-.gallery-item:nth-child(2) { animation-delay: 0.2s; }
-.gallery-item:nth-child(3) { animation-delay: 0.3s; }
-.gallery-item:nth-child(4) { animation-delay: 0.4s; }
-.gallery-item:nth-child(5) { animation-delay: 0.5s; }
-.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+.gallery-section .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-section .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-section .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-section .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-section .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-section .gallery-item:nth-child(6) { animation-delay: 0.6s; }
 
 @keyframes galleryItemFadeIn {
   to {
