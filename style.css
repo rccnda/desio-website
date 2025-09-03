@@ -2576,20 +2576,7 @@ html {
     display: none;
   }
   
-  /* Ensure mobile menu is properly positioned and hidden by default */
-  .mobile-menu {
-    transform: translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-  
-  .mobile-menu.active {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
+
 }
 
 .btn,

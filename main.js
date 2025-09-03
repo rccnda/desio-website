@@ -320,6 +320,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuClose = document.querySelector('.mobile-menu-close');
     const body = document.body;
 
+
+
     // Create mobile menu overlay
     const mobileMenuOverlay = document.createElement('div');
     mobileMenuOverlay.className = 'mobile-menu-overlay';
