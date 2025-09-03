@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'bread-bruschetta': {
             name: 'Bread with Bruschetta',
-            price: '€4',
+            price: '€4.5',
             image: 'assets/images/bruschetta.jpg',
             ingredients: 'Fresh bread with tomatoes, garlic, basil, olive oil',
             story: 'Our Bruschetta celebrates the rustic charm of Italian antipasti. Fresh bread is toasted and topped with a vibrant mixture of ripe tomatoes, fragrant basil, and garlic. This simple yet flavorful dish embodies the Italian tradition of turning humble ingredients into something extraordinary.',
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'bread-truffle-butter': {
             name: 'Bread with Truffle Butter',
-            price: '€4',
+            price: '€4.5',
             image: 'assets/images/butter.jpg',
             ingredients: 'Fresh bread with truffle butter',
             story: 'Our Bread with Truffle Butter offers a luxurious twist on simple bread service. The earthy, aromatic truffle butter transforms ordinary bread into an indulgent treat. This combination showcases the Italian love for bold, distinctive flavors and the art of elevating everyday ingredients.',
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'bread-pesto': {
             name: 'Bread with Pesto',
-            price: '€4',
+            price: '€4.5',
             image: 'assets/images/pesto fresco.jpg',
             ingredients: 'Fresh bread with homemade pesto',
             story: 'Our Bread with Pesto brings the vibrant flavors of Liguria to your table. Fresh basil pesto, made with pine nuts and aged Parmigiano, is spread generously on warm bread. This simple preparation highlights the authentic taste of Italian pesto and the Mediterranean lifestyle.',
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'bread-burrata': {
             name: 'Bread with Burrata',
-            price: '€5',
+            price: '€5.5',
             image: 'assets/images/burrata.jpg',
             ingredients: 'Fresh bread with creamy burrata',
             story: 'Our Bread with Burrata celebrates the creamy indulgence of Italian cheese culture. The rich, velvety texture of burrata paired with fresh bread creates a perfect harmony of textures and flavors. This combination represents the Italian art of simple yet sophisticated food pairings.',
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'stracciatella-burrata': {
             name: 'Stracciatella Burrata',
-            price: '€6',
+            price: '€3',
             image: 'assets/images/burrata.jpg',
             ingredients: 'Fresh stracciatella burrata cheese',
             story: 'Our Stracciatella Burrata showcases the delicate art of Italian cheesemaking. The creamy, stringy stracciatella wrapped in fresh mozzarella creates a textural masterpiece. This cheese represents the Italian dedication to craftsmanship and the celebration of simple, pure flavors.',
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'classic-tiramisu': {
             name: 'Classic Tiramisù',
-            price: '€6',
+            price: '€4.5',
             image: 'assets/images/classic_tiramisù.png',
             ingredients: 'Mascarpone cream, coffee-soaked ladyfingers, cocoa powder',
             story: 'Our Classic Tiramisù is a tribute to the beloved Italian dessert that originated in Veneto. Layers of coffee-soaked ladyfingers are alternated with rich mascarpone cream, creating a dessert that\'s both light and indulgent. This timeless recipe represents the perfect balance of coffee, cream, and sweetness that has made tiramisù a global favorite.',
