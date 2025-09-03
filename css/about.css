@@ -48,6 +48,8 @@
 .about-content {
   padding: 4rem 0;
   background: var(--light-background);
+  position: relative;
+  z-index: 1;
 }
 
 .about-content .container {
@@ -244,6 +246,8 @@
 .map-section {
   background: white;
   padding: 3rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .map-section .container {
@@ -290,6 +294,8 @@
   padding: 4rem 0;
   background: var(--light-background);
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .store-reviews .container {

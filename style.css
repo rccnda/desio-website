@@ -782,7 +782,9 @@ p {
   padding: 0;
   margin-top: 4rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 10;
+  min-height: auto;
 }
 
 .site-footer::before {
@@ -799,6 +801,8 @@ p {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 10;
 }
 
 .footer-main {
@@ -806,12 +810,16 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3rem;
   padding: 4rem 0 3rem 0;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-section {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-heading {
@@ -994,6 +1002,8 @@ p {
   background: rgba(0, 0, 0, 0.2);
   padding: 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
 }
 
 .footer-bottom-content {
@@ -1180,27 +1190,40 @@ p {
   /* Enhanced Mobile Footer */
   .site-footer {
     margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+    min-height: auto;
+    overflow: visible;
   }
   
   .footer-content {
     padding: 0 1rem;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-main {
     grid-template-columns: 1fr;
     gap: 2.5rem;
     padding: 2.5rem 0 2rem 0;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-section {
     text-align: center;
     align-items: center;
     padding: 0 0.5rem;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-heading {
     font-size: 1.3rem;
     margin-bottom: 1rem;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-heading::after {
@@ -1213,6 +1236,9 @@ p {
     line-height: 1.5;
     max-width: 300px;
     margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-links {
@@ -1221,6 +1247,8 @@ p {
     gap: 0.8rem;
     align-items: center;
     width: 100%;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-links a {
@@ -1228,6 +1256,9 @@ p {
     padding: 0.5rem 0;
     width: 100%;
     text-align: center;
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 10;
   }
   
   .contact-info {
@@ -1236,6 +1267,8 @@ p {
     gap: 1rem;
     align-items: center;
     width: 100%;
+    position: relative;
+    z-index: 10;
   }
   
   .contact-item {
@@ -1246,6 +1279,9 @@ p {
     text-align: center;
     justify-content: center;
     width: 100%;
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 10;
   }
   
   .contact-icon {
@@ -1258,6 +1294,9 @@ p {
     max-width: 280px;
     margin: 0 auto 1rem auto;
     line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 10;
   }
   
   .newsletter-form {
@@ -1266,6 +1305,8 @@ p {
     max-width: 280px;
     margin: 0 auto;
     gap: 0.8rem;
+    position: relative;
+    z-index: 10;
   }
   
   .newsletter-form input,
@@ -1273,6 +1314,8 @@ p {
     width: 100%;
     padding: 1rem;
     font-size: 0.95rem;
+    position: relative;
+    z-index: 10;
   }
   
   .newsletter-btn {
@@ -1282,11 +1325,15 @@ p {
   
   .footer-bottom {
     padding: 1.5rem 0;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-bottom-content {
     gap: 1.5rem;
     padding: 0 1rem;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-legal, .footer-business {
@@ -1295,11 +1342,16 @@ p {
     align-items: center;
     text-align: center;
     width: 100%;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-legal a, .footer-business span {
     font-size: 0.9rem;
     padding: 0.3rem 0;
+    color: rgba(255, 255, 255, 0.8) !important;
+    position: relative;
+    z-index: 10;
   }
   
   .separator {
@@ -1310,11 +1362,15 @@ p {
     justify-content: center;
     gap: 1.2rem;
     margin-top: 1rem;
+    position: relative;
+    z-index: 10;
   }
   
   .social-link {
     width: 48px;
     height: 48px;
+    position: relative;
+    z-index: 10;
   }
   
   .social-link img {
@@ -1327,50 +1383,75 @@ p {
 @media (max-width: 480px) {
   .footer-content {
     padding: 0 0.75rem;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-main {
     gap: 2rem;
     padding: 2rem 0 1.5rem 0;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-section {
     padding: 0 0.25rem;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-heading {
     font-size: 1.2rem;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-description {
     font-size: 0.9rem;
     max-width: 260px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-links a {
     font-size: 0.9rem;
     padding: 0.4rem 0;
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 10;
   }
   
   .contact-item {
     font-size: 0.9rem;
     gap: 0.6rem;
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 10;
   }
   
   .newsletter-text {
     font-size: 0.9rem;
     max-width: 250px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    position: relative;
+    z-index: 10;
   }
   
   .newsletter-form {
     max-width: 250px;
     gap: 0.6rem;
+    position: relative;
+    z-index: 10;
   }
   
   .newsletter-form input,
   .newsletter-form button {
     padding: 0.9rem;
     font-size: 0.9rem;
+    position: relative;
+    z-index: 10;
   }
   
   .newsletter-btn {
@@ -1380,21 +1461,30 @@ p {
   
   .footer-bottom {
     padding: 1.25rem 0;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-bottom-content {
     padding: 0 0.75rem;
     gap: 1.25rem;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-legal a, .footer-business span {
     font-size: 0.85rem;
     padding: 0.25rem 0;
+    color: rgba(255, 255, 255, 0.8) !important;
+    position: relative;
+    z-index: 10;
   }
   
   .social-link {
     width: 44px;
     height: 44px;
+    position: relative;
+    z-index: 10;
   }
   
   .social-link img {
@@ -1414,18 +1504,27 @@ p {
   .footer-main {
     gap: 1.5rem;
     padding: 1.5rem 0 1rem 0;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-section {
     gap: 1rem;
+    position: relative;
+    z-index: 10;
   }
   
   .footer-heading {
     font-size: var(--font-size-md);
+    color: #ffffff !important;
+    position: relative;
+    z-index: 10;
   }
   
   .newsletter-form {
     max-width: 250px;
+    position: relative;
+    z-index: 10;
   }
 }
 
