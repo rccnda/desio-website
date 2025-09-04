@@ -324,9 +324,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Check if elements exist
         if (!toggleButton || !mobileMenu || !closeButton) {
-            console.error('Mobile menu elements not found!');
+            console.error('Mobile menu elements not found!', {
+                toggleButton: !!toggleButton,
+                mobileMenu: !!mobileMenu,
+                closeButton: !!closeButton
+            });
             return;
         }
+
+        console.log('Mobile menu elements found successfully:', {
+            toggleButton: toggleButton,
+            mobileMenu: mobileMenu,
+            closeButton: closeButton
+        });
 
         let isOpen = false;
 
@@ -359,6 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleButton.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
+            console.log('Mobile menu toggle clicked!');
             toggleMenu();
         });
 

@@ -220,8 +220,8 @@ p {
   justify-content: space-around;
   width: 40px;
   height: 40px;
-  background: transparent;
-  border: none;
+  background: rgba(44, 85, 48, 0.1);
+  border: 2px solid var(--primary-color);
   cursor: pointer;
   padding: 8px;
   z-index: 1002;
@@ -255,6 +255,7 @@ p {
   transform-origin: center;
   display: block;
   pointer-events: none;
+  box-shadow: 0 0 2px rgba(44, 85, 48, 0.3);
 }
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
