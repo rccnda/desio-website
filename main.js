@@ -314,179 +314,94 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize gallery
     initMasonryGallery();
 
-    // Enhanced Mobile Menu Functionality - Cross-Browser Compatible
-    function initMobileMenu() {
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    // Simple Mobile Menu - Bulletproof Implementation
+    function initSimpleMobileMenu() {
+        const toggleButton = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeButton = document.getElementById('mobile-menu-close');
+        const menuLinks = document.querySelectorAll('.mobile-menu-link');
         const body = document.body;
 
         // Check if elements exist
-        if (!hamburger || !mobileMenu || !mobileMenuClose) {
-            console.warn('Mobile menu elements not found');
+        if (!toggleButton || !mobileMenu || !closeButton) {
+            console.error('Mobile menu elements not found!');
             return;
         }
 
-        // Create mobile menu overlay
-        let mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-        if (!mobileMenuOverlay) {
-            mobileMenuOverlay = document.createElement('div');
-            mobileMenuOverlay.className = 'mobile-menu-overlay';
-            document.body.appendChild(mobileMenuOverlay);
+        let isOpen = false;
+
+        // Open menu
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            toggleButton.classList.add('active');
+            body.style.overflow = 'hidden';
+            isOpen = true;
         }
 
-        let isMenuOpen = false;
-        let scrollPosition = 0;
+        // Close menu
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            toggleButton.classList.remove('active');
+            body.style.overflow = '';
+            isOpen = false;
+        }
 
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-            isMenuOpen = !isMenuOpen;
-            
-            if (isMenuOpen) {
-                openMobileMenu();
+        // Toggle menu
+        function toggleMenu() {
+            if (isOpen) {
+                closeMenu();
             } else {
-                closeMobileMenu();
+                openMenu();
             }
         }
 
-        // Open mobile menu
-        function openMobileMenu() {
-            // Store scroll position
-            scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Add active classes
-            hamburger.classList.add('active');
-            mobileMenu.classList.add('active');
-            mobileMenuOverlay.classList.add('active');
-            
-            // Prevent background scrolling
-            body.style.overflow = 'hidden';
-            body.style.position = 'fixed';
-            body.style.top = `-${scrollPosition}px`;
-            body.style.width = '100%';
-            
-            // Add touch-action to prevent scrolling
-            body.style.touchAction = 'none';
-        }
+        // Event listeners
+        toggleButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu();
+        });
 
-        // Close mobile menu
-        function closeMobileMenu() {
-            // Remove active classes
-            hamburger.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            
-            // Restore scrolling
-            body.style.overflow = '';
-            body.style.position = '';
-            body.style.top = '';
-            body.style.width = '';
-            body.style.touchAction = '';
-            
-            // Restore scroll position
-            window.scrollTo(0, scrollPosition);
-            
-            isMenuOpen = false;
-        }
+        closeButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeMenu();
+        });
 
-        // Enhanced event listeners with touch support
-        function addEventListeners() {
-            // Hamburger click/touch
-            hamburger.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMobileMenu();
+        // Close menu when clicking on links
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMenu();
             });
+        });
 
-            // Touch events for better mobile support
-            hamburger.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-            }, { passive: false });
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isOpen) {
+                closeMenu();
+            }
+        });
 
-            hamburger.addEventListener('touchend', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMobileMenu();
-            }, { passive: false });
+        // Close menu on window resize to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && isOpen) {
+                closeMenu();
+            }
+        });
 
-            // Close button
-            mobileMenuClose.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                closeMobileMenu();
-            });
-
-            // Overlay click
-            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-            mobileMenuOverlay.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                closeMobileMenu();
-            }, { passive: false });
-
-            // Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && isMenuOpen) {
-                    closeMobileMenu();
-                }
-            });
-
-            // Close on menu link clicks
-            const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-nav a');
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    closeMobileMenu();
-                });
-            });
-
-            // Close on window resize (if menu is open and screen becomes large)
-            window.addEventListener('resize', function() {
-                if (isMenuOpen && window.innerWidth > 768) {
-                    closeMobileMenu();
-                }
-            });
-
-            // Prevent menu from opening on desktop
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768 && isMenuOpen) {
-                    closeMobileMenu();
-                }
-            });
-        }
-
-        // Initialize
-        addEventListeners();
-        
         // Make functions globally accessible for debugging
         window.mobileMenu = {
-            open: openMobileMenu,
-            close: closeMobileMenu,
-            toggle: toggleMobileMenu,
-            isOpen: () => isMenuOpen,
-            elements: {
-                hamburger: hamburger,
-                menu: mobileMenu,
-                close: mobileMenuClose,
-                overlay: mobileMenuOverlay
-            }
+            open: openMenu,
+            close: closeMenu,
+            toggle: toggleMenu,
+            isOpen: () => isOpen
         };
 
-        // Debug function - can be called from browser console
-        window.debugMobileMenu = function() {
-            console.log('Mobile Menu Debug Info:');
-            console.log('- Hamburger element:', hamburger);
-            console.log('- Mobile menu element:', mobileMenu);
-            console.log('- Close button element:', mobileMenuClose);
-            console.log('- Overlay element:', mobileMenuOverlay);
-            console.log('- Is menu open:', isMenuOpen);
-            console.log('- Menu classes:', mobileMenu.className);
-            console.log('- Hamburger classes:', hamburger.className);
-            console.log('- Window width:', window.innerWidth);
-            console.log('- Available functions: window.mobileMenu.toggle()');
-        };
+        console.log('Simple mobile menu initialized successfully');
     }
 
-    // Initialize mobile menu
-    initMobileMenu();
+    // Initialize simple mobile menu
+    initSimpleMobileMenu();
 
     // Enhanced Touch Support for Mobile
     function enhanceTouchSupport() {
