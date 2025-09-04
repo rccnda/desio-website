@@ -335,7 +335,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Mobile menu elements found successfully:', {
             toggleButton: toggleButton,
             mobileMenu: mobileMenu,
-            closeButton: closeButton
+            closeButton: closeButton,
+            pageUrl: window.location.href
         });
 
         let isOpen = false;
@@ -408,7 +409,12 @@ document.addEventListener('DOMContentLoaded', function() {
             isOpen: () => isOpen
         };
 
-        console.log('Simple mobile menu initialized successfully');
+        // Add a test click event to verify the button is working
+        toggleButton.addEventListener('click', function() {
+            console.log('Mobile menu button clicked - this should work!');
+        });
+
+        console.log('Simple mobile menu initialized successfully on:', window.location.href);
     }
 
     // Initialize simple mobile menu
