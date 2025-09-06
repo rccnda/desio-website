@@ -59,15 +59,33 @@ document.addEventListener('DOMContentLoaded', function() {
         effect: 'slide',
         slidesPerView: 1,
         spaceBetween: 0,
+        // Touch and swipe settings
+        touchRatio: 1,
+        touchAngle: 45,
+        grabCursor: true,
+        touchStartPreventDefault: false,
+        touchMoveStopPropagation: false,
+        simulateTouch: true,
+        allowTouchMove: true,
         // Responsive breakpoints
         breakpoints: {
             320: {
                 slidesPerView: 1,
                 spaceBetween: 0,
+                touchRatio: 1,
+                allowTouchMove: true,
             },
             768: {
                 slidesPerView: 1,
                 spaceBetween: 0,
+                touchRatio: 1,
+                allowTouchMove: true,
+            },
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                touchRatio: 1,
+                allowTouchMove: true,
             }
         }
     });
