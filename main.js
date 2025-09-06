@@ -34,6 +34,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Initialize Gallery Carousel
+    const galleryCarousel = new Swiper('.gallery-carousel', {
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 1,
+        },
+        preloadImages: false,
+        watchSlidesProgress: true,
+        speed: 600,
+        effect: 'slide',
+        slidesPerView: 1,
+        spaceBetween: 0,
+        // Responsive breakpoints
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            }
+        }
+    });
+
     // Scroll Animations
     function animateOnScroll() {
         const elements = document.querySelectorAll('.animate-on-scroll');
