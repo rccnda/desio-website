@@ -175,82 +175,51 @@
           <h2>High quality ingredients, simplicity and tradition</h2>
           <p>Desìo is a homely Italian eatery, designed with attention to details, where you can see our team preparing your meal with passion and care. Experience the heart of Italian artisan tradition right in the center of Groningen.</p>
         </div>
-        
-        <!-- Photo Gallery Carousel -->
-        <div class="gallery-carousel-section">
-          <div class="gallery-carousel swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="gallery-carousel-item">
-                  <img src="assets/images/slider_1.png" alt="Desio interior" loading="lazy" width="400" height="300">
-                  <div class="gallery-caption">Desìo Interior</div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="gallery-carousel-item">
-                  <img src="assets/images/slider_2.png" alt="Fresh pasta preparation" loading="lazy" width="400" height="300">
-                  <div class="gallery-caption">Fresh Pasta Preparation</div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="gallery-carousel-item">
-                  <img src="assets/images/slider_3.png" alt="Italian dishes" loading="lazy" width="400" height="300">
-                  <div class="gallery-caption">Our Motto</div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="gallery-carousel-item">
-                  <img src="assets/images/pasta_placeholder_1.png" alt="Pasta al Brasato" loading="lazy" width="400" height="300">
-                  <div class="gallery-caption">Pasta al Brasato</div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="gallery-carousel-item">
-                  <img src="assets/images/caprese.jpg" alt="Caprese con Burrata" loading="lazy" width="400" height="300">
-                  <div class="gallery-caption">Caprese con Burrata</div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="gallery-carousel-item">
-                  <img src="assets/images/pasta_placeholder_3.png" alt="Panino con Mortadella" loading="lazy" width="400" height="300">
-                  <div class="gallery-caption">Panino con Mortadella</div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section">
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section">
       <div class="container">
-        <div class="features-grid">
-          <div class="feature-item">
-            <div class="feature-icon">
-              <img src="assets/images/pasta_placeholder_1.png" alt="Fresh ingredients" class="feature-image" loading="lazy" width="60" height="60">
+        <div class="scrolling-gallery">
+          <div class="gallery-track">
+            <div class="gallery-circle">
+              <img src="assets/images/slider_1.png" alt="Desio interior" loading="lazy">
             </div>
-            <h3>Authentic Italian Flavors</h3>
-            <p>We use fresh, high-quality pasta and craft every sauce from scratch using time-honored recipes and the finest natural ingredients. No additives, no shortcuts, but just wholesome ingredients and real flavor in every bite. Rich tradition. Pure taste.</p>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">
-              <img src="assets/images/pasta_placeholder_2.png" alt="Fast service" class="feature-image" loading="lazy" width="60" height="60">
+            <div class="gallery-circle">
+              <img src="assets/images/slider_2.png" alt="Fresh pasta preparation" loading="lazy">
             </div>
-            <h3>A delicious meal served quickly</h3>
-            <p>Our fresh pasta, prepared with traditional methods, cooks quickly while maintaining authentic Italian flavors. Between preparation, cooking, and serving, you won't wait more than a few minutes for your perfect Italian meal.</p>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">
-              <img src="assets/images/pasta_placeholder_3.png" alt="Dine in or takeaway" class="feature-image" loading="lazy" width="60" height="60">
+            <div class="gallery-circle">
+              <img src="assets/images/slider_3.png" alt="Italian dishes" loading="lazy">
             </div>
-            <h3>Eat upstairs at the table or take it away with you</h3>
-            <p>You can have your meal inside our cozy eatery, but if you want to continue with your walk around Groningen, or just want to take away your meal with you, we will provide you with everything you need for that perfect Italian experience.</p>
+            <div class="gallery-circle">
+              <img src="assets/images/pasta_placeholder_1.png" alt="Pasta al Brasato" loading="lazy">
+            </div>
+            <div class="gallery-circle">
+              <img src="assets/images/caprese.jpg" alt="Caprese con Burrata" loading="lazy">
+            </div>
+            <div class="gallery-circle">
+              <img src="assets/images/pasta_placeholder_3.png" alt="Panino con Mortadella" loading="lazy">
+            </div>
+            <!-- Duplicate images for seamless loop -->
+            <div class="gallery-circle">
+              <img src="assets/images/slider_1.png" alt="Desio interior" loading="lazy">
+            </div>
+            <div class="gallery-circle">
+              <img src="assets/images/slider_2.png" alt="Fresh pasta preparation" loading="lazy">
+            </div>
+            <div class="gallery-circle">
+              <img src="assets/images/slider_3.png" alt="Italian dishes" loading="lazy">
+            </div>
+            <div class="gallery-circle">
+              <img src="assets/images/pasta_placeholder_1.png" alt="Pasta al Brasato" loading="lazy">
+            </div>
+            <div class="gallery-circle">
+              <img src="assets/images/caprese.jpg" alt="Caprese con Burrata" loading="lazy">
+            </div>
+            <div class="gallery-circle">
+              <img src="assets/images/pasta_placeholder_3.png" alt="Panino con Mortadella" loading="lazy">
+            </div>
           </div>
         </div>
       </div>
@@ -277,27 +246,73 @@
       </div>
     </section>
 
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">
+              <div class="feature-icon">
+                <img src="assets/images/pasta_placeholder_1.png" alt="Fresh ingredients" class="feature-image" loading="lazy" width="60" height="60">
+              </div>
+              <h3>Authentic Italian Flavors</h3>
+              <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="dropdown-content">
+              <p>We use fresh, high-quality pasta and craft every sauce from scratch using time-honored recipes and the finest natural ingredients. No additives, no shortcuts, but just wholesome ingredients and real flavor in every bite. Rich tradition. Pure taste.</p>
+            </div>
+          </div>
+          
+          <div class="feature-item dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">
+              <div class="feature-icon">
+                <img src="assets/images/pasta_placeholder_2.png" alt="Fast service" class="feature-image" loading="lazy" width="60" height="60">
+              </div>
+              <h3>A delicious meal served quickly</h3>
+              <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="dropdown-content">
+              <p>Our fresh pasta, prepared with traditional methods, cooks quickly while maintaining authentic Italian flavors. Between preparation, cooking, and serving, you won't wait more than a few minutes for your perfect Italian meal.</p>
+            </div>
+          </div>
+          
+          <div class="feature-item dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">
+              <div class="feature-icon">
+                <img src="assets/images/pasta_placeholder_3.png" alt="Dine in or takeaway" class="feature-image" loading="lazy" width="60" height="60">
+              </div>
+              <h3>Eat upstairs at the table or take it away with you</h3>
+              <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="dropdown-content">
+              <p>You can have your meal inside our cozy eatery, but if you want to continue with your walk around Groningen, or just want to take away your meal with you, we will provide you with everything you need for that perfect Italian experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Menu Preview Section -->
     <section class="menu-preview-section">
       <div class="container">
         <h2>Our main meals</h2>
         <p>Our best meals are always on the menu, featuring fresh pasta, authentic panini, and delicious tiramisù. We also offer gluten-free and vegan pasta upon request.</p>
         <div class="menu-grid">
-          <div class="menu-item">
+          <a href="menudesio.html#pasta" class="menu-item menu-link">
             <img src="assets/images/pasta_boxes.png" alt="Fresh Pasta" loading="lazy" width="300" height="200">
             <h3>Fresh Handmade Pasta</h3>
             <p>Served in boxes that keep it warm so you can eat it wherever you want.</p>
-          </div>
-          <div class="menu-item">
+          </a>
+          <a href="menudesio.html#sandwiches" class="menu-item menu-link">
             <img src="assets/images/panino_brasato.png" alt="Authentic Panini" loading="lazy" width="300" height="200">
             <h3>Authentic Panini</h3>
             <p>Fresh Italian sandwiches with premium ingredients</p>
-          </div>
-          <div class="menu-item">
+          </a>
+          <a href="menudesio.html#tiramisu" class="menu-item menu-link">
             <img src="assets/images/classic_tiramisù.png" alt="Classic Tiramisù" loading="lazy" width="300" height="200">
             <h3>Classic Triamisù</h3>
             <p>The king of Italian desserts, without alcol</p>
-          </div>
+          </a>
         </div>
         <div class="menu-cta">
           <a href="menudesio.html" class="btn btn-primary">View Full Menu</a>
@@ -305,40 +320,6 @@
       </div>
     </section>
 
-    <!-- Photo Gallery Section -->
-    <section class="gallery-section">
-      <div class="container">
-        <h2>Photo gallery</h2>
-        <p>This is a selection of pictures from our venue in Groningen. 
-          Follow us on social media to discover more!</p>
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="assets/images/slider_1.png" alt="Desio interior" loading="lazy" width="350" height="263">
-            <div class="gallery-caption">Desìo</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/slider_2.png" alt="Fresh pasta preparation" loading="lazy" width="350" height="263">
-            <div class="gallery-caption">Desio Interior</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/slider_3.png" alt="Italian dishes" loading="lazy" width="350" height="263">
-            <div class="gallery-caption">Motto</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/pasta_placeholder_1.png" alt="Pasta al Brasato" loading="lazy" width="350" height="263">
-            <div class="gallery-caption">Pasta al Brasato</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/caprese.HEIC" alt="Caprese con Burrata" loading="lazy" width="350" height="263">
-            <div class="gallery-caption">Caprese con Burrata</div>
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/pasta_placeholder_3.png" alt="Panino con Mortadella" loading="lazy" width="350" height="263">
-            <div class="gallery-caption">Panino con Mortadella</div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Social Media & Reviews Section -->
     <section class="social-section">

@@ -160,5 +160,34 @@
     <div id="footer-placeholder"></div>
     <script src="footer-inject.js"></script>
     <script src="main.js"></script>
+    <script>
+        // Debug script for funstuff page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Funstuff page loaded');
+            const toggleButton = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            console.log('Toggle button found:', !!toggleButton);
+            console.log('Mobile menu found:', !!mobileMenu);
+            
+            if (toggleButton) {
+                console.log('Toggle button element:', toggleButton);
+                console.log('Toggle button styles:', window.getComputedStyle(toggleButton));
+                
+                // Add direct click handler for debugging
+                toggleButton.addEventListener('click', function(e) {
+                    console.log('Direct click handler triggered!');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    if (mobileMenu) {
+                        mobileMenu.classList.toggle('active');
+                        toggleButton.classList.toggle('active');
+                        console.log('Menu toggled, active class:', mobileMenu.classList.contains('active'));
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

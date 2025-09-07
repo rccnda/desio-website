@@ -34,61 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Initialize Gallery Carousel
-    const galleryCarousel = new Swiper('.gallery-carousel', {
-        loop: true,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        lazy: {
-            loadPrevNext: true,
-            loadPrevNextAmount: 1,
-        },
-        preloadImages: false,
-        watchSlidesProgress: true,
-        speed: 600,
-        effect: 'slide',
-        slidesPerView: 1,
-        spaceBetween: 0,
-        // Touch and swipe settings
-        touchRatio: 1,
-        touchAngle: 45,
-        grabCursor: true,
-        touchStartPreventDefault: false,
-        touchMoveStopPropagation: false,
-        simulateTouch: true,
-        allowTouchMove: true,
-        // Responsive breakpoints
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                touchRatio: 1,
-                allowTouchMove: true,
-            },
-            768: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                touchRatio: 1,
-                allowTouchMove: true,
-            },
-            1024: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                touchRatio: 1,
-                allowTouchMove: true,
-            }
-        }
-    });
 
     // Scroll Animations
     function animateOnScroll() {
@@ -517,4 +462,83 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize accessibility enhancements
     enhanceAccessibility();
-}); 
+    
+    // Initialize dropdown functionality
+    initDropdowns();
+});
+
+// Initialize dropdown functionality
+function initDropdowns() {
+    const dropdownHeaders = document.querySelectorAll('.dropdown-header');
+    
+    console.log('Found dropdown headers:', dropdownHeaders.length);
+    
+    dropdownHeaders.forEach((header, index) => {
+        console.log(`Initializing dropdown ${index + 1}:`, header);
+        
+        // Remove any existing event listeners
+        header.removeEventListener('click', handleDropdownClick);
+        
+        // Add click event listener
+        header.addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            console.log('Dropdown clicked!', this);
+            
+            const dropdown = this.parentElement;
+            const isActive = dropdown.classList.contains('active');
+            
+            console.log('Current state:', isActive);
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => {
+                d.classList.remove('active');
+            });
+            
+            // Toggle current dropdown
+            if (!isActive) {
+                dropdown.classList.add('active');
+                console.log('Dropdown opened');
+            } else {
+                console.log('Dropdown closed');
+            }
+        });
+        
+        console.log(`Event listener added to dropdown ${index + 1}`);
+    });
+    
+    console.log('All dropdowns initialized');
+}
+
+// Dropdown toggle function
+function toggleDropdown(header) {
+    console.log('toggleDropdown called with:', header);
+    
+    if (!header) {
+        console.error('No header provided to toggleDropdown');
+        return;
+    }
+    
+    const dropdown = header.parentElement;
+    if (!dropdown) {
+        console.error('No dropdown parent found');
+        return;
+    }
+    
+    const isActive = dropdown.classList.contains('active');
+    console.log('Current state:', isActive);
+    
+    // Close all other dropdowns
+    document.querySelectorAll('.dropdown').forEach(d => {
+        d.classList.remove('active');
+    });
+    
+    // Toggle current dropdown
+    if (!isActive) {
+        dropdown.classList.add('active');
+        console.log('Dropdown opened');
+    } else {
+        console.log('Dropdown closed');
+    }
+} 
