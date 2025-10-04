@@ -1,29 +1,59 @@
 /* Font Declarations */
+/* Lato Font Family */
 @font-face {
-    font-family: 'Barriecito';
-    src: url('assets/fonts/Barriecito-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato/Lato-Regular.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'ITC Franklin Gothic LT';
-    src: url('assets/fonts/ITC Franklin Gothic LT Medium.otf') format('opentype');
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato/Lato-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Roboto Condensed';
-    src: url('assets/fonts/RobotoCondensed.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato/Lato-SemiBold.ttf') format('truetype');
+    font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Sensei';
-    src: url('assets/fonts/Sensei-Medium.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'Lato';
+    src: url('assets/fonts/Lato/Lato-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Playfair Display Font Family */
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('assets/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('assets/fonts/Playfair_Display/static/PlayfairDisplay-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('assets/fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('assets/fonts/Playfair_Display/static/PlayfairDisplay-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
     font-style: normal;
 }
 
@@ -65,12 +95,27 @@
   --container-width: 1200px;
   --container-padding: 1rem;
 
-  --heading-font: 'Sensei', cursive; /* For H1, H2, H3 */
-  --body-font: 'ITC Franklin Gothic LT', sans-serif; /* For paragraphs */
-  --button-font: 'Roboto Condensed', sans-serif; /* For buttons, menu, footer texts */
+  --heading-font: 'Playfair Display', serif; /* For H1, H2, H3 */
+  --body-font: 'Lato', sans-serif; /* For paragraphs */
+  --button-font: 'Lato', sans-serif; /* For buttons, menu, footer texts */
   --base-font-size: 16px;
-  --body-line-height: 1.6;
+  --body-line-height: 1.5;
   --heading-line-height: 1.2;
+  
+  /* Typography Scale - Mobile First */
+  --font-size-h1: 2rem; /* 32px */
+  --font-size-h2: 1.5rem; /* 24px */
+  --font-size-h3: 1.125rem; /* 18px */
+  --font-size-body: 1rem; /* 16px */
+  --font-size-small: 0.875rem; /* 14px */
+  --font-size-ui: 0.9375rem; /* 15px */
+  
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 }
 
 * {
@@ -98,12 +143,43 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-color);
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
+h1 { 
+  font-size: var(--font-size-h1);
+  font-family: var(--heading-font);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+  margin-bottom: var(--spacing-sm);
+}
+
+h2 { 
+  font-size: var(--font-size-h2);
+  font-family: var(--heading-font);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+  margin-bottom: var(--spacing-sm);
+}
+
+h3 { 
+  font-size: var(--font-size-h3);
+  font-family: var(--body-font);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+  margin-bottom: var(--spacing-xs);
+}
+
+h4 { 
+  font-size: var(--font-size-body);
+  font-family: var(--body-font);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-xs);
+}
 
 p {
+  font-size: var(--font-size-body);
+  font-family: var(--body-font);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
   margin-bottom: var(--spacing-sm);
   color: var(--light-text);
 }
@@ -538,9 +614,10 @@ p {
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
+  font-size: var(--font-size-ui);
   font-family: var(--button-font);
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -728,7 +805,7 @@ p {
   opacity: 0;
   background: rgba(44, 85, 48, 0.7);
   color: #fff;
-  font-family: 'Roboto Condensed', 'RobotoCondensedCustom', Arial, sans-serif;
+  font-family: var(--button-font);
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
@@ -1641,7 +1718,7 @@ html, body, .container, main, section, .site-footer, .main-header {
 .store-hero h1 {
   font-size: 4rem;
   margin-bottom: 20px;
-  font-family: 'ITC Franklin Gothic LT', sans-serif;
+  font-family: var(--body-font);
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--primary-color);
@@ -1712,7 +1789,7 @@ html, body, .container, main, section, .site-footer, .main-header {
   font-size: 2.5rem;
   margin-bottom: 10px;
   color: var(--primary-color);
-  font-family: 'ITC Franklin Gothic LT', sans-serif;
+  font-family: var(--body-font);
 }
 
 .store-address p {
@@ -1725,7 +1802,7 @@ html, body, .container, main, section, .site-footer, .main-header {
   font-size: 1.8rem;
   margin-bottom: 25px;
   color: var(--primary-color);
-  font-family: 'ITC Franklin Gothic LT', sans-serif;
+  font-family: var(--body-font);
 }
 
 .hours-grid {
@@ -1846,7 +1923,7 @@ html, body, .container, main, section, .site-footer, .main-header {
 .menu-hero-section h1 {
   font-size: 4rem;
   margin-bottom: 20px;
-  font-family: 'ITC Franklin Gothic LT', sans-serif;
+  font-family: var(--body-font);
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--primary-color);
@@ -1944,7 +2021,7 @@ html, body, .container, main, section, .site-footer, .main-header {
   font-size: 1.8rem;
   margin-bottom: 10px;
   color: var(--primary-color);
-  font-family: 'ITC Franklin Gothic LT', sans-serif;
+  font-family: var(--body-font);
 }
 
 .dish-content p,
@@ -2002,7 +2079,7 @@ html, body, .container, main, section, .site-footer, .main-header {
   font-size: 1.5rem;
   color: var(--primary-color);
   margin-bottom: 15px;
-  font-family: 'ITC Franklin Gothic LT', sans-serif;
+  font-family: var(--body-font);
 }
 
 .ingredients-category ul {
@@ -2291,6 +2368,23 @@ html {
 }
 
 /* Responsive Design */
+/* Responsive Typography - Larger Screens */
+@media (min-width: 1024px) {
+  :root {
+    --font-size-h1: 2.5rem; /* 40px */
+    --font-size-h2: 1.875rem; /* 30px */
+    --font-size-h3: 1.25rem; /* 20px */
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --font-size-h1: 3rem; /* 48px */
+    --font-size-h2: 2rem; /* 32px */
+    --font-size-h3: 1.375rem; /* 22px */
+  }
+}
+
 @media (max-width: 1024px) {
   :root {
     --container-width: 90%;
@@ -2583,7 +2677,7 @@ html {
 }
 
 .sliding-text {
-  font-family: 'ITC Franklin Gothic LT', sans-serif;
+  font-family: var(--body-font);
   font-weight: 500;
   font-size: 1.1rem;
   color: var(--text-color);
