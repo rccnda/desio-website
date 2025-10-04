@@ -203,14 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const popupContent = `
                     <div class="map-popup">
                         <h3>📍 Desìo</h3>
-                        <p><strong>Address:</strong> Herestraat 82, Groningen</p>
-                        <p><strong>Hours:</strong> Daily 12:00 - 21:00</p>
-                        <p><strong>Phone:</strong> <a href="tel:+31621261108">+31 6 21261108</a></p>
-                        <a href="https://maps.app.goo.gl/jsGu7BLtxVCqFXnn9" 
-                           target="_blank" 
-                           class="map-btn">
-                            Get Directions →
-                        </a>
                     </div>
                 `;
 
