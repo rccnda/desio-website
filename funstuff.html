@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Stuff - Desio</title>
+    <title>Fun Stuff - Desìo | Behind the Scenes, Recipes & Community</title>
+    <meta name="description" content="Discover the fun side of Desìo! Behind-the-scenes stories, Italian recipes, team features, and community content from Groningen's favorite Italian eatery.">
+    <meta name="keywords" content="Desìo fun stuff, behind the scenes, Italian recipes, restaurant stories, Groningen food community, Italian restaurant blog">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/funstuff.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
@@ -51,85 +53,169 @@
 
     <main class="page-main">
         <!-- Hero Section -->
-        <section class="fun-hero">
-            <div class="hero-content">
-                <h1>Fun Stuff</h1>
-                <p>Discover the stories, music, and moments that make Desio special</p>
+        <section class="about-hero">
+            <div class="hero-background">
+                <img src="assets/images/team.jpg" alt="Desìo team working together with passion and smiles" loading="eager">
             </div>
-        </section>
-
-        <!-- Featured Content Section -->
-        <section class="featured-content">
-            <div class="container">
-                <h2>Featured Stories</h2>
-                <p class="section-intro">Check out what people are saying about us and catch a glimpse of our team in action</p>
-                
-                <div class="content-grid">
-                    <!-- Blog Article Card -->
-                    <div class="content-card blog-card">
-                        <div class="card-image">
-                            <img src="https://images.sikkom.nl/sikkom/incoming/ppxv5e-20250715-115615.jpg/alternates/FREE_640/20250715_115615.jpg" alt="Desio Sikkom Article">
-                            <div class="card-overlay">
-                                <span class="card-tag">Press</span>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Sikkom Article</h3>
-                            <p>Read about our journey and what makes Desio special in Groningen's food scene</p>
-                            <a href="https://sikkom.nl/grunngids/horeca/nieuw-in-groningen-desio-46880007.html" target="_blank" rel="noopener" class="card-btn">
-                                Read Article →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Instagram Reel Card -->
-                    <div class="content-card instagram-card">
-                        <div class="card-image">
-                            <img src="assets/images/team.jpg" alt="Instagram Team Feature">
-                            <div class="card-overlay">
-                                <span class="card-tag">Social</span>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Team Feature on Instagram</h3>
-                            <p>Watch our amazing team in action, featured by oogstgroningen</p>
-                            <a href="https://www.instagram.com/p/DMHpvtltPgm/" target="_blank" rel="noopener" class="card-btn">
-                                Watch Reel →
-                            </a>
+            <div class="hero-content">
+                <div class="container">
+                    <div class="hero-text">
+                        <h1>Fun Stuff</h1>
+                        <p class="hero-subtitle">Behind the scenes, recipes, and the stories that make Desìo special</p>
+                        <p class="hero-description">
+                            From our kitchen secrets to community stories, discover the lighter side of authentic Italian dining in Groningen.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#featured" class="btn btn-primary">Explore Stories</a>
+                            <a href="https://www.instagram.com/desiofood/" target="_blank" class="btn btn-outline">Follow Us</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Music Section -->
-        <section class="music-section">
+        <!-- Featured Content Section -->
+        <section id="featured" class="featured-content">
             <div class="container">
-                <h2>Our Vibe</h2>
-                <p class="section-intro">The music that keeps our kitchen grooving and our guests smiling</p>
-                
-                <div class="spotify-card">
-                    <div class="spotify-content">
-                        <div class="spotify-info">
-                            <h3>Desio Kitchen Playlist</h3>
-                            <p>Curated by our team - the perfect soundtrack for your Italian dining experience</p>
+                <div class="section-header">
+                    <h2>Featured Stories</h2>
+                    <p class="section-intro">Behind-the-scenes content, press features, and community highlights</p>
+                </div>
+
+                <div class="content-magazine">
+                    <!-- Featured Article -->
+                    <article class="featured-article">
+                        <div class="article-image">
+                            <img src="https://images.sikkom.nl/sikkom/incoming/ppxv5e-20250715-115615.jpg/alternates/FREE_640/20250715_115615.jpg" alt="Desio featured in Sikkom - Groningen's food scene" loading="lazy">
+                            <div class="article-overlay">
+                                <span class="article-category">Press Feature</span>
+                                <div class="article-meta">
+                                    <span class="meta-item">📅 July 2024</span>
+                                    <span class="meta-item">📖 3 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <h3>Featured in Sikkom</h3>
+                            <p class="article-excerpt">
+                                "Nieuw in Groningen: Desio - Where authentic Italian passion meets Dutch hospitality.
+                                Discover how this new eatery is bringing fresh pasta and traditional flavors to the city center."
+                            </p>
+                            <div class="article-actions">
+                                <a href="https://sikkom.nl/grunngids/horeca/nieuw-in-groningen-desio-46880007.html" target="_blank" rel="noopener" class="btn btn-primary">
+                                    Read Full Article
+                                </a>
+                                <div class="social-share">
+                                    <button class="share-btn instagram" onclick="shareContent('instagram', 'https://sikkom.nl/grunngids/horeca/nieuw-in-groningen-desio-46880007.html', 'Check out Desìo featured in Sikkom!')">
+                                        <img src="assets/images/instagram.svg" alt="Share on Instagram">
+                                    </button>
+                                    <button class="share-btn facebook" onclick="shareContent('facebook', 'https://sikkom.nl/grunngids/horeca/nieuw-in-groningen-desio-46880007.html', 'Check out Desìo featured in Sikkom!')">
+                                        <span>📘</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Instagram Feature -->
+                    <article class="instagram-feature">
+                        <div class="feature-video">
+                            <div class="video-placeholder">
+                                <img src="assets/images/team.jpg" alt="Desìo team featured on Instagram by oogstgroningen" loading="lazy">
+                                <div class="play-button">
+                                    <span>▶️</span>
+                                </div>
+                            </div>
+                            <div class="feature-overlay">
+                                <span class="feature-category">Team Spotlight</span>
+                                <div class="feature-meta">
+                                    <span class="meta-item">@oogstgroningen</span>
+                                    <span class="meta-item">📹 Video</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Team Feature by @oogstgroningen</h3>
+                            <p class="feature-excerpt">
+                                "Watch our passionate team in action! From fresh pasta making to warm customer service,
+                                see what makes Desìo Groningen's favorite Italian spot."
+                            </p>
+                            <div class="feature-actions">
+                                <a href="https://www.instagram.com/p/DMHpvtltPgm/" target="_blank" rel="noopener" class="btn btn-primary">
+                                    Watch on Instagram
+                                </a>
+                                <div class="social-share">
+                                    <button class="share-btn instagram" onclick="shareContent('instagram', 'https://www.instagram.com/p/DMHpvtltPgm/', 'Amazing team feature at Desìo!')">
+                                        <img src="assets/images/instagram.svg" alt="Share on Instagram">
+                                    </button>
+                                    <button class="share-btn facebook" onclick="shareContent('facebook', 'https://www.instagram.com/p/DMHpvtltPgm/', 'Amazing team feature at Desìo!')">
+                                        <span>📘</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="community-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Community & Culture</h2>
+                    <p class="section-intro">Celebrating Italian culture and Groningen's food community</p>
+                </div>
+
+                <div class="community-grid">
+                    <!-- Music Section -->
+                    <div class="community-item music-item">
+                        <div class="item-icon">
+                            <span>🎵</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Our Kitchen Playlist</h3>
+                            <p>The soundtrack that keeps our team motivated and our guests smiling. Curated Italian classics and modern vibes.</p>
                             <div class="playlist-stats">
                                 <span class="stat">🎵 50+ tracks</span>
                                 <span class="stat">⏱️ 3+ hours</span>
                                 <span class="stat">🇮🇹 Italian vibes</span>
                             </div>
+                            <div class="spotify-embed">
+                                <iframe
+                                    style="border-radius:12px"
+                                    src="https://open.spotify.com/embed/playlist/5rQvxOYb4BTNgYgGLXxjcu?utm_source=generator"
+                                    width="100%"
+                                    height="200"
+                                    frameborder="0"
+                                    allowfullscreen=""
+                                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                    loading="lazy">
+                                </iframe>
+                            </div>
                         </div>
-                        <div class="spotify-embed">
-                            <iframe 
-                                style="border-radius:12px" 
-                                src="https://open.spotify.com/embed/playlist/5rQvxOYb4BTNgYgGLXxjcu?utm_source=generator" 
-                                width="100%" 
-                                height="352" 
-                                frameborder="0" 
-                                allowfullscreen="" 
-                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                                loading="lazy">
-                            </iframe>
+                    </div>
+
+                    <!-- Recipe Section -->
+                    <div class="community-item recipe-item">
+                        <div class="item-icon">
+                            <span>🍝</span>
+                        </div>
+                        <div class="item-content">
+                            <h3>Recipe Spotlight</h3>
+                            <p>Learn the secrets behind our most popular dishes. Simple techniques for authentic Italian flavors at home.</p>
+
+                            <div class="recipe-card">
+                                <div class="recipe-image">
+                                    <img src="assets/images/pasta_pesto.jpg" alt="Classic Pesto Pasta recipe" loading="lazy">
+                                </div>
+                                <div class="recipe-info">
+                                    <h4>Homemade Basil Pesto</h4>
+                                    <p class="recipe-difficulty">Easy • 15 min</p>
+                                    <p class="recipe-description">The foundation of our Genovese pasta - fresh, aromatic, and absolutely delicious.</p>
+                                    <a href="#recipe-modal" class="btn btn-outline">Get Recipe</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -139,53 +225,188 @@
         <!-- Team Section -->
         <section class="team-section">
             <div class="container">
-                <h2>Meet Our Amazing Team</h2>
-                <p class="section-intro">The passionate people behind every delicious dish and warm smile</p>
-                
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-avatar">
-                            <img src="assets/images/team.jpg" alt="Desio Team">
+                <div class="section-header">
+                    <h2>Meet Our Amazing Team</h2>
+                    <p class="section-intro">The passionate people behind every delicious dish and warm smile</p>
+                </div>
+
+                <div class="team-showcase">
+                    <div class="team-member featured">
+                        <div class="member-photo">
+                            <img src="assets/images/team.jpg" alt="Desìo team - passionate pasta makers and hospitality experts" loading="lazy">
+                            <div class="member-overlay">
+                                <h4>The Desìo Family</h4>
+                                <p>Passionate food lovers united by authentic Italian cuisine</p>
+                                <div class="social-links">
+                                    <a href="https://www.instagram.com/desiofood/" target="_blank" class="social-link">
+                                        <img src="assets/images/instagram.svg" alt="Follow on Instagram">
+                                        <span>Follow Us</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="member-info">
-                            <h3>The Desio Family</h3>
-                            <p>From our chefs crafting authentic Italian flavors to our friendly staff making every visit memorable</p>
+                    </div>
+
+                    <div class="team-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8+</span>
+                            <span class="stat-label">Team Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Pasta Shapes Mastered</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Happy Customers</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Recipe Modal -->
+        <div id="recipe-modal" class="recipe-modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeRecipeModal()">&times;</button>
+                <div class="modal-header">
+                    <h3>Homemade Basil Pesto</h3>
+                    <p class="recipe-meta">Easy • 15 minutes • Serves 4</p>
+                </div>
+
+                <div class="modal-body">
+                    <div class="recipe-grid">
+                        <div class="recipe-ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>2 cups fresh basil leaves</li>
+                                <li>1/2 cup pine nuts</li>
+                                <li>1/2 cup grated Parmesan cheese</li>
+                                <li>3 garlic cloves</li>
+                                <li>1/2 cup extra virgin olive oil</li>
+                                <li>Salt and pepper to taste</li>
+                            </ul>
+                        </div>
+
+                        <div class="recipe-instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li>Toast pine nuts in a dry pan until golden (2-3 minutes)</li>
+                                <li>Add basil, garlic, and pine nuts to food processor</li>
+                                <li>Pulse until roughly chopped</li>
+                                <li>Add Parmesan cheese and pulse again</li>
+                                <li>Slowly add olive oil while processing</li>
+                                <li>Season with salt and pepper</li>
+                                <li>Mix with cooked pasta and enjoy!</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="recipe-tips">
+                        <h4>Chef's Tips</h4>
+                        <p>"Use only fresh basil and good quality olive oil for the best results. This pesto is perfect with our fresh pasta!"</p>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" onclick="shareRecipe()">Share Recipe</button>
+                    <button class="btn btn-outline" onclick="closeRecipeModal()">Close</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <div id="footer-placeholder"></div>
     <script src="footer-inject.js"></script>
     <script src="main.js"></script>
     <script>
-        // Debug script for funstuff page
+        // Fun Stuff page JavaScript
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Funstuff page loaded');
+            console.log('Fun Stuff page loaded');
+
+            // Mobile menu functionality (keeping existing debug code)
             const toggleButton = document.getElementById('mobile-menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
-            
-            console.log('Toggle button found:', !!toggleButton);
-            console.log('Mobile menu found:', !!mobileMenu);
-            
+
             if (toggleButton) {
-                console.log('Toggle button element:', toggleButton);
-                console.log('Toggle button styles:', window.getComputedStyle(toggleButton));
-                
-                // Add direct click handler for debugging
                 toggleButton.addEventListener('click', function(e) {
-                    console.log('Direct click handler triggered!');
                     e.preventDefault();
                     e.stopPropagation();
-                    
+
                     if (mobileMenu) {
                         mobileMenu.classList.toggle('active');
                         toggleButton.classList.toggle('active');
-                        console.log('Menu toggled, active class:', mobileMenu.classList.contains('active'));
                     }
                 });
+            }
+
+            // Recipe Modal Functionality
+            const recipeModal = document.getElementById('recipe-modal');
+            const recipeLinks = document.querySelectorAll('a[href="#recipe-modal"]');
+
+            recipeLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openRecipeModal();
+                });
+            });
+
+            // Social Sharing Functions
+            window.shareContent = function(platform, url, text) {
+                const encodedUrl = encodeURIComponent(url);
+                const encodedText = encodeURIComponent(text);
+
+                let shareUrl = '';
+
+                switch(platform) {
+                    case 'instagram':
+                        // Instagram doesn't support direct URL sharing, so we'll copy to clipboard
+                        navigator.clipboard.writeText(url).then(() => {
+                            alert('Link copied to clipboard! Share it on Instagram');
+                        });
+                        break;
+                    case 'facebook':
+                        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+                        window.open(shareUrl, 'facebook-share', 'width=600,height=400');
+                        break;
+                }
+            };
+
+            window.shareRecipe = function() {
+                const recipeText = "Check out this amazing Homemade Basil Pesto recipe from Desìo!";
+                shareContent('instagram', window.location.href, recipeText);
+            };
+        });
+
+        // Recipe Modal Functions
+        function openRecipeModal() {
+            const modal = document.getElementById('recipe-modal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeRecipeModal() {
+            const modal = document.getElementById('recipe-modal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('recipe-modal');
+            if (event.target === modal) {
+                closeRecipeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeRecipeModal();
             }
         });
     </script>

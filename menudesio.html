@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Desio</title>
+    <title>Our Menu - Desio | Authentic Italian Pasta & Dishes in Groningen</title>
+    <meta name="description" content="Discover Desio's authentic Italian menu featuring fresh handmade pasta, artisanal panini, traditional sides, and our famous tiramisu. All made with passion and the finest ingredients.">
+    <meta name="keywords" content="Italian menu Groningen, fresh pasta menu, authentic Italian food, pasta restaurant menu, Italian catering menu">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu.css">
@@ -44,16 +46,28 @@
                 <a href="funstuff.html" class="mobile-menu-link">Fun Stuff</a>
                 <a href="workwithdesio.html" class="mobile-menu-link">Work with us</a>
             </div>
-        </div>
-    </div>
+                    </div>
+                </div>
 
     <main>
         <!-- Hero Section -->
-        <section class="menu-hero">
-            <div class="container">
-                <div class="menu-hero-content">
-                    <h1>Our Menu</h1>
-                    <p>Discover our authentic Italian dishes, from fresh pasta to delicious sandwiches, all made with passion and the finest ingredients.</p>
+        <section class="about-hero">
+            <div class="hero-background">
+                <img src="assets/images/pasta_boxes.png" alt="Fresh pasta dishes at Desio" loading="eager">
+            </div>
+            <div class="hero-content">
+                <div class="container">
+                    <div class="hero-text">
+                        <h1>Our Menu</h1>
+                        <p class="hero-subtitle">Authentic Italian flavors crafted with passion, served with love</p>
+                        <p class="hero-description">
+                            From our kitchen to your table. Discover our fresh pasta, artisanal panini, and traditional Italian specialties.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#pasta" class="btn btn-primary">🍝 Explore Pasta</a>
+                            <a href="tel:+31621261108" class="btn btn-outline">📞 Order Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -61,30 +75,30 @@
         <!-- Menu Navigation -->
         <section class="menu-navigation">
             <div class="container">
-                <div class="menu-nav-buttons">
-                    <button class="menu-nav-btn active" data-target="pasta">
-                        <span class="menu-nav-icon">🍝</span>
-                        <span class="menu-nav-text">Pasta</span>
+                <div class="menu-nav-tabs">
+                    <button class="nav-tab active" data-target="pasta">
+                        <span class="tab-icon">🍝</span>
+                        <span class="tab-text">Pasta</span>
                     </button>
-                    <button class="menu-nav-btn" data-target="sandwiches">
-                        <span class="menu-nav-icon">🥪</span>
-                        <span class="menu-nav-text">Sandwiches</span>
+                    <button class="nav-tab" data-target="sandwiches">
+                        <span class="tab-icon">🥪</span>
+                        <span class="tab-text">Panini</span>
                     </button>
-                    <button class="menu-nav-btn" data-target="sides">
-                        <span class="menu-nav-icon">🥗</span>
-                        <span class="menu-nav-text">Sides</span>
+                    <button class="nav-tab" data-target="sides">
+                        <span class="tab-icon">🥗</span>
+                        <span class="tab-text">Sides</span>
                     </button>
-                    <button class="menu-nav-btn" data-target="tiramisu">
-                        <span class="menu-nav-icon">🍰</span>
-                        <span class="menu-nav-text">Tiramisù</span>
+                    <button class="nav-tab" data-target="tiramisu">
+                        <span class="tab-icon">🍰</span>
+                        <span class="tab-text">Dolci</span>
                     </button>
-                    <button class="menu-nav-btn" data-target="drinks">
-                        <span class="menu-nav-icon">🥤</span>
-                        <span class="menu-nav-text">Drinks</span>
+                    <button class="nav-tab" data-target="drinks">
+                        <span class="tab-icon">🥤</span>
+                        <span class="tab-text">Drinks</span>
                     </button>
-                    <button class="menu-nav-btn" data-target="allergens">
-                        <span class="menu-nav-icon">⚠️</span>
-                        <span class="menu-nav-text">Allergens</span>
+                    <button class="nav-tab" data-target="allergens">
+                        <span class="tab-icon">⚠️</span>
+                        <span class="tab-text">Info</span>
                     </button>
                 </div>
             </div>
@@ -94,130 +108,206 @@
         <section class="menu-sections">
             <div class="container">
                 <!-- Pasta Section -->
-                <div id="pasta" class="menu-section active">
-                    <div class="section-header">
-                        <h2>Pasta</h2>
-                        <p>Fresh pasta with authentic Italian sauces</p>
+                <div id="pasta" class="menu-category active">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="assets/images/pasta_placeholder_1.png" alt="Fresh Pasta" loading="lazy">
+                        </div>
+                        <div class="category-info">
+                            <h2>Pasta</h2>
+                            <p>Fresh pasta made daily with authentic Italian sauces and the finest ingredients</p>
+                        </div>
                     </div>
-                    <div class="menu-grid">
-                        <div class="menu-item" data-dish="ragu-bolognese">
-                            <div class="menu-item-image">
-                                <img src="assets/images/pasta_ragù.jpg" alt="Ragù Bolognese">
+
+                    <div class="menu-items">
+                        <div class="menu-item-card" data-dish="ragu-bolognese">
+                            <div class="item-image">
+                                <img src="assets/images/pasta_ragù.jpg" alt="Ragù Bolognese - Classic Bolognese sauce with fresh pasta" loading="lazy">
+                                <div class="item-badge popular">Popular</div>
                             </div>
-                            <div class="menu-item-content">
-                                <div class="menu-item-header">
+                            <div class="item-content">
+                                <div class="item-header">
                                     <h3>Ragù Bolognese</h3>
-                                    <span class="price">€11</span>
+                                    <span class="price">€11.00</span>
                                 </div>
-                                <p class="ingredients">Beef, tomato sauce, onion, carrots, celery, laurel, oil, s/p</p>
-                                <div class="allergy-tags">
-                                    <span class="allergy-tag meat">🥩 Meat</span>
-                                    <span class="allergy-tag gluten">🌾 Gluten</span>
+                                <p class="item-description">Classic Bolognese sauce with slow-cooked beef, tomatoes, and aromatic herbs</p>
+                                <div class="item-ingredients">
+                                    <span>Beef • Tomato sauce • Onion • Carrots • Celery • Laurel • Olive oil</span>
                                 </div>
+                                <div class="item-tags">
+                                    <span class="tag meat">🥩 Contains Meat</span>
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
+                                </div>
+                    </div>
+                </div>
+
+                        <div class="menu-item-card" data-dish="brasato">
+                            <div class="item-image">
+                                <img src="assets/images/pasta_brasato.jpg" alt="Brasato - Slow-braised beef with red wine and herbs" loading="lazy">
+                                <div class="item-badge chef">Chef's Special</div>
                             </div>
-                        </div>
-                        
-                        <div class="menu-item" data-dish="brasato">
-                            <div class="menu-item-image">
-                                <img src="assets/images/pasta_brasato.jpg" alt="Brasato">
-                            </div>
-                            <div class="menu-item-content">
-                                <div class="menu-item-header">
+                            <div class="item-content">
+                                <div class="item-header">
                                     <h3>Brasato</h3>
-                                    <span class="price">€11</span>
+                                    <span class="price">€12.50</span>
                                 </div>
-                                <p class="ingredients">Braised beef, garlic, sage, rosemary, tomatoes, carrots, red wine</p>
-                                <div class="allergy-tags">
-                                    <span class="allergy-tag meat">🥩 Meat</span>
-                                    <span class="allergy-tag gluten">🌾 Gluten</span>
-                                    <span class="allergy-tag wine">🍷 Wine</span>
+                                <p class="item-description">Slow-braised beef with red wine, fresh herbs, and seasonal vegetables</p>
+                                <div class="item-ingredients">
+                                    <span>Braised beef • Garlic • Sage • Rosemary • Tomatoes • Carrots • Red wine</span>
                                 </div>
+                                <div class="item-tags">
+                                    <span class="tag meat">🥩 Contains Meat</span>
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
+                                    <span class="tag alcohol">🍷 Contains Alcohol</span>
+                                </div>
+                    </div>
+                </div>
+
+                        <div class="menu-item-card" data-dish="puttanesca">
+                            <div class="item-image">
+                                <img src="assets/images/pasta_puttanesca.jpg" alt="Puttanesca - Spicy tomato sauce with olives and capers" loading="lazy">
                             </div>
-                        </div>
-                        
-                        <div class="menu-item" data-dish="puttanesca">
-                            <div class="menu-item-image">
-                                <img src="assets/images/pasta_puttanesca.jpg" alt="Puttanesca">
-                            </div>
-                            <div class="menu-item-content">
-                                <div class="menu-item-header">
+                            <div class="item-content">
+                                <div class="item-header">
                                     <h3>Puttanesca</h3>
-                                    <span class="price">€9</span>
+                                    <span class="price">€10.50</span>
                                 </div>
-                                <p class="ingredients">Tomatoes sauce with oregano, olives, capers and garlic.</p>
-                                <div class="allergy-tags">
-                                    <span class="allergy-tag gluten">🌾 Gluten</span>
-                                    <span class="allergy-tag vegan">🌱 Vegan</span>
+                                <p class="item-description">Spicy tomato sauce with olives, capers, garlic, and aromatic herbs</p>
+                                <div class="item-ingredients">
+                                    <span>Tomato sauce • Oregano • Olives • Capers • Garlic</span>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <div class="menu-item" data-dish="pesto">
-                            <div class="menu-item-image">
-                                <img src="assets/images/pasta_pesto.jpg" alt="Pesto">
-                            </div>
-                            <div class="menu-item-content">
-                                <div class="menu-item-header">
-                                    <h3>Pesto</h3>
-                                    <span class="price">€11</span>
+                                <div class="item-tags">
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
+                                    <span class="tag vegan">🌱 Vegan</span>
                                 </div>
-                                <p class="ingredients">Basil, pine nuts, parmesan, garlic, olive oil</p>
-                                <div class="allergy-tags">
-                                    <span class="allergy-tag gluten">🌾 Gluten</span>
-                                    <span class="allergy-tag dairy">🥛 Dairy</span>
-                                    <span class="allergy-tag nuts">🥜 Nuts</span>
+                    </div>
+                </div>
+
+                        <div class="menu-item-card" data-dish="pesto">
+                            <div class="item-image">
+                                <img src="assets/images/pasta_pesto.jpg" alt="Pesto - Fresh basil pesto with pine nuts and parmesan" loading="lazy">
+                                <div class="item-badge vegetarian">Vegetarian</div>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Genovese Pesto</h3>
+                                    <span class="price">€11.00</span>
                                 </div>
+                                <p class="item-description">Traditional Ligurian pesto with fresh basil, pine nuts, and aged parmesan</p>
+                                <div class="item-ingredients">
+                                    <span>Fresh basil • Pine nuts • Parmesan • Garlic • Extra virgin olive oil</span>
+                                </div>
+                                <div class="item-tags">
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
+                                    <span class="tag dairy">🥛 Contains Dairy</span>
+                                    <span class="tag nuts">🥜 Contains Nuts</span>
+                                </div>
+                    </div>
+                </div>
+
+                        <div class="menu-item-card" data-dish="salmone">
+                            <div class="item-image">
+                                <img src="assets/images/pasta_salmone.jpg" alt="Salmone - Creamy salmon pasta with dill and lemon" loading="lazy">
                             </div>
-                        </div>
-                        
-                        <div class="menu-item" data-dish="salmone">
-                            <div class="menu-item-image">
-                                <img src="assets/images/pasta_salmone.jpg" alt="Salmone">
-                            </div>
-                            <div class="menu-item-content">
-                                <div class="menu-item-header">
+                            <div class="item-content">
+                                <div class="item-header">
                                     <h3>Salmone</h3>
-                                    <span class="price">€11</span>
+                                    <span class="price">€13.50</span>
                                 </div>
-                                <p class="ingredients">Salmon, cream, dill, lemon, white wine</p>
-                                <div class="allergy-tags">
-                                    <span class="allergy-tag fish">🐟 Fish</span>
-                                    <span class="allergy-tag gluten">🌾 Gluten</span>
-                                    <span class="allergy-tag dairy">🥛 Dairy</span>
+                                <p class="item-description">Creamy salmon pasta with fresh dill, lemon zest, and a touch of white wine</p>
+                                <div class="item-ingredients">
+                                    <span>Fresh salmon • Cream • Dill • Lemon • White wine</span>
                                 </div>
-                            </div>
-                        </div>
+                                <div class="item-tags">
+                                    <span class="tag fish">🐟 Contains Fish</span>
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
+                                    <span class="tag dairy">🥛 Contains Dairy</span>
+                                    <span class="tag alcohol">🍷 Contains Alcohol</span>
+                                </div>
+                    </div>
+                </div>
                         
-                        <div class="menu-item" data-dish="pomodoro">
-                            <div class="menu-item-image">
-                                <img src="assets/images/pasta_pomodoro.jpg" alt="Pomodoro">
+                        <div class="menu-item-card" data-dish="pomodoro">
+                            <div class="item-image">
+                                <img src="assets/images/pasta_pomodoro.jpg" alt="Pomodoro - Classic tomato sauce with fresh basil" loading="lazy">
                             </div>
-                            <div class="menu-item-content">
-                                <div class="menu-item-header">
+                            <div class="item-content">
+                                <div class="item-header">
                                     <h3>Pomodoro</h3>
-                                    <span class="price">€9</span>
+                                    <span class="price">€9.50</span>
                                 </div>
-                                <p class="ingredients">Fresh tomatoes, basil, garlic, olive oil</p>
-                                <div class="allergy-tags">
-                                    <span class="allergy-tag gluten">🌾 Gluten</span>
-                                    <span class="allergy-tag vegan">🌱 Vegan</span>
+                                <p class="item-description">Simple and perfect tomato sauce with fresh basil and garlic</p>
+                                <div class="item-ingredients">
+                                    <span>Fresh tomatoes • Basil • Garlic • Extra virgin olive oil</span>
+                                </div>
+                                <div class="item-tags">
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
+                                    <span class="tag vegan">🌱 Vegan</span>
+                                </div>
+                    </div>
+                </div>
+
+                        <div class="menu-item-card" data-dish="tonno">
+                            <div class="item-image">
+                                <img src="assets/images/pasta_tonno.jpg" alt="Tonno - Tuna pasta with cherry tomatoes and olives" loading="lazy">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Tonno</h3>
+                                    <span class="price">€12.00</span>
+                                </div>
+                                <p class="item-description">Fresh tuna with cherry tomatoes, olives, and capers in light tomato sauce</p>
+                                <div class="item-ingredients">
+                                    <span>Tuna • Cherry tomatoes • Olives • Capers</span>
+                                </div>
+                                <div class="item-tags">
+                                    <span class="tag fish">🐟 Contains Fish</span>
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="menu-item" data-dish="tonno">
-                            <div class="menu-item-image">
-                                <img src="assets/images/pasta_tonno.jpg" alt="Tonno">
+
+                        <div class="menu-item-card" data-dish="carbonara">
+                            <div class="item-image">
+                                <img src="assets/images/pasta_carbonara.jpg" alt="Carbonara - Classic Roman pasta with eggs, cheese, and pancetta" loading="lazy">
+                                <div class="item-badge popular">Popular</div>
                             </div>
-                            <div class="menu-item-content">
-                                <div class="menu-item-header">
-                                    <h3>Tonno</h3>
-                                    <span class="price">€11</span>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Carbonara</h3>
+                                    <span class="price">€11.50</span>
                                 </div>
-                                <p class="ingredients">Tuna, cherry tomatoes, olives, capers</p>
-                                <div class="allergy-tags">
-                                    <span class="allergy-tag fish">🐟 Fish</span>
-                                    <span class="allergy-tag gluten">🌾 Gluten</span>
+                                <p class="item-description">Classic Roman pasta with fresh eggs, aged pecorino cheese, and crispy pancetta</p>
+                                <div class="item-ingredients">
+                                    <span>Fresh eggs • Pecorino Romano • Pancetta • Black pepper • Extra virgin olive oil</span>
+                                </div>
+                                <div class="item-tags">
+                                    <span class="tag meat">🥩 Contains Meat</span>
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
+                                    <span class="tag dairy">🥛 Contains Dairy</span>
+                                    <span class="tag eggs">🥚 Contains Eggs</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card" data-dish="amatriciana">
+                            <div class="item-image">
+                                <img src="assets/images/pasta_amatriciana.jpg" alt="Amatriciana - Traditional Roman pasta with tomato and guanciale" loading="lazy">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Amatriciana</h3>
+                                    <span class="price">€11.00</span>
+                                </div>
+                                <p class="item-description">Traditional Roman pasta with San Marzano tomatoes, guanciale, and pecorino cheese</p>
+                                <div class="item-ingredients">
+                                    <span>San Marzano tomatoes • Guanciale • Pecorino Romano • Red pepper flakes • White wine</span>
+                                </div>
+                                <div class="item-tags">
+                                    <span class="tag meat">🥩 Contains Meat</span>
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
+                                    <span class="tag dairy">🥛 Contains Dairy</span>
+                                    <span class="tag alcohol">🍷 Contains Alcohol</span>
                                 </div>
                             </div>
                         </div>
@@ -225,47 +315,59 @@
                 </div>
 
                 <!-- Sandwiches Section -->
-                <div id="sandwiches" class="menu-section">
-                    <div class="section-header">
-                        <h2>Sandwiches</h2>
-                        <p>Fresh Italian sandwiches with premium ingredients</p>
+                <div id="sandwiches" class="menu-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="assets/images/panino_mortadella.jpg" alt="Authentic Panini" loading="lazy">
+                        </div>
+                        <div class="category-info">
+                            <h2>Panini</h2>
+                            <p>Fresh Italian sandwiches with premium ingredients and authentic flavors</p>
+                        </div>
                     </div>
-                    <div class="menu-grid">
-                        <div class="menu-item" data-dish="sandwich-brasato">
-                            <div class="menu-item-image">
-                                <img src="assets/images/panino_brasato.jpg" alt="Brasato Sandwich">
+
+                    <div class="menu-items">
+                        <div class="menu-item-card" data-dish="sandwich-brasato">
+                            <div class="item-image">
+                                <img src="assets/images/panino_brasato.jpg" alt="Brasato Sandwich - Slow-braised beef with caramelized onions" loading="lazy">
                             </div>
-                            <div class="menu-item-content">
-                                <div class="menu-item-header">
-                                    <h3>Brasato</h3>
-                                    <span class="price">€10</span>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Brasato Sandwich</h3>
+                                    <span class="price">€10.00</span>
                                 </div>
-                                <p class="ingredients">Braised beef, caramelized onions, carrots, celery, red wine, mustard, sage, rosemary, s/p</p>
-                                <div class="allergy-tags">
-                                    <span class="allergy-tag meat">🥩 Meat</span>
-                                    <span class="allergy-tag gluten">🌾 Gluten</span>
-                                    <span class="allergy-tag wine">🍷 Wine</span>
+                                <p class="item-description">Slow-braised beef with caramelized onions, carrots, and aromatic herbs</p>
+                                <div class="item-ingredients">
+                                    <span>Braised beef • Caramelized onions • Carrots • Celery • Red wine • Mustard • Sage • Rosemary</span>
                                 </div>
-                            </div>
-                        </div>
+                                <div class="item-tags">
+                                    <span class="tag meat">🥩 Contains Meat</span>
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
+                                    <span class="tag alcohol">🍷 Contains Alcohol</span>
+                                </div>
+                    </div>
+                </div>
                         
-                        <div class="menu-item" data-dish="prosciutto-crudo">
-                            <div class="menu-item-image">
-                                <img src="assets/images/Panino_crudo.jpg" alt="Prosciutto Crudo">
+                        <div class="menu-item-card" data-dish="prosciutto-crudo">
+                            <div class="item-image">
+                                <img src="assets/images/Panino_crudo.jpg" alt="Prosciutto Crudo - Authentic Italian cured ham with burrata" loading="lazy">
                             </div>
-                            <div class="menu-item-content">
-                                <div class="menu-item-header">
+                            <div class="item-content">
+                                <div class="item-header">
                                     <h3>Prosciutto Crudo</h3>
-                                    <span class="price">€10</span>
+                                    <span class="price">€10.00</span>
                                 </div>
-                                <p class="ingredients">Cured ham, burrata, sun-dried tomatoes, salad, balsamic</p>
-                                <div class="allergy-tags">
-                                    <span class="allergy-tag meat">🥩 Meat</span>
-                                    <span class="allergy-tag gluten">🌾 Gluten</span>
-                                    <span class="allergy-tag dairy">🥛 Dairy</span>
+                                <p class="item-description">Authentic Italian cured ham with creamy burrata and sun-dried tomatoes</p>
+                                <div class="item-ingredients">
+                                    <span>Cured ham • Burrata • Sun-dried tomatoes • Salad • Balsamic</span>
                                 </div>
-                            </div>
-                        </div>
+                                <div class="item-tags">
+                                    <span class="tag meat">🥩 Contains Meat</span>
+                                    <span class="tag gluten">🌾 Contains Gluten</span>
+                                    <span class="tag dairy">🥛 Contains Dairy</span>
+                                </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="mortadella">
                             <div class="menu-item-image">
@@ -283,8 +385,8 @@
                                     <span class="allergy-tag dairy">🥛 Dairy</span>
                                     <span class="allergy-tag nuts">🥜 Nuts</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="sandwich-pesto">
                             <div class="menu-item-image">
@@ -301,8 +403,8 @@
                                     <span class="allergy-tag dairy">🥛 Dairy</span>
                                     <span class="allergy-tag nuts">🥜 Nuts</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="sandwich-salmone">
                             <div class="menu-item-image">
@@ -319,8 +421,8 @@
                                     <span class="allergy-tag gluten">🌾 Gluten</span>
                                     <span class="allergy-tag dairy">🥛 Dairy</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="sandwich-tonno">
                             <div class="menu-item-image">
@@ -337,18 +439,24 @@
                                     <span class="allergy-tag gluten">🌾 Gluten</span>
                                     <span class="allergy-tag eggs">🥚 Eggs</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                     </div>
                 </div>
 
                 <!-- Sides Section -->
-                <div id="sides" class="menu-section">
-                    <div class="section-header">
-                        <h2>Sides</h2>
-                        <p>Fresh and delicious Italian sides and accompaniments</p>
+                <div id="sides" class="menu-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="assets/images/olives.jpg" alt="Italian Sides" loading="lazy">
+                        </div>
+                        <div class="category-info">
+                            <h2>Sides</h2>
+                            <p>Fresh and delicious Italian sides and accompaniments</p>
+                        </div>
                     </div>
-                    <div class="menu-grid">
+
+                    <div class="menu-items">
                         <div class="menu-item" data-dish="caprese-stracciatella">
                             <div class="menu-item-image">
                                 <img src="assets/images/caprese_with_burata.png" alt="Caprese with Stracciatella">
@@ -363,8 +471,8 @@
                                     <span class="allergy-tag dairy">🥛 Dairy</span>
                                     <span class="allergy-tag vegetarian">🥬 Vegetarian</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="bread-bruschetta">
                             <div class="menu-item-image">
@@ -380,8 +488,8 @@
                                     <span class="allergy-tag gluten">🌾 Gluten</span>
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="bread-truffle-butter">
                             <div class="menu-item-image">
@@ -397,8 +505,8 @@
                                     <span class="allergy-tag gluten">🌾 Gluten</span>
                                     <span class="allergy-tag dairy">🥛 Dairy</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="bread-pesto">
                             <div class="menu-item-image">
@@ -414,8 +522,8 @@
                                     <span class="allergy-tag gluten">🌾 Gluten</span>
                                     <span class="allergy-tag nuts">🥜 Nuts</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="bread-burrata">
                             <div class="menu-item-image">
@@ -431,8 +539,8 @@
                                     <span class="allergy-tag gluten">🌾 Gluten</span>
                                     <span class="allergy-tag dairy">🥛 Dairy</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="taralli">
                             <div class="menu-item-image">
@@ -448,8 +556,8 @@
                                     <span class="allergy-tag gluten">🌾 Gluten</span>
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="olives">
                             <div class="menu-item-image">
@@ -465,8 +573,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="parmigiano-cheese">
                             <div class="menu-item-image">
@@ -482,8 +590,8 @@
                                     <span class="allergy-tag dairy">🥛 Dairy</span>
                                     <span class="allergy-tag vegetarian">🥬 Vegetarian</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="stracciatella-burrata">
                             <div class="menu-item-image">
@@ -499,18 +607,24 @@
                                     <span class="allergy-tag dairy">🥛 Dairy</span>
                                     <span class="allergy-tag vegetarian">🥬 Vegetarian</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                     </div>
                 </div>
 
                 <!-- Tiramisù Section -->
-                <div id="tiramisu" class="menu-section">
-                    <div class="section-header">
-                        <h2>Tiramisù</h2>
-                        <p>Classic Italian dessert made with love</p>
+                <div id="tiramisu" class="menu-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="assets/images/classic_tiramisu.png" alt="Classic Tiramisù" loading="lazy">
+                        </div>
+                        <div class="category-info">
+                            <h2>Dolci</h2>
+                            <p>Classic Italian dessert made with love</p>
+                        </div>
                     </div>
-                    <div class="menu-grid">
+
+                    <div class="menu-items">
                         <div class="menu-item" data-dish="classic-tiramisu">
                             <div class="menu-item-image">
                                 <img src="assets/images/tiramisu.png" alt="Classic Tiramisù">
@@ -526,18 +640,24 @@
                                     <span class="allergy-tag eggs">🥚 Eggs</span>
                                     <span class="allergy-tag gluten">🌾 Gluten</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                     </div>
                 </div>
 
                 <!-- Drinks Section -->
-                <div id="drinks" class="menu-section">
-                    <div class="section-header">
-                        <h2>Drinks</h2>
-                        <p>Refreshing beverages to complement your meal</p>
+                <div id="drinks" class="menu-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="assets/images/cocacola.jpg" alt="Refreshing Drinks" loading="lazy">
+                        </div>
+                        <div class="category-info">
+                            <h2>Drinks</h2>
+                            <p>Refreshing beverages to complement your meal</p>
+                        </div>
                     </div>
-                    <div class="menu-grid">
+
+                    <div class="menu-items">
                         <div class="menu-item" data-dish="natural-water">
                             <div class="menu-item-image">
                                 <img src="assets/images/water.jpg" alt="Natural Water">
@@ -552,8 +672,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="sparkling-water">
                             <div class="menu-item-image">
@@ -569,8 +689,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="coca-cola">
                             <div class="menu-item-image">
@@ -586,8 +706,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="coca-cola-zero">
                             <div class="menu-item-image">
@@ -603,8 +723,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="fuze-tea-peach">
                             <div class="menu-item-image">
@@ -620,8 +740,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="fuze-tea-green">
                             <div class="menu-item-image">
@@ -637,8 +757,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="appel-sap">
                             <div class="menu-item-image">
@@ -654,8 +774,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="sinaasappel">
                             <div class="menu-item-image">
@@ -671,8 +791,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="sprite-zero">
                             <div class="menu-item-image">
@@ -688,8 +808,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="fanta-cassis">
                             <div class="menu-item-image">
@@ -705,8 +825,8 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         
                         <div class="menu-item" data-dish="fanta-orange">
                             <div class="menu-item-image">
@@ -722,17 +842,24 @@
                                     <span class="allergy-tag vegan">🌱 Vegan</span>
                                     <span class="allergy-tag gluten-free">✅ Gluten Free</span>
                                 </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                     </div>
                 </div>
 
                 <!-- Allergens Section -->
-                <div id="allergens" class="menu-section">
-                    <div class="section-header">
-                        <h2>Allergens</h2>
-                        <p>Important information about food allergens</p>
+                <div id="allergens" class="menu-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <img src="assets/images/parmigiano.jpg" alt="Allergen Information" loading="lazy">
+                        </div>
+                        <div class="category-info">
+                            <h2>Info</h2>
+                            <p>Important information about food allergens</p>
+                        </div>
                     </div>
+
+                    <div class="menu-items">
                     <div class="allergens-content">
                         <div class="allergens-card">
                             <h3>Food Allergen Information</h3>
@@ -776,8 +903,8 @@
                         <button class="btn btn-primary order-now-btn">Order Now</button>
                         <button class="btn btn-secondary add-to-favorites-btn">❤️ Add to Favorites</button>
                     </div>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 

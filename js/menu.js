@@ -2,8 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Menu navigation functionality
-    const menuNavButtons = document.querySelectorAll('.menu-nav-btn');
-    const menuSections = document.querySelectorAll('.menu-section');
+    const menuNavButtons = document.querySelectorAll('.nav-tab');
+    const menuSections = document.querySelectorAll('.menu-category');
     const modal = document.getElementById('dish-modal');
     const closeModal = document.querySelector('.close-modal');
 
