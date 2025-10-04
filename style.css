@@ -3987,7 +3987,7 @@ html {
 
 .category-info p {
   font-size: 1.1rem;
-  color: #ffffff; /* White for better visibility */
+  color: #000000; /* Black for better readability */
   line-height: 1.6;
 }
 
