@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             price: '€10',
             image: 'assets/images/Panino_crudo.jpg',
             ingredients: 'Cured ham, burrata, sun-dried tomatoes, salad, balsamic',
-            story: 'Prosciutto Crudo, Italy\'s most celebrated cured meat, takes center stage in this elegant panini. Paired with creamy burrata and sun-dried tomatoes, this combination showcases the Italian art of balancing flavors and textures. Each bite reveals the careful craftsmanship that goes into creating this timeless Italian classic.',
+            story: 'Prosciutto Crudo, Italy\'s most celebrated cured meat, takes center stage in this elegant focaccia. Paired with creamy burrata and sun-dried tomatoes, this combination showcases the Italian art of balancing flavors and textures. Each bite reveals the careful craftsmanship that goes into creating this timeless Italian classic.',
             allergies: ['🥩 Meat', '🌾 Gluten', '🥛 Dairy']
         },
         'mortadella': {
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             price: '€8',
             image: 'assets/images/panino_mortadella.jpg',
             ingredients: 'Italian mortadella with pistachios, cream cheese, truffle mayo, salad',
-            story: 'Mortadella, the pride of Bologna, is elevated in our panini with the addition of pistachios and truffle mayo. This combination celebrates the rich culinary heritage of Emilia-Romagna, where mortadella has been crafted for centuries. The subtle truffle notes add a touch of luxury to this traditional Italian favorite.',
+            story: 'Mortadella, the pride of Bologna, is elevated in our focaccia with the addition of pistachios and truffle mayo. This combination celebrates the rich culinary heritage of Emilia-Romagna, where mortadella has been crafted for centuries. The subtle truffle notes add a touch of luxury to this traditional Italian favorite.',
             allergies: ['🥩 Meat', '🌾 Gluten', '🥛 Dairy', '🥜 Nuts']
         },
         'sandwich-pesto': {
